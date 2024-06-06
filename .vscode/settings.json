@@ -1,0 +1,10 @@
+{
+    "tailwindCSS.experimental.classRegex": [
+      ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+      ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  }
+  
