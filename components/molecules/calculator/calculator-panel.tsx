@@ -5,13 +5,9 @@ import { formatDisplayNumber, formatNumber } from '@/utils/utils'
 
 export default function CalculatorPanel() {
   const {
-    tokens,
-    setTokens,
-    tokenPrice,
     bonusTokens,
     totalTokens,
     bonusAmount,
-    totalInvestment,
     discountedTokenPrice,
     totalReturn40,
     yieldAveragePerYear40Years,

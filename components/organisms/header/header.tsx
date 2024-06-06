@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { Button } from '@/components/atoms/button'
-import Drawer from '@/components/atoms/drawer'
 import { Logo, Menu } from '@/components/atoms/icons'
 
 export default function Header() {

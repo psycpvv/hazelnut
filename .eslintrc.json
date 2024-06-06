@@ -4,10 +4,7 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "simple-import-sort"
-  ],
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
   "rules": {
     "prettier/prettier": "warn",
     "simple-import-sort/imports": "warn",

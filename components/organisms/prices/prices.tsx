@@ -24,7 +24,7 @@ export default function Prices() {
       <div className="flex w-full flex-col items-center gap-10">
         <div>
           <div className="relative flex h-[134px] items-center justify-center">
-            <div className="font-roboto z-10 text-3xl font-bold text-white">
+            <div className="z-10 font-roboto text-3xl font-bold text-white">
               €102
             </div>
             <Hazelnut className="absolute left-[50%] top-0 w-[150px] -translate-x-1/2" />
@@ -35,7 +35,7 @@ export default function Prices() {
         </div>
         <div>
           <div className="relative flex h-[134px] items-center justify-center">
-            <div className="font-roboto z-10 text-3xl font-bold text-white">
+            <div className="z-10 font-roboto text-3xl font-bold text-white">
               €139
             </div>
             <Hazelnut
@@ -73,7 +73,7 @@ export default function Prices() {
 
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
-                      <div className="font-roboto z-10 text-2xl font-bold text-white">
+                      <div className="z-10 font-roboto text-2xl font-bold text-white">
                         €139
                       </div>
                       <Hazelnut
@@ -103,7 +103,7 @@ export default function Prices() {
 
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
-                      <div className="font-roboto z-10 text-2xl font-bold text-white">
+                      <div className="z-10 font-roboto text-2xl font-bold text-white">
                         €139
                       </div>
                       <Hazelnut
@@ -133,7 +133,7 @@ export default function Prices() {
 
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
-                      <div className="font-roboto z-10 text-2xl font-bold text-white">
+                      <div className="z-10 font-roboto text-2xl font-bold text-white">
                         €139
                       </div>
                       <Hazelnut
@@ -163,7 +163,7 @@ export default function Prices() {
 
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
-                      <div className="font-roboto z-10 text-2xl font-bold text-white">
+                      <div className="z-10 font-roboto text-2xl font-bold text-white">
                         €139
                       </div>
                       <Hazelnut

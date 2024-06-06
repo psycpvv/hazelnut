@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3004",
+    "format": "npx prettier --write .",
     "build": "next build",
+    "type-check": "tsc --noEmit --pretty",
     "start": "next start",
     "lint": "next lint"
   },

@@ -1,11 +1,7 @@
-'use client'
 import Image from 'next/image'
 import React from 'react'
 
-import useCalculatorStore from '@/store/calculatorStore'
-
 export default function CalcImage() {
-  const rate = useCalculatorStore(state => state.rate)
   return (
     <div className="w-full">
       <Image

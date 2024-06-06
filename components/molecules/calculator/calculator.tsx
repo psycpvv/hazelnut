@@ -11,7 +11,7 @@ export default function Calculator() {
   return (
     <div className="px-6">
       <div className="w-full py-12">
-        <div className="font-nunito flex flex-col px-8 text-xs text-white">
+        <div className="flex flex-col px-8 font-nunito text-xs text-white">
           <div className="relative flex h-[46px] w-full items-center justify-end rounded-full bg-secondary">
             <div className="px-4">28.301</div>
             <div className="absolute left-0 top-0 flex h-[46px] w-[24%] items-center justify-center rounded-full bg-primary">
