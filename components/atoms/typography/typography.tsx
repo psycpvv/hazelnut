@@ -8,10 +8,10 @@ const typographyVariants = cva('', {
     variant: {
       default: '',
       h1: 'text-3xl md:text-5xl 2xl:text-[80px] leading-10 md:leading-[80px] 2xl:leading-[100px] font-bold',
-      h2: 'text-[28px] font-nunito',
-      h3: 'text-2xl font-nunito',
+      h2: 'text-[28px] md:text-4xl lg:text-5xl font-nunito',
+      h3: 'text-2xl md:text-3xl font-nunito',
       h4: 'text-xl font-nunito',
-      subtitle1: 'text-base/7 font-light',
+      subtitle1: 'text-base/7 md:text-[20px] font-light',
       subtitle2: 'text-[15px]/7 font-light',
       text: 'text-xs/4 font-light',
     },

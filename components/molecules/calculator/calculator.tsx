@@ -10,13 +10,13 @@ import Chart2 from './chart2'
 
 export default function Calculator() {
   return (
-    <div className="px-6">
-      <div className="w-full py-12">
-        <div className="flex flex-col font-nunito text-xs text-white">
+    <div className="container px-6" id="calculator">
+      <div className="w-full py-12 md:pt-20">
+        <div className="flex flex-col font-nunito text-xs text-white md:px-8 md:text-[15px]">
           <div className="relative flex h-[46px] w-full items-center justify-end rounded-full bg-secondary">
             <div className="px-4">28.301</div>
             <div className="absolute left-0 top-0 flex h-[46px] w-[24%] items-center justify-center rounded-full bg-primary">
-              1.444 <br /> (5.1%)
+              1.444 <br className="md:hidden" /> (5.1%)
             </div>
           </div>
         </div>
@@ -30,16 +30,16 @@ export default function Calculator() {
         <Typography
           variant="subtitle1"
           textColor="primary"
-          className="px-6 text-center"
+          className="px-6 text-center md:text-base"
         >
           * Reserved trees are lorem ipsum ipsum
         </Typography>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col md:flex-row md:gap-8">
         <CalcInfo />
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 md:w-2/3">
           <CalculatorInputs />
-          <div className="w-full">
+          <div className="mt-6 w-full">
             <CalculatorSlider />
           </div>
           <div className="w-full">
@@ -47,14 +47,14 @@ export default function Calculator() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 pt-8">
+      <div className="flex flex-col gap-8 pt-8 md:flex-row">
         <Chart1 />
         <Chart2 />
       </div>
 
       <div className="flex flex-col">
         <div className="mx-auto my-10">
-          <InvestButton className="w-52" />
+          <InvestButton className="w-52 md:h-[60px] md:w-[200px]" />
         </div>
 
         <Typography variant="text" className="pb-20">

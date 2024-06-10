@@ -22,7 +22,7 @@ export default function CalcInfo() {
     tokens,
   } = useCalculatorStore(state => state)
   return (
-    <div className="w-full">
+    <div className="w-full md:w-1/3">
       <Image
         src={`/assets/img/calculator/${calcImageSrc()}`}
         width={1156}
@@ -30,13 +30,39 @@ export default function CalcInfo() {
         alt="Calculater Image"
         className="w-full"
       />
-      <div className="flex items-center justify-center py-6">
+      <div className="flex items-center justify-center py-6 md:hidden">
         <button
           onClick={() => setOpen(true)}
           className="rounded-full bg-primary px-4 py-1.5 text-[11px] uppercase leading-3 text-white shadow-xl"
         >
           Show my offsets
         </button>
+      </div>
+      <div className="hidden md:block">
+        <div className="mt-2">
+          <p className="font-bold">
+            You are offsetting carbon emissions equivalent to:
+          </p>
+          <ul className="flex list-disc flex-col pl-7 pt-4 marker:text-2xl marker:text-secondary">
+            <li>Driving a passenger car for {drivingMiles()} miles</li>
+            <li>
+              Taking {flights() === '1' ? 'a' : flights()} round-trip flight
+              from New York to Los Angeles
+            </li>
+            <li>
+              Heating a typical US home for approximately {heatingText()} days
+            </li>
+            {tokens >= 10 && (
+              <>
+                <li>
+                  Yearly carbon emissions of a city of approximately {people()}{' '}
+                  people
+                </li>
+                <li>{cows()} cows per year</li>
+              </>
+            )}
+          </ul>
+        </div>
       </div>
 
       <Image
@@ -117,18 +143,18 @@ export default function CalcInfo() {
           </TransitionChild>
 
           <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+            <div className="flex min-h-full items-center justify-center p-4 text-center md:items-center md:p-0">
               <TransitionChild
                 enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                enterFrom="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+                enterTo="opacity-100 translate-y-0 md:scale-100"
                 leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                leaveFrom="opacity-100 translate-y-0 md:scale-100"
+                leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
               >
-                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                    <div className="sm:flex sm:items-start">
+                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all md:my-8 md:w-full md:max-w-lg">
+                  <div className="bg-white px-4 pb-4 pt-5 md:p-6 md:pb-4">
+                    <div className="md:flex md:items-start">
                       <div className="mt-2">
                         <p className="font-bold">
                           You are offsetting carbon emissions equivalent to:

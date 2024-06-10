@@ -13,11 +13,13 @@ import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Typography } from '@/components/atoms/typography'
+import useMedia from '@/hooks/useMedia'
 import { cn } from '@/utils/utils'
 
 import { assets, data } from './constants'
 
 export default function WhyTreesupy() {
+  const { isMd, isLg } = useMedia()
   const [row, setRow] = useState(0)
   const [col, setCol] = useState(0)
   function updateCell(_row: number, _col: number) {
@@ -29,7 +31,7 @@ export default function WhyTreesupy() {
     setCol(0)
   }
   return (
-    <div className="py-14">
+    <div className="container py-14">
       <div className="flex flex-col gap-4 px-4 pb-12 text-center">
         <Typography variant="h2" textColor="primary">
           WHY TREESURY?
@@ -41,9 +43,9 @@ export default function WhyTreesupy() {
         </Typography>
       </div>
       <div className="flex" onMouseLeave={initCell}>
-        <div className="w-32 pl-4 text-[11px] shadow-why-tree">
+        <div className="w-1/3 pl-4 text-[11px] shadow-why-tree md:shadow-none lg:w-1/6">
           <div
-            className="flex h-24 items-end font-nunito text-primary"
+            className="flex h-24 items-end font-nunito text-primary md:py-5"
             onMouseEnter={() => updateCell(0, 0)}
           >
             ASSET CLASS
@@ -51,30 +53,37 @@ export default function WhyTreesupy() {
           {assets.map((asset, key) => (
             <div
               key={key}
-              className="flex h-16 items-center font-nunito"
+              className="flex h-16 items-center border-t font-nunito"
               onMouseEnter={() => updateCell(0, key + 1)}
             >
               {asset}
             </div>
           ))}
         </div>
-        <div className="w-[200px] flex-1">
+        <div className="w-2/3 lg:w-5/6">
           <Swiper
             pagination={{
               clickable: true,
               el: '.swiper-why-treesupy-pagination',
             }}
-            slidesPerView={1}
+            slidesPerView={isLg ? 3 : 1}
             spaceBetween={0}
             modules={[Pagination]}
+            className="md:!pl-4"
           >
             {data.map((_data, _key) => (
               <SwiperSlide key={_key}>
-                <div className="flex w-full">
+                <div className="flex w-full md:overflow-visible">
                   {_data.map((__data, __key) => (
-                    <div className="flex w-1/2 flex-col px-2" key={__key}>
+                    <div
+                      className={cn(
+                        'flex w-1/2 flex-col px-2',
+                        row === _key * 2 + __key && 'md:shadow-why-tree-item',
+                      )}
+                      key={__key}
+                    >
                       <div
-                        className="flex h-24 flex-col items-center justify-end"
+                        className="flex h-24 flex-col items-center justify-end border-b md:py-5"
                         onMouseEnter={() => updateCell(_key * 2 + __key, 0)}
                       >
                         <Image
@@ -83,7 +92,7 @@ export default function WhyTreesupy() {
                           height={40}
                           alt="favicon"
                           className={cn(
-                            row === _key * 2 + __key || 'opacity-20',
+                            row === _key * 2 + __key || isMd || 'opacity-20',
                           )}
                         />
                         <div className="mt-2.5 flex items-end font-nunito text-[11px] text-primary">
@@ -143,7 +152,7 @@ export default function WhyTreesupy() {
         </div>
       </div>
       <div className="swiper-why-treesupy-pagination my-7 flex justify-center gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
-      <Typography variant="text" className="px-4">
+      <Typography variant="text" className="p-4">
         * Only green bonds provide green investment opportunities, and only a
         limited number of stocks can be classified as green. ** Treesury Trees
         will be converted to security tokens that are backed by hard assets. ***
@@ -151,16 +160,16 @@ export default function WhyTreesupy() {
         NYU Stern School of Business. U.S. Govt. Bonds - U.S. Treasury 10-Year
         Bond; Stocks - Standard & Poor 500 Index; Gold - Investment grade gold;
         Commercial - NCREIF Property Index; CD - Bankrate Historical 1-Year CD
-        Interest Rates. Please note that past performance does not guarantee
-        future results, and there is no guarantee that this trend will continue.
-        Treesury&apos;s internal analysis covers the period from 1991 to 2022.
-        All returns except for Treesury asset class are estimated and assume the
-        reinvestment of dividends. The information provided on the index is for
-        illustrative purposes only and is not intended to represent the results
-        of an actual investment. Additionally, the returns mentioned do not
-        include any management fees, transaction costs, or expenses. Volatility
-        is measured by using the monthly total returns of each index or asset
-        class, and the historical performance of each index is cited to
+        Interest Rates. <br /> <br /> Please note that past performance does not
+        guarantee future results, and there is no guarantee that this trend will
+        continue. Treesury&apos;s internal analysis covers the period from 1991
+        to 2022. All returns except for Treesury asset class are estimated and
+        assume the reinvestment of dividends. The information provided on the
+        index is for illustrative purposes only and is not intended to represent
+        the results of an actual investment. Additionally, the returns mentioned
+        do not include any management fees, transaction costs, or expenses.
+        Volatility is measured by using the monthly total returns of each index
+        or asset class, and the historical performance of each index is cited to
         illustrate historical market trends. It&apos;s worth noting that the
         risk/reward profile for each asset class varies significantly, and this
         information should not be considered a recommendation for any particular

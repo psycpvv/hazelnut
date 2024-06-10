@@ -16,72 +16,68 @@ export default function CalculatorPanel() {
     totalCo2AveragePerYearMt,
   } = useCalculatorStore(state => state)
   return (
-    <div className="col-span-3 grid gap-4">
+    <div className="grid gap-4 md:grid-cols-3">
       <div className="h-full rounded-2xl border border-solid border-[rgba(49,70,140,0.3)] p-5">
-        <Typography variant="h3" textColor="primary" className="pb-5">
-          BONUS
-        </Typography>
+        <div className="pb-5 font-nunito text-[22px] text-primary">BONUS</div>
         <Typography variant="subtitle2">Total Acquired Trees</Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           {formatNumber(totalTokens())}
           <div className="text-base">
             {bonusTokens()
               ? `(Including ${formatNumber(bonusTokens())} Bonus Trees)`
               : ''}
           </div>
-        </Typography>
+        </div>
         <Typography variant="subtitle2" textColor="primary">
           Obtained Bonus Amount
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           €{formatNumber(bonusAmount())}
-        </Typography>
+        </div>
         <Typography variant="subtitle2" textColor="primary">
           Effective Price per Tree
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           €{discountedTokenPrice()}
-        </Typography>
+        </div>
       </div>
       <div className="h-full rounded-2xl border border-solid border-[rgba(49,70,140,0.3)] p-5">
-        <Typography variant="h3" textColor="primary" className="pb-5">
-          RETURN
-        </Typography>
+        <div className="pb-5 font-nunito text-[22px] text-primary">RETURN</div>
         <Typography variant="subtitle2">
           Average Annual Yield (40 years)
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           {yieldAveragePerYear40Years()}%
-        </Typography>
+        </div>
         <Typography variant="subtitle2" textColor="primary">
           Total Investment Return (40 yrs)
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           €{formatDisplayNumber(Math.trunc(totalReturn40()))}
-        </Typography>
+        </div>
         <Typography variant="subtitle2" textColor="primary">
           Payback Period
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           {paybackYears()} years
-        </Typography>
+        </div>
       </div>
       <div className="h-full rounded-2xl border border-solid border-[rgba(49,70,140,0.3)] p-5">
-        <Typography variant="h3" textColor="primary" className="pb-5">
+        <div className="pb-5 font-nunito text-[22px] text-primary">
           CARBON CREDITS
-        </Typography>
+        </div>
         <Typography variant="subtitle2">
           Total CO<sub>2</sub> Captured (40 yrs)
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           {formatDisplayNumber(totalCo240YearsMt())} t
-        </Typography>
+        </div>
         <Typography variant="subtitle2" textColor="primary">
           Average Annual CO<sub>2</sub> Captured
         </Typography>
-        <Typography variant="h3" textColor="primary" className="pb-4">
+        <div className="pb-4 font-nunito text-[22px] text-primary">
           {formatDisplayNumber(totalCo2AveragePerYearMt())} t
-        </Typography>
+        </div>
       </div>
     </div>
   )

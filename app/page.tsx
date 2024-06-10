@@ -19,7 +19,7 @@ import Workflow from '@/components/organisms/workflow'
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-col overflow-x-hidden">
+    <main className="flex w-full flex-col items-center overflow-x-hidden">
       <Banner />
       <Basiness1 />
       <Workflow
@@ -55,7 +55,7 @@ export default function Home() {
                   </div>
                 </>
               ),
-              href: '/faq#hazelnut_experience',
+              href: '/faq#sell_treesury_tree',
               icon: (
                 <Image
                   src="/assets/img/liquidity.svg"
@@ -70,7 +70,7 @@ export default function Home() {
               title: 'SUSTAINABILITY',
               subtitle:
                 'Contribute to a more sustainable future by investing in a nature-based solution for carbon removal.',
-              href: '/faq#hazelnut_experience',
+              href: '/faq#return_on_carbon_credits',
               icon: (
                 <Image
                   src="/assets/img/work-4-1.svg"
