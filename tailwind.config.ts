@@ -11,6 +11,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      transformOrigin: {
+        'bottom-center': 'bottom center',
+      },
+      boxShadow: {
+        'why-tree': '5px 0 30px -5px rgba(0, 0, 0, 0.1)',
+      },
       backgroundImage: {
         'ui-tree': "url('/assets/img/tree.svg')",
       },
@@ -54,10 +60,34 @@ const config: Config = {
             opacity: '0',
           },
         },
+        blink: {
+          '0%': {
+            background: '#fff',
+          },
+          '50%': {
+            background: '#8e9ac0',
+          },
+          '100%': {
+            background: '#fff',
+          },
+        },
+        'hand-rotate': {
+          '0%': {
+            transform: 'rotate(-10deg)',
+          },
+          '50%': {
+            transform: 'rotate(10deg)',
+          },
+          '100%': {
+            transform: 'rotate(-10deg)',
+          },
+        },
       },
       animation: {
         'pulse-border-2': 'pulseBorder2 1.5s linear infinite',
         'pulse-border': 'pulseBorder 1s linear infinite',
+        blink: 'blink 1.4s linear infinite',
+        'hand-rotate': 'hand-rotate 1.6s linear infinite',
       },
     },
   },
@@ -71,6 +101,9 @@ const config: Config = {
         '.var-button-secondary-color': {
           '--button-color': `${secondaryColor}`,
           '--button-hover-color': `${secondaryHoverColor}`,
+        },
+        '.items-first-baseline': {
+          'align-items': 'first baseline',
         },
       }
 

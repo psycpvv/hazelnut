@@ -11,6 +11,7 @@ import {
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 
+import { Typography } from '@/components/atoms/typography'
 import useCalculatorStore from '@/store/calculatorStore'
 
 Chart.register(
@@ -152,94 +153,101 @@ export default function Chart2() {
     8.87 * totalTokens() * rate,
   ]
   return (
-    <Bar
-      className="w-full"
-      options={{
-        plugins: {
-          tooltip: {
-            displayColors: false,
-            callbacks: {
-              labelColor: function () {
-                return {
-                  borderColor: 'rgba(0, 0, 0, 0)', // Remove the border color
-                  backgroundColor: 'rgba(0, 0, 0, 0)', // Remove the background color
-                  display: false,
-                }
-              },
-              label: function (tooltipItem) {
-                var value1 = co2[tooltipItem.dataIndex]
-                var value2 = hazelnuts[tooltipItem.dataIndex]
-                var total = value1 + value2
-                var value1_final = value1.toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'EUR',
-                })
-                var value2_final = value2.toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'EUR',
-                })
-                var total_final = total.toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'EUR',
-                })
-                return [
-                  `Hazelnuts: ${value1_final}`,
-                  `Carbon Credits (CO2): ${value2_final}`,
-                  `Total: ${total_final}`,
-                ]
-              },
-              title: function (tooltipItems) {
-                return 'Year: ' + tooltipItems[0].label
-              },
-            },
-          },
-          legend: {
-            // display: false,
-            position: 'bottom',
-          },
-        },
-        maintainAspectRatio: true,
-        responsive: true,
-        scales: {
-          y: {
-            ticks: {
-              callback: function (value) {
-                return value.toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'EUR',
-                })
+    <div>
+      <Typography variant="subtitle2" className="text-center">
+        Return structure from Hazelnuts and Carbon Credits over the Treesury
+        Tree lifetime
+      </Typography>
+      <Bar
+        className="w-full"
+        height={200}
+        options={{
+          plugins: {
+            tooltip: {
+              displayColors: false,
+              callbacks: {
+                labelColor: function () {
+                  return {
+                    borderColor: 'rgba(0, 0, 0, 0)', // Remove the border color
+                    backgroundColor: 'rgba(0, 0, 0, 0)', // Remove the background color
+                    display: false,
+                  }
+                },
+                label: function (tooltipItem) {
+                  var value1 = co2[tooltipItem.dataIndex]
+                  var value2 = hazelnuts[tooltipItem.dataIndex]
+                  var total = value1 + value2
+                  var value1_final = value1.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'EUR',
+                  })
+                  var value2_final = value2.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'EUR',
+                  })
+                  var total_final = total.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'EUR',
+                  })
+                  return [
+                    `Hazelnuts: ${value1_final}`,
+                    `Carbon Credits (CO2): ${value2_final}`,
+                    `Total: ${total_final}`,
+                  ]
+                },
+                title: function (tooltipItems) {
+                  return 'Year: ' + tooltipItems[0].label
+                },
               },
             },
-            stacked: true,
+            legend: {
+              // display: false,
+              position: 'bottom',
+            },
           },
-          x: {
-            ticks: {},
-            display: true, // always display the x-axis
-            suggestedMin: 0, // set a fixed minimum value for the axis
-            suggestedMax: 6, // set a fixed maximum value for the axis
-            stacked: true,
+          maintainAspectRatio: true,
+          responsive: true,
+          scales: {
+            y: {
+              ticks: {
+                callback: function (value) {
+                  return value.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'EUR',
+                  })
+                },
+              },
+              stacked: true,
+            },
+            x: {
+              ticks: {},
+              display: true, // always display the x-axis
+              suggestedMin: 0, // set a fixed minimum value for the axis
+              suggestedMax: 6, // set a fixed maximum value for the axis
+              stacked: true,
+            },
           },
-        },
-      }}
-      data={{
-        labels: data.map(item => item.year),
-        datasets: [
-          {
-            label: 'Hazelnuts',
-            data: hazelnuts,
-            barPercentage: 0.65,
-            categoryPercentage: 0.65,
-            backgroundColor: '#31468c',
-          },
-          {
-            label: 'Carbon Credits (CO2)',
-            data: co2,
-            barPercentage: 0.65,
-            categoryPercentage: 0.65,
-            backgroundColor: '#c7cb50',
-          },
-        ],
-      }}
-    />
+        }}
+        data={{
+          labels: data.map(item => item.year),
+          datasets: [
+            {
+              label: 'Hazelnuts',
+              data: hazelnuts,
+              barPercentage: 0.65,
+              categoryPercentage: 0.65,
+              backgroundColor: '#31468c',
+            },
+            {
+              label: 'Carbon Credits (CO2)',
+              data: co2,
+              barPercentage: 0.65,
+              categoryPercentage: 0.65,
+              backgroundColor: '#c7cb50',
+            },
+          ],
+        }}
+      />
+    </div>
   )
 }

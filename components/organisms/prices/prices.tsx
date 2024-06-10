@@ -13,7 +13,7 @@ import { Typography } from '@/components/atoms/typography'
 
 export default function Prices() {
   return (
-    <div className="flex flex-col items-center justify-center px-3 pb-8">
+    <div className="flex flex-col items-center justify-center px-3 py-8">
       <Typography
         variant="h2"
         textColor="primary"
@@ -74,7 +74,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €139
+                        €106
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -104,7 +104,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €139
+                        €123
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -116,7 +116,7 @@ export default function Prices() {
                       textColor="primary"
                       className="pt-3 text-sm"
                     >
-                      YEAR 1
+                      YEAR 2
                     </Typography>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €139
+                        €135
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -146,21 +146,13 @@ export default function Prices() {
                       textColor="primary"
                       className="pt-3 text-sm"
                     >
-                      YEAR 1
+                      YEAR 3
                     </Typography>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="relative">
-                  <Image
-                    src="/assets/img/hazelnut-arrow1.png"
-                    width={25}
-                    height={32}
-                    alt="hazelnut-arrow"
-                    className="absolute right-[-10px] top-[40px]"
-                  />
-
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[107px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
@@ -176,20 +168,21 @@ export default function Prices() {
                       textColor="primary"
                       className="pt-3 text-sm"
                     >
-                      YEAR 1
+                      YEAR 4 & ONWARDS
                     </Typography>
                   </div>
                 </div>
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="swiper-hazelnuts-pagination flex justify-center gap-2.5 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
+          <div className="swiper-hazelnuts-pagination flex justify-center gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
         </div>
       </div>
       <Button className="my-8">
         DISCOVER: FACTORS AFFECTING TREESURY TREE PRICES
       </Button>
-      <div className="text-[10px]">
+
+      <Typography variant="text">
         * The regular price of a Treesury Tree is €139. However, early investors
         can take advantage of privileged pricing. The privileged price for the
         first 22,500 Treesury Trees or the first 2 months, whichever milestone
@@ -203,7 +196,7 @@ export default function Prices() {
         for early investors presents an attractive opportunity for potential
         capital gains, considering the projected increase in Treesury Tree price
         over time.
-      </div>
+      </Typography>
     </div>
   )
 }

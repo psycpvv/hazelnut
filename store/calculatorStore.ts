@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { formatNumber } from '@/utils/utils'
+
 type State = {
   rate: number
   tokens: number
@@ -21,12 +23,13 @@ type CalculatorState = State & {
   drivingMiles: () => string
   flights: () => string
   heatingText: () => string
-  people: () => number
+  people: () => string
   cows: () => number
   totalInvestorsReturn40: () => number
   totalReturn40: () => number
   totalCo240YearsMt: () => string
   totalCo2AveragePerYearMt: () => string
+  calcImageSrc: () => string
 }
 
 const INITIAL_STATE: State = {
@@ -75,6 +78,17 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
     if (tokens > 4500 && tokens < 5000) return 5000 - tokens
     return 0
   },
+  calcImageSrc: () => {
+    const tokens = get().tokens
+    if (tokens < 10) return 'calc-1.png'
+    if (tokens < 100) return 'calc-2.png'
+    if (tokens < 1000) return 'calc-3.png'
+    if (tokens < 2000) return 'calc-4.png'
+    if (tokens < 3000) return 'calc-5.png'
+    if (tokens < 4000) return 'calc-6.png'
+    if (tokens < 5000) return 'calc-7.png'
+    return 'calc-8.png'
+  },
   drivingMiles: () =>
     String(871 * get().tokens)
       .replace(/\D/g, '')
@@ -86,7 +100,7 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
     const heating_years = Math.trunc(heating / 365)
     return heating_years < 1 ? heating + ' days' : heating_years + ' years'
   },
-  people: () => get().tokens * 818.18,
+  people: () => formatNumber(Math.trunc(get().tokens * 818.18)),
   cows: () => Math.trunc(get().tokens * 0.72),
   totalCo240YearsMt: () =>
     ((get().totalTokens() * get().co2PerToken) / 1000).toFixed(2),

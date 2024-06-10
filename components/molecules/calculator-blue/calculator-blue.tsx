@@ -4,7 +4,7 @@ import { Typography } from '@/components/atoms/typography'
 
 export default function CalculatorBlue() {
   return (
-    <div className="w-full bg-primary px-3 py-14 text-white">
+    <div className="flex w-full flex-col gap-4 bg-primary px-3 py-14 text-white">
       <Typography variant="h2" className="text-center">
         INVESTMENT PLANNER
       </Typography>

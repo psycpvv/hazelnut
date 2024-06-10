@@ -11,6 +11,7 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 
+import { Typography } from '@/components/atoms/typography'
 import useCalculatorStore from '@/store/calculatorStore'
 
 Chart.register(
@@ -67,67 +68,73 @@ export default function Chart1() {
     { year: 40, value: 653.97 * totalTokens() * rate },
   ]
   return (
-    <Line
-      className="w-full"
-      options={{
-        plugins: {
-          tooltip: {
-            displayColors: false,
-            callbacks: {
-              label: function (tooltipItem) {
-                return Number(tooltipItem.formattedValue).toLocaleString(
-                  'en-US',
-                  {
+    <div>
+      <Typography variant="subtitle2" className="text-center">
+        Cumulative return of your investment over the Treesury Tree lifetime
+      </Typography>
+      <Line
+        height={200}
+        className="w-full"
+        options={{
+          plugins: {
+            tooltip: {
+              displayColors: false,
+              callbacks: {
+                label: function (tooltipItem) {
+                  return Number(tooltipItem.formattedValue).toLocaleString(
+                    'en-US',
+                    {
+                      style: 'currency',
+                      currency: 'EUR',
+                    },
+                  )
+                },
+                title: function (tooltipItems) {
+                  return 'Year: ' + tooltipItems[0].label
+                },
+              },
+            },
+            legend: {
+              display: false,
+            },
+          },
+          maintainAspectRatio: true,
+          responsive: true,
+          scales: {
+            y: {
+              ticks: {
+                callback: function (value) {
+                  return value.toLocaleString('en-US', {
                     style: 'currency',
                     currency: 'EUR',
-                  },
-                )
-              },
-              title: function (tooltipItems) {
-                return 'Year: ' + tooltipItems[0].label
+                  })
+                },
               },
             },
-          },
-          legend: {
-            display: false,
-          },
-        },
-        maintainAspectRatio: true,
-        responsive: true,
-        scales: {
-          y: {
-            ticks: {
-              callback: function (value) {
-                return value.toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'EUR',
-                })
-              },
-            },
-          },
 
-          x: {
-            ticks: {},
-            suggestedMin: 0, // set a fixed minimum value for the axis
-            suggestedMax: 6, // set a fixed maximum value for the axis
+            x: {
+              ticks: {},
+              suggestedMin: 0, // set a fixed minimum value for the axis
+              suggestedMax: 6, // set a fixed maximum value for the axis
+            },
           },
-        },
-      }}
-      data={{
-        labels: data.map(item => item.year),
-        datasets: [
-          {
-            label:
-              'Cumulative return of your investment over the Treesury Tree lifetime',
-            data: data.map(function (item) {
-              return item.value
-            }),
-            type: 'line',
-            borderColor: '#31468c',
-            fill: false,
-          },
-        ],
-      }}
-    />
+        }}
+        data={{
+          labels: data.map(item => item.year),
+          datasets: [
+            {
+              label:
+                'Cumulative return of your investment over the Treesury Tree lifetime',
+              data: data.map(function (item) {
+                return item.value
+              }),
+              type: 'line',
+              borderColor: '#31468c',
+              fill: false,
+            },
+          ],
+        }}
+      />
+    </div>
   )
 }

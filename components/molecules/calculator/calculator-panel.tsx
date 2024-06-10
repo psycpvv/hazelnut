@@ -16,7 +16,7 @@ export default function CalculatorPanel() {
     totalCo2AveragePerYearMt,
   } = useCalculatorStore(state => state)
   return (
-    <div className="col-span-3 grid">
+    <div className="col-span-3 grid gap-4">
       <div className="h-full rounded-2xl border border-solid border-[rgba(49,70,140,0.3)] p-5">
         <Typography variant="h3" textColor="primary" className="pb-5">
           BONUS

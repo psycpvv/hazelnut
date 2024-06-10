@@ -1,8 +1,17 @@
 import Image from 'next/image'
 
+import AboutSection from '@/components/molecules/about-section'
 import Calculator from '@/components/molecules/calculator'
 import CalculatorBlue from '@/components/molecules/calculator-blue'
+import Contact from '@/components/molecules/contact'
 import EscWhite from '@/components/molecules/esc-white'
+import Features from '@/components/molecules/features'
+import Income from '@/components/molecules/income'
+import Partners from '@/components/molecules/partners'
+import Roadmap from '@/components/molecules/roadmap'
+import Team from '@/components/molecules/team'
+import TrackRecord from '@/components/molecules/track-record'
+import WhyTreesupy from '@/components/molecules/why-treesupy'
 import Banner from '@/components/organisms/banner'
 import Basiness1 from '@/components/organisms/business1'
 import Prices from '@/components/organisms/prices'
@@ -10,7 +19,7 @@ import Workflow from '@/components/organisms/workflow'
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-col">
+    <main className="flex w-full flex-col overflow-x-hidden">
       <Banner />
       <Basiness1 />
       <Workflow
@@ -133,6 +142,77 @@ export default function Home() {
       <EscWhite />
       <CalculatorBlue />
       <Calculator />
+      <AboutSection />
+      <Workflow
+        data={{
+          title: 'WHAT TO EXPECT',
+          subTitle: 'We differentiate ourselves from other farm managers by:',
+          investBtn: true,
+          workflowBoxes: [
+            {
+              title: 'Full transparency.',
+              href: '/faq#monitor_investment',
+              icon: (
+                <Image
+                  src="/assets/img/full-transparency-new.svg"
+                  width={50}
+                  height={100}
+                  alt="security-shield"
+                  className="py-5"
+                />
+              ),
+            },
+            {
+              title: 'Streamlined & cost-effective investment procedure.',
+
+              href: '/faq#hazelnut_experience',
+              icon: (
+                <Image
+                  src="/assets/img/simple-low-cost-investment-process-new.svg"
+                  width={50}
+                  height={100}
+                  alt="security-shield"
+                  className="py-5"
+                />
+              ),
+            },
+            {
+              title: 'Precision farming guided by data-driven insights.',
+              href: '/faq#hazelnut_experience',
+              icon: (
+                <Image
+                  src="/assets/img/data-driven-precision-farming-new.svg"
+                  width={66}
+                  height={40}
+                  alt="security-shield"
+                  className="py-1"
+                />
+              ),
+            },
+            {
+              title: 'Sustainable and regenerative farming practices.',
+              href: '/faq#hazelnut_experience',
+              icon: (
+                <Image
+                  src="/assets/img/responsible-regenerative-farming-practices.svg"
+                  width={50}
+                  height={50}
+                  alt="security-shield"
+                  className="py-1"
+                />
+              ),
+            },
+          ],
+        }}
+      />
+      <Features />
+      <Income />
+      <WhyTreesupy />
+      <Roadmap />
+      <Partners />
+      <Team />
+      <TrackRecord />
+      <Contact />
     </main>
   )
 }

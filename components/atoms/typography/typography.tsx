@@ -13,6 +13,7 @@ const typographyVariants = cva('', {
       h4: 'text-xl font-nunito',
       subtitle1: 'text-base/7 font-light',
       subtitle2: 'text-[15px]/7 font-light',
+      text: 'text-xs/4 font-light',
     },
     textColor: {
       default: '',
