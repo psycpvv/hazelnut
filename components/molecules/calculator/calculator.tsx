@@ -1,4 +1,3 @@
-import { Button } from '@/components/atoms/button'
 import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'
 
