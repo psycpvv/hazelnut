@@ -1,7 +1,6 @@
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import React from 'react'
 
 import { Typography } from '@/components/atoms/typography'
 
@@ -19,7 +18,7 @@ export default function Features() {
         <Typography variant="h2" textColor="primary">
           FEATURES
         </Typography>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -31,7 +30,7 @@ export default function Features() {
             We plant, grow, harvest and sell. You collect returns.
           </div>
         </div>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -44,7 +43,7 @@ export default function Features() {
             supply chain buyers.
           </div>
         </div>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -57,7 +56,7 @@ export default function Features() {
             projected trends.
           </div>
         </div>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -69,7 +68,7 @@ export default function Features() {
             Tree insurance with a replanting guarantee.
           </div>
         </div>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -82,7 +81,7 @@ export default function Features() {
             positive carbon footprint.
           </div>
         </div>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -94,7 +93,7 @@ export default function Features() {
             Operational transparency facilitated by blockchain technology.
           </div>
         </div>
-        <div className="items-first-baseline flex gap-2.5 text-[18px]/6 font-light">
+        <div className="flex gap-2.5 text-[18px]/6 font-light items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}

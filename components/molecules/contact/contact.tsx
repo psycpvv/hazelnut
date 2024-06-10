@@ -1,8 +1,4 @@
-import {
-  faFacebookF,
-  faLinkedin,
-  faSquareFacebook,
-} from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 

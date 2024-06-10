@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 
 import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'

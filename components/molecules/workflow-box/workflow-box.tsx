@@ -18,7 +18,7 @@ export default function WorkflowBox({
   return (
     <Link
       href={href}
-      className="before:content-empty after:content-empty group relative z-10 flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-solid border-white/10 p-9 before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-[0%] before:bg-white before:transition-all before:duration-500 before:ease-out after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-[0%] after:bg-white after:transition-all after:duration-500 after:ease-out hover:before:w-[51%] hover:after:w-[51%]"
+      className="group relative z-10 flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-solid border-white/10 p-9 before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-[0%] before:bg-white before:transition-all before:duration-500 before:ease-out before:content-empty after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-[0%] after:bg-white after:transition-all after:duration-500 after:ease-out after:content-empty hover:before:w-[51%] hover:after:w-[51%]"
     >
       <div className="h-[100px] overflow-hidden">{icon}</div>
 

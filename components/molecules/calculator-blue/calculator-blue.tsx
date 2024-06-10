@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Typography } from '@/components/atoms/typography'
 
 export default function CalculatorBlue() {
