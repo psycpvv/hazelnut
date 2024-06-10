@@ -43,11 +43,11 @@ export default function InvestModal() {
               leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
             >
               <DialogPanel className="relative transform overflow-hidden bg-white text-left shadow-xl transition-all md:my-8 md:w-full md:max-w-lg">
-                <div className="bg-white px-4 pb-4 pt-5 md:p-6 md:pb-4">
-                  <div className="py-6 md:flex md:items-start">
-                    <Typography variant="h3" className="mb-2">
+                <div className="bg-white p-4 md:px-8 md:py-8">
+                  <div className="py-6">
+                    <div className="mb-2 font-nunito text-2xl md:text-4xl md:text-primary">
                       GAIN EARLY PRIVILEGES
-                    </Typography>
+                    </div>
                     <Typography
                       variant="subtitle1"
                       textColor="primary"
@@ -56,7 +56,7 @@ export default function InvestModal() {
                       We&apos;ll let you know how to get access to agriculture
                       investment with Treesury when we launch.
                     </Typography>
-                    <div className="flex flex-col gap-1.5">
+                    <div className="grid gap-1.5 md:grid-cols-2 md:gap-6">
                       <input
                         type="text"
                         placeholder="Enter your First Name"
@@ -67,14 +67,15 @@ export default function InvestModal() {
                         placeholder="Enter your Last Name"
                         className="shadow-primary-input w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary outline-none"
                       />
+
                       <input
                         type="text"
                         placeholder="Enter your Email"
-                        className="shadow-primary-input w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary outline-none"
+                        className="shadow-primary-input w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary outline-none md:col-span-2"
                       />
                       <Menu
                         as="div"
-                        className="relative inline-block text-left font-semibold text-primary"
+                        className="relative inline-block text-left font-semibold text-primary md:col-span-2"
                       >
                         <div>
                           <MenuButton className="inline-flex w-full items-center justify-between gap-x-1.5 rounded-md border border-primary py-3 pl-7 pr-3 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
@@ -166,9 +167,11 @@ export default function InvestModal() {
                         Subscribe to our newsletter
                       </label>
                     </div>
-                    <button className="h-[60px] w-full rounded-md bg-primary font-nunito text-white">
-                      Gain Early Privileges
-                    </button>
+                    <div className="flex w-full flex-col items-center">
+                      <button className="h-[60px] w-full rounded-md bg-primary font-nunito text-white md:w-[360px] md:rounded-full">
+                        Gain Early Privileges
+                      </button>
+                    </div>
                   </div>
                 </div>
               </DialogPanel>
