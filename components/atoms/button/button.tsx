@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cn } from '@/utils/utils'
 
 const buttonVariants = cva(
-  'px-5 py-1.5 flex justify-center items-center min-w-24 h-[50px] transition-colors duration-300 font-nunito',
+  'flex justify-center items-center transition-colors duration-300 font-nunito',
   {
     variants: {
       buttonColor: {
@@ -18,7 +18,10 @@ const buttonVariants = cva(
           'border border-[var(--button-color)] text-[--button-color] hover:text-white hover:bg-[var(--button-color)]',
       },
       size: {
-        default: 'rounded-full text-sm/5',
+        default:
+          'px-5 xl:px-6 rounded-full text-sm/5 xl:text-base min-w-24 h-[50px] xl:h-[60px]',
+        small:
+          'px-5 xl:px-6 rounded-full text-sm/5 xl:text-base min-w-24 h-[50px]',
       },
     },
     defaultVariants: {

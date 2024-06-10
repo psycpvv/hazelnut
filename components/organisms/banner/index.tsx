@@ -18,7 +18,7 @@ export default function Banner() {
         </div>
         <div className="flex gap-1 md:gap-4">
           <div>
-            <InvestButton />
+            <InvestButton buttonColor="secondary" />
           </div>
           <div>
             <Button buttonColor="secondary">WHITEPAPER</Button>

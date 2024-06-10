@@ -10,7 +10,7 @@ export default function Roadmap() {
   const [showHand, setShowHand] = useState(true)
   return (
     <>
-      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 pb-20 pt-16 text-white">
+      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-20 text-white">
         <div id="roadmap" className="absolute -top-[73px] md:-top-[79px]"></div>
         <Image
           src="/assets/img/upper-curve.svg"
@@ -185,7 +185,10 @@ export default function Roadmap() {
               showHand ? 'opacity-100' : 'opacity-0',
             )}
           />
-          <InvestButton className="mt-10 md:h-[60px] md:w-[200px]" />
+          <InvestButton
+            className="mt-10 md:w-[200px]"
+            buttonColor="secondary"
+          />
         </div>
       </div>
       <Image

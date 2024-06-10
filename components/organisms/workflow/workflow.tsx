@@ -58,7 +58,10 @@ export default function Workflow({
             ))}
           </div>
           {investBtn && (
-            <InvestButton className="mt-12 md:h-[60px] md:w-[200px]" />
+            <InvestButton
+              buttonColor="secondary"
+              className="mt-12 md:w-[200px]"
+            />
           )}
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function Income() {
             gain the privilege of profit sharing from the farm, setting you on
             the path towards realizing your aspirations.
           </Typography>
-          <InvestButton className="mt-8 w-full" />
+          <InvestButton className="mt-8 w-full" buttonColor="secondary" />
         </div>
       </div>
     </div>

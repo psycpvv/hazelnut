@@ -19,17 +19,17 @@ export default function Header() {
           {navs.map((nav, key) => (
             <li
               key={key}
-              className="font-nunito text-sm text-primary"
+              className="font-nunito text-sm text-primary xl:text-base"
               onClick={() => setIsOpen(false)}
             >
               <Link href={nav.href}>{nav.title}</Link>
             </li>
           ))}
           <div className="flex gap-3 xl:gap-6">
-            <Button variant="outlined" className="h-10">
+            <Button variant="outlined" size="small">
               <Link href="/faq">FAQ</Link>
             </Button>
-            <InvestButton color="default" className="h-10" />
+            <InvestButton color="default" size="small" />
           </div>
         </ul>
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
@@ -56,7 +56,7 @@ export default function Header() {
             <Button variant="outlined">
               <Link href="/faq">FAQ</Link>
             </Button>
-            <InvestButton color="default" />
+            <InvestButton buttonColor="default" />
           </li>
         </ul>
       </div>

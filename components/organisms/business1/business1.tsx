@@ -85,7 +85,7 @@ export default function Basiness1() {
         </div>
       </div>
       <div className="flex w-full justify-between gap-8 py-8 md:justify-center">
-        <InvestButton color="default" />
+        <InvestButton buttonColor="default" />
         <Button variant="outlined">
           <div className="px-3">
             DOWNLOAD <br /> WHITEPAPER

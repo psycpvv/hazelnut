@@ -11,7 +11,7 @@ const typographyVariants = cva('', {
       h2: 'text-[28px] md:text-4xl lg:text-5xl font-nunito',
       h3: 'text-2xl md:text-3xl font-nunito',
       h4: 'text-xl font-nunito',
-      subtitle1: 'text-base/7 md:text-[20px] font-light',
+      subtitle1: 'text-base/7 md:text-[20px] xl:text-2xl font-light',
       subtitle2: 'text-[15px]/7 font-light',
       text: 'text-xs/4 font-light',
     },
