@@ -3,10 +3,8 @@ import { Typography } from '@/components/atoms/typography'
 
 export default function EscWhite() {
   return (
-    <div
-      className="container flex w-full flex-col gap-4 px-4 py-14"
-      id="esc-white"
-    >
+    <div className="container relative flex w-full flex-col gap-4 px-4 py-14">
+      <div className="absolute -top-[73px] md:-top-[79px]" id="esc-white"></div>
       <Typography variant="h2" textColor="primary" className="text-center">
         SEC APPROVED WHITEPAPER
       </Typography>

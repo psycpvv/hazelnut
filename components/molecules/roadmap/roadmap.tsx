@@ -10,10 +10,8 @@ export default function Roadmap() {
   const [showHand, setShowHand] = useState(true)
   return (
     <>
-      <div
-        id="roadmap"
-        className="relative flex w-full flex-col items-center justify-center bg-primary px-4 pb-20 pt-16 text-white"
-      >
+      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 pb-20 pt-16 text-white">
+        <div id="roadmap" className="absolute -top-[73px] md:-top-[79px]"></div>
         <Image
           src="/assets/img/upper-curve.svg"
           width={1920}

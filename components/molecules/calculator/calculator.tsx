@@ -10,7 +10,11 @@ import Chart2 from './chart2'
 
 export default function Calculator() {
   return (
-    <div className="container px-6" id="calculator">
+    <div className="container relative px-6">
+      <div
+        className="absolute -top-[73px] md:-top-[79px]"
+        id="calculator"
+      ></div>
       <div className="w-full py-12 md:pt-20">
         <div className="flex flex-col font-nunito text-xs text-white md:px-8 md:text-[15px]">
           <div className="relative flex h-[46px] w-full items-center justify-end rounded-full bg-secondary">

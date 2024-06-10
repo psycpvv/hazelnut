@@ -4,7 +4,8 @@ import { Typography } from '@/components/atoms/typography'
 
 export default function AboutSection() {
   return (
-    <div className="flex w-full flex-col gap-20 pb-8" id="about">
+    <div className="relative flex w-full flex-col gap-20 pb-8">
+      <div className="absolute -top-[73px] md:-top-[79px]" id="about"></div>
       <div className="flex flex-col items-center justify-center bg-primary px-4 py-16 text-center">
         <Typography
           variant="h3"

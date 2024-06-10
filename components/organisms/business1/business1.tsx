@@ -12,7 +12,7 @@ import lottie3 from './lottie3.json'
 export default function Basiness1() {
   return (
     <div className="container relative flex flex-col items-center px-4 py-20">
-      <div className="absolute -top-16" id="services"></div>
+      <div className="absolute -top-[73px] md:-top-[79px]" id="services"></div>
       <Typography variant="h2" textColor="primary" className="pb-4 text-center">
         HOW IT WORKS?
       </Typography>
