@@ -16,6 +16,7 @@ const config: Config = {
       },
       boxShadow: {
         'why-tree': '5px 0 30px -5px rgba(0, 0, 0, 0.1)',
+        'primary-input': '0px 3px 8px 0px rgba(0, 88, 255, 0.12)',
       },
       backgroundImage: {
         'ui-tree': "url('/assets/img/tree.svg')",

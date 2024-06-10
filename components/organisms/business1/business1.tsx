@@ -2,6 +2,7 @@
 import Lottie from 'react-lottie'
 
 import { Button } from '@/components/atoms/button'
+import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'
 
 import lottie1 from './lottie1.json'
@@ -72,7 +73,7 @@ export default function Basiness1() {
         Collect profits from crop sales after produce is harvested and sold.
       </Typography>
       <div className="flex w-full justify-between py-8">
-        <Button>INVEST NOW</Button>
+        <InvestButton color="default" />
         <Button variant="outlined">
           <div className="px-3">
             DOWNLOAD <br /> WHITEPAPER

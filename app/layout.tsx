@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Nunito_Sans, Roboto } from 'next/font/google'
 
+import InvestModal from '@/components/molecules/invest-modal'
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import { cn } from '@/utils/utils'
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Header />
         <div className="pt-[73px]" suppressHydrationWarning={true}>
           {children}
+          <InvestModal />
         </div>
         <Footer />
       </body>

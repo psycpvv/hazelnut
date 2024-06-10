@@ -1,4 +1,5 @@
 import { Button } from '@/components/atoms/button'
+import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'
 
 import CalcInfo from './calc-info'
@@ -54,9 +55,7 @@ export default function Calculator() {
 
       <div className="flex flex-col">
         <div className="mx-auto my-10">
-          <Button className="w-52" buttonColor="secondary">
-            INVEST NOW
-          </Button>
+          <InvestButton className="w-52" />
         </div>
 
         <Typography variant="text" className="pb-20">

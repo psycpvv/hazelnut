@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Button } from '@/components/atoms/button'
 import { IconButton } from '@/components/atoms/icon-button'
+import InvestButton from '@/components/atoms/invest-button'
 
 export default function Banner() {
   return (
@@ -17,9 +18,7 @@ export default function Banner() {
         </div>
         <div className="flex gap-1">
           <div>
-            <Button buttonColor="secondary" className="text-nowrap">
-              INVEST NOW
-            </Button>
+            <InvestButton />
           </div>
           <div>
             <Button buttonColor="secondary">WHITEPAPER</Button>
