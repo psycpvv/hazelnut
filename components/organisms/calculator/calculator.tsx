@@ -51,7 +51,7 @@ export default function Calculator() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 pt-8 md:flex-row">
+      <div className="grid gap-8 pt-8 md:grid-cols-2">
         <Chart1 />
         <Chart2 />
       </div>

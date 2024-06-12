@@ -1,8 +1,5 @@
 import type { Config } from 'tailwindcss'
-const primaryColor = '#31468C'
-const primaryHoverColor = '#182A68'
-const secondaryColor = '#C7CB50'
-const secondaryHoverColor = '#919430'
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -29,12 +26,12 @@ const config: Config = {
         background: '#FFFFFF',
         foreground: '#212529',
         primary: {
-          DEFAULT: primaryColor,
-          hover: primaryHoverColor,
+          DEFAULT: 'var(--primary)',
+          hover: 'var(--primary-hover)',
         },
         secondary: {
-          DEFAULT: secondaryColor,
-          hover: secondaryHoverColor,
+          DEFAULT: 'var(--secondary)',
+          hover: 'var(--secondary-hover)',
         },
       },
       fontFamily: {
@@ -97,12 +94,12 @@ const config: Config = {
     function ({ addUtilities }: any) {
       const newUtilities = {
         '.var-button-primary-color': {
-          '--button-color': `${primaryColor}`,
-          '--button-hover-color': `${primaryHoverColor}`,
+          '--button-color': 'var(--primary)',
+          '--button-hover-color': 'var(--primary-hover)',
         },
         '.var-button-secondary-color': {
-          '--button-color': `${secondaryColor}`,
-          '--button-hover-color': `${secondaryHoverColor}`,
+          '--button-color': 'var(--secondary)',
+          '--button-hover-color': 'var(--secondary-hover)',
         },
         '.items-first-baseline': {
           'align-items': 'first baseline',
