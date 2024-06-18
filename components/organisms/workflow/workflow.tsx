@@ -3,21 +3,16 @@ import Image from 'next/image'
 import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'
 import WorkflowBox from '@/components/molecules/workflow-box'
-import { WorkflowBoxProps } from '@/components/molecules/workflow-box/workflow-box'
+import { WorkFlow } from '@/sanity/queries/components/workFlowCardProps'
 import { cn } from '@/utils/utils'
 
 type WorkflowProps = {
-  data: {
-    title: string
-    subTitle: string
-    workflowBoxes: WorkflowBoxProps[]
-    investBtn?: boolean
-  }
+  data: WorkFlow
   className?: string
 }
 
 export default function Workflow({
-  data: { title, subTitle, workflowBoxes, investBtn },
+  data: { title, subtitle, workFlowCards },
   className,
 }: WorkflowProps) {
   return (
@@ -48,21 +43,19 @@ export default function Workflow({
             className="pb-14 text-center"
             textColor="white"
           >
-            {subTitle}
+            {subtitle}
           </Typography>
           <div className="flex flex-col justify-center gap-10 md:flex-row md:flex-wrap md:gap-0">
-            {workflowBoxes.map((box, key) => (
+            {workFlowCards.map((box, key) => (
               <div className="md:w-1/2 md:p-3 lg:w-1/4 lg:flex-1" key={key}>
                 <WorkflowBox data={box} />
               </div>
             ))}
           </div>
-          {investBtn && (
-            <InvestButton
-              buttonColor="secondary"
-              className="mt-12 md:w-[200px]"
-            />
-          )}
+          <InvestButton
+            buttonColor="secondary"
+            className="mt-12 md:w-[200px]"
+          />
         </div>
       </div>
       <Image

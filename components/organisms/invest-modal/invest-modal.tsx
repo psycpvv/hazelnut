@@ -60,18 +60,18 @@ export default function InvestModal() {
                       <input
                         type="text"
                         placeholder="Enter your First Name"
-                        className="shadow-primary-input w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary outline-none"
+                        className="w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary shadow-primary-input outline-none"
                       />
                       <input
                         type="text"
                         placeholder="Enter your Last Name"
-                        className="shadow-primary-input w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary outline-none"
+                        className="w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary shadow-primary-input outline-none"
                       />
 
                       <input
                         type="text"
                         placeholder="Enter your Email"
-                        className="shadow-primary-input w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary outline-none md:col-span-2"
+                        className="w-full rounded-lg border border-primary px-7 py-3 text-primary placeholder-primary shadow-primary-input outline-none md:col-span-2"
                       />
                       <Menu
                         as="div"

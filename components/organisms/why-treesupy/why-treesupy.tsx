@@ -8,17 +8,20 @@ import {
 } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
+import { PortableText } from 'next-sanity'
 import { useState } from 'react'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Typography } from '@/components/atoms/typography'
 import useMedia from '@/hooks/useMedia'
+import { type WhyTreesupy } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/utils'
 
-import { assets, data } from './constants'
+import { assets, mockData } from './constants'
 
-export default function WhyTreesupy() {
+type WhyTreesupyProps = { data: WhyTreesupy }
+export default function WhyTreesupy({ data }: WhyTreesupyProps) {
   const { isMd, isLg } = useMedia()
   const [row, setRow] = useState(0)
   const [col, setCol] = useState(0)
@@ -34,13 +37,9 @@ export default function WhyTreesupy() {
     <div className="container py-14">
       <div className="flex flex-col gap-4 px-4 pb-12 text-center">
         <Typography variant="h2" textColor="primary">
-          WHY TREESURY?
+          {data.title}
         </Typography>
-        <Typography variant="subtitle1">
-          Amidst the backdrop of an expanding global population and an
-          ever-increasing demand for food, Treesury presents an exceptionally
-          diversified investment opportunity with compelling long-term returns.
-        </Typography>
+        <Typography variant="subtitle1">{data.subtitle} </Typography>
       </div>
       <div className="flex" onMouseLeave={initCell}>
         <div className="w-1/3 pl-4 text-[11px] shadow-why-tree md:shadow-none lg:w-1/6">
@@ -71,7 +70,7 @@ export default function WhyTreesupy() {
             modules={[Pagination]}
             className="md:!pl-4"
           >
-            {data.map((_data, _key) => (
+            {mockData.map((_data, _key) => (
               <SwiperSlide key={_key}>
                 <div className="flex w-full md:overflow-visible">
                   {_data.map((__data, __key) => (
@@ -153,28 +152,7 @@ export default function WhyTreesupy() {
       </div>
       <div className="swiper-why-treesupy-pagination my-7 flex justify-center gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
       <Typography variant="text" className="p-4">
-        * Only green bonds provide green investment opportunities, and only a
-        limited number of stocks can be classified as green. ** Treesury Trees
-        will be converted to security tokens that are backed by hard assets. ***
-        Data source: Bloomberg, Federal Reserve Bank of St. Louis, NCREIF, and
-        NYU Stern School of Business. U.S. Govt. Bonds - U.S. Treasury 10-Year
-        Bond; Stocks - Standard & Poor 500 Index; Gold - Investment grade gold;
-        Commercial - NCREIF Property Index; CD - Bankrate Historical 1-Year CD
-        Interest Rates. <br /> <br /> Please note that past performance does not
-        guarantee future results, and there is no guarantee that this trend will
-        continue. Treesury&apos;s internal analysis covers the period from 1991
-        to 2022. All returns except for Treesury asset class are estimated and
-        assume the reinvestment of dividends. The information provided on the
-        index is for illustrative purposes only and is not intended to represent
-        the results of an actual investment. Additionally, the returns mentioned
-        do not include any management fees, transaction costs, or expenses.
-        Volatility is measured by using the monthly total returns of each index
-        or asset class, and the historical performance of each index is cited to
-        illustrate historical market trends. It&apos;s worth noting that the
-        risk/reward profile for each asset class varies significantly, and this
-        information should not be considered a recommendation for any particular
-        security. Furthermore, it is essential to keep in mind that you cannot
-        invest directly in an index.
+        <PortableText value={data.description} />
       </Typography>
     </div>
   )

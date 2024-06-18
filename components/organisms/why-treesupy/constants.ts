@@ -1,4 +1,4 @@
-export const data = [
+export const mockData = [
   [
     {
       icon: '/assets/img/favicon.png',

@@ -11,6 +11,7 @@ type State = {
 
 type CalculatorState = State & {
   setTokens: (val: number) => void
+  setTokenPrice: (val: number) => void
   totalInvestment: () => number
   bonusTokens: () => number
   totalTokens: () => number
@@ -107,6 +108,7 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
   totalCo2AveragePerYearMt: () =>
     ((get().totalTokens() * get().co2PerToken) / 40 / 1000).toFixed(2),
   setTokens: tokens => set({ tokens }),
+  setTokenPrice: tokenPrice => set({ tokenPrice }),
 }))
 
 export default useCalculatorStore

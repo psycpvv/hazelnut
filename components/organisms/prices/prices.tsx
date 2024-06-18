@@ -10,8 +10,10 @@ import { Button } from '@/components/atoms/button'
 import { Hazelnut } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 import useMedia from '@/hooks/useMedia'
+import { type Prices } from '@/sanity/queries/pages/home.query'
 
-export default function Prices() {
+type PricesProps = { data: Prices }
+export default function Prices({ data }: PricesProps) {
   const { ismd } = useMedia()
   return (
     <div className="container flex flex-col items-center justify-center px-3 py-8">
@@ -20,14 +22,14 @@ export default function Prices() {
         textColor="primary"
         className="px-3 pb-12 text-center"
       >
-        TREESURY TREE PRICING
+        {data.title}
       </Typography>
       <div className="flex w-full flex-col items-center gap-6">
         <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-24">
           <div>
             <div className="relative flex h-[134px] items-center justify-center">
               <div className="z-10 font-roboto text-3xl font-bold text-white">
-                €102
+                {data.earlyBirdPrice}
               </div>
               <Hazelnut className="absolute left-[50%] top-0 w-[150px] -translate-x-1/2" />
             </div>
@@ -38,7 +40,7 @@ export default function Prices() {
           <div>
             <div className="relative flex h-[134px] items-center justify-center">
               <div className="z-10 font-roboto text-3xl font-bold text-white">
-                €139
+                {data.regularPrice}
               </div>
               <Hazelnut
                 className="absolute left-[50%] top-0 w-[150px] -translate-x-1/2"
@@ -69,7 +71,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[120px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €106
+                        €{data.year1}
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 h-[120px] w-[141px] -translate-x-1/2"
@@ -98,7 +100,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[120px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €123
+                        €{data.year2}
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 h-[120px] w-[141px] -translate-x-1/2"
@@ -127,7 +129,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[120px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €135
+                        €{data.year3}
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 h-[120px] w-[141px] -translate-x-1/2"
@@ -148,7 +150,7 @@ export default function Prices() {
                   <div className="flex flex-col items-center">
                     <div className="relative flex h-[120px] items-center justify-center">
                       <div className="z-10 font-roboto text-2xl font-bold text-white">
-                        €139
+                        €{data.year4}
                       </div>
                       <Hazelnut
                         className="absolute left-[50%] top-0 h-[120px] w-[141px] -translate-x-1/2"
@@ -188,7 +190,7 @@ export default function Prices() {
                     <div className="flex flex-col items-center">
                       <div className="relative flex h-[107px] items-center justify-center">
                         <div className="z-10 font-roboto text-2xl font-bold text-white">
-                          €106
+                          €{data.year1}
                         </div>
                         <Hazelnut
                           className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -218,7 +220,7 @@ export default function Prices() {
                     <div className="flex flex-col items-center">
                       <div className="relative flex h-[107px] items-center justify-center">
                         <div className="z-10 font-roboto text-2xl font-bold text-white">
-                          €123
+                          €{data.year2}
                         </div>
                         <Hazelnut
                           className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -248,7 +250,7 @@ export default function Prices() {
                     <div className="flex flex-col items-center">
                       <div className="relative flex h-[107px] items-center justify-center">
                         <div className="z-10 font-roboto text-2xl font-bold text-white">
-                          €135
+                          €{data.year3}
                         </div>
                         <Hazelnut
                           className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -270,7 +272,7 @@ export default function Prices() {
                     <div className="flex flex-col items-center">
                       <div className="relative flex h-[107px] items-center justify-center">
                         <div className="z-10 font-roboto text-2xl font-bold text-white">
-                          €139
+                          €{data.year4}
                         </div>
                         <Hazelnut
                           className="absolute left-[50%] top-0 w-[120px] -translate-x-1/2"
@@ -297,21 +299,7 @@ export default function Prices() {
         DISCOVER: FACTORS AFFECTING TREESURY TREE PRICES
       </Button>
 
-      <Typography variant="text">
-        * The regular price of a Treesury Tree is €139. However, early investors
-        can take advantage of privileged pricing. The privileged price for the
-        first 22,500 Treesury Trees or the first 2 months, whichever milestone
-        is reached first, in the first year is €110 (Early Bird Price). After
-        that, the privileged price for Year 1 is €107. <br /> <br />
-        ** For subsequent years, the guaranteed minimum prices at which Treesury
-        will issue new tokens are as follows: Year 2: €123, Year 3: €135, and
-        Year 4: €139. These guaranteed prices may only be reduced for limited
-        early bird offerings. Please note that Treesury reserves the right to
-        discontinue offering privileged prices at any time. The privileged price
-        for early investors presents an attractive opportunity for potential
-        capital gains, considering the projected increase in Treesury Tree price
-        over time.
-      </Typography>
+      <Typography variant="text">{data.description}</Typography>
     </div>
   )
 }

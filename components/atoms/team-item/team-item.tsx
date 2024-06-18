@@ -2,20 +2,21 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ReactNode } from 'react'
+
+import { TeamMember } from '@/sanity/queries/pages/home.query'
 
 type TeamItemProps = {
-  data: { linkedin: string; avatar: string; name: string; role: ReactNode }
+  data: TeamMember
 }
 export default function TeamItem({
-  data: { linkedin, avatar, name, role },
+  data: { linkedin, name, role, image },
 }: TeamItemProps) {
   return (
     <div>
       <Image
-        src={avatar}
-        width={800}
-        height={940}
+        src={image.url}
+        width={image.metadata.dimensions.width}
+        height={image.metadata.dimensions.height}
         alt="upper-curve"
         className="h-[450px] rounded-2xl object-cover"
       />

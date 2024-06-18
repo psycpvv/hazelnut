@@ -4,9 +4,11 @@ import React, { useState } from 'react'
 
 import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'
+import { type Roadmap } from '@/sanity/queries/pages/home.query'
 import { cn } from '@/utils/utils'
 
-export default function Roadmap() {
+type RoadmapProps = { data: Roadmap }
+export default function Roadmap({ data }: RoadmapProps) {
   const [showHand, setShowHand] = useState(true)
   return (
     <>
@@ -21,10 +23,8 @@ export default function Roadmap() {
         />
         <div className="container flex flex-col items-center">
           <div className="flex flex-col gap-4 pl-5 pr-4 text-center">
-            <Typography variant="h2">ROADMAP</Typography>
-            <Typography variant="subtitle1">
-              Learn more about our strategic plan and project timeline.
-            </Typography>
+            <Typography variant="h2">{data.title}</Typography>
+            <Typography variant="subtitle1">{data.subtitle}</Typography>
           </div>
           <div
             className="w-full overflow-x-auto"

@@ -7,21 +7,18 @@ import { IconButton } from '@/components/atoms/icon-button'
 import { Input } from '@/components/atoms/input'
 import { Textarea } from '@/components/atoms/textarea'
 import { Typography } from '@/components/atoms/typography'
+import { CommonSection } from '@/sanity/types'
 
-export default function Contack() {
+type ContactProps = { data: CommonSection }
+export default function Contact({ data }: ContactProps) {
   return (
     <div className="relative flex w-full flex-col items-center bg-primary px-4 py-20">
       <div className="absolute -top-[73px] md:-top-[79px]" id="contact"></div>
       <div className="container grid md:grid-cols-2 md:gap-8">
         <div className="">
           <div className="flex flex-col gap-4 text-white md:gap-8">
-            <Typography variant="h2">
-              Want to ask us a question that is not in our FAQ? Get in touch via
-              the contact form
-            </Typography>
-            <Typography variant="subtitle1">
-              Join our vibrant online community today!
-            </Typography>
+            <Typography variant="h2">{data.title}</Typography>
+            <Typography variant="subtitle1">{data.subtitle}</Typography>
           </div>
           <div className="flex gap-5 py-5">
             <Link href="https://www.facebook.com/treesuryinc" target="_blank">

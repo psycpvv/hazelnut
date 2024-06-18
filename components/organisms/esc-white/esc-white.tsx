@@ -1,16 +1,18 @@
 import { Button } from '@/components/atoms/button'
 import { Typography } from '@/components/atoms/typography'
+import { CommonSection } from '@/sanity/types'
 
-export default function EscWhite() {
+type EscWhiteProps = { data: CommonSection }
+
+export default function EscWhite({ data }: EscWhiteProps) {
   return (
     <div className="container relative flex w-full flex-col gap-4 px-4 py-14">
       <div className="absolute -top-[73px] md:-top-[79px]" id="esc-white"></div>
       <Typography variant="h2" textColor="primary" className="text-center">
-        SEC APPROVED WHITEPAPER
+        {data.title}
       </Typography>
       <Typography variant="subtitle1" className="text-center">
-        Digital tokens are regulated by the Digital Property Act. Our whitepaper
-        has been approved by the Republic of Serbia Securities Commission.
+        {data.subtitle}
       </Typography>
       <div className="flex w-full justify-between gap-8 py-8 md:justify-center">
         <Button>DOWNLOAD WHITEPAPER</Button>

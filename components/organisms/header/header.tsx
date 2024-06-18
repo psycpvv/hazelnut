@@ -14,7 +14,10 @@ export default function Header() {
   return (
     <div className="fixed z-50 flex w-full flex-col bg-white px-4 py-1.5 text-sm shadow-lg md:px-8">
       <div className="flex justify-between">
-        <Logo className="w-44 md:w-48" />
+        <Link href="/">
+          <Logo className="w-44 md:w-48" />
+        </Link>
+
         <ul className="hidden items-center gap-4 lg:flex xl:gap-8">
           {navs.map((nav, key) => (
             <li
