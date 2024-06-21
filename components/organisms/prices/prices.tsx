@@ -14,7 +14,7 @@ import { type Prices } from '@/sanity/queries/pages/home.query'
 
 type PricesProps = { data: Prices }
 export default function Prices({ data }: PricesProps) {
-  const { ismd } = useMedia()
+  const { isMd } = useMedia()
   return (
     <div className="container flex flex-col items-center justify-center px-3 py-8">
       <Typography
@@ -57,7 +57,7 @@ export default function Prices({ data }: PricesProps) {
             Minimum Guaranteed Price for Subsequent Issues **
           </h3>
           <div className="w-full py-10 md:pb-5">
-            {ismd ? (
+            {isMd ? (
               <div className="flex justify-between">
                 <div className="relative w-1/4">
                   <Image

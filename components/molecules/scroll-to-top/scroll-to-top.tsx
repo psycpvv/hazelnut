@@ -7,7 +7,7 @@ import {
   useScroll,
   Variants,
 } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 const ScrollToTopContainerVariants: Variants = {
   hide: { opacity: 0, y: 100 },
   show: { opacity: 1, y: 0 },

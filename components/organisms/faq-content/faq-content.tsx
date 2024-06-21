@@ -13,7 +13,6 @@ import Faq from 'react-faq-component'
 import { FaqList } from '@/sanity/queries/pages/faq.query'
 import { blocksToText } from '@/utils/utils'
 
-import FaqWhyHazeluts from './faq-why-hazeluts'
 import specialFaqItem from './special-faq-item'
 
 type FaqContentProps = {
