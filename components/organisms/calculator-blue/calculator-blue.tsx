@@ -5,7 +5,7 @@ type CalculatorBlueProps = { data: CommonSection }
 
 export default function CalculatorBlue({ data }: CalculatorBlueProps) {
   return (
-    <div className="w-full bg-primary px-3 py-14 text-white">
+    <div className="flex w-full flex-col items-center bg-primary px-3 py-14 text-white">
       <div className="container flex flex-col items-center gap-4">
         <Typography variant="h2" className="text-center">
           {data.title}

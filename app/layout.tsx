@@ -5,6 +5,7 @@ import { Nunito_Sans, Roboto } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { VisualEditing } from 'next-sanity'
 
+import ScrollToTopButton from '@/components/molecules/scroll-to-top'
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import InvestModal from '@/components/organisms/invest-modal'
@@ -43,6 +44,7 @@ export default function RootLayout({
           <InvestModal />
         </div>
         <Footer />
+        <ScrollToTopButton />
         {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>

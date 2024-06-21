@@ -1,18 +1,20 @@
-import Link from 'next/link'
-import React from 'react'
+import { PortableText } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
 
-export default function FaqTitle() {
+export default function FaqTitle({
+  title,
+  subtitle,
+}: {
+  title: string
+  subtitle: any
+}) {
   return (
-    <div className="flex w-full flex-col items-center bg-primary py-16 lg:py-28">
+    <div className="flex w-full flex-col items-center bg-primary px-4 py-16 lg:py-28">
       <div className="container flex flex-col items-center justify-center gap-4 text-center text-white">
-        <Typography variant="h2">Frequently Asked Questions</Typography>
+        <Typography variant="h2">{title}</Typography>
         <Typography variant="subtitle1">
-          If you haven’t found an answer to your question,{' '}
-          <Link href="/faq#example-faq-item" className="underline">
-            contact us
-          </Link>
+          <PortableText value={subtitle} />
         </Typography>
       </div>
     </div>

@@ -7,7 +7,7 @@ declare module 'react-faq-component' {
   }
 
   interface FaqData {
-    title: string
+    title: string | JSX.Element
     rows: FaqDataRow[]
   }
 
