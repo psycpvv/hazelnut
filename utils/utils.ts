@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from 'clsx'
+import { Metadata } from 'next'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
@@ -55,4 +56,19 @@ export function blocksToText(blocks: any, opts = {}) {
       return block.children.map((child: any) => child.text).join('')
     })
     .join('\n\n') as string
+}
+
+export function mapSeo(seo: Sanity.Seo) {
+  if (!seo) return {}
+  const mappedSeo: Metadata = {
+    robots: {
+      follow: seo?.robotsNoFollow,
+      index: seo?.robotsNoIndex,
+    },
+  }
+  if (seo.title) mappedSeo.title = seo.title
+  if (seo.description) mappedSeo.description = seo.description
+  if (seo.keywords?.length) mappedSeo.keywords = seo.keywords
+  if (seo.description) mappedSeo.description = seo.description
+  return mappedSeo
 }

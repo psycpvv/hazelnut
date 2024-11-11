@@ -1,8 +1,7 @@
-import Home from '@/components/templates/home/home'
-import { fetchHomeData } from '@/sanity/services/pages/home.service'
+// eslint-disable-next-line no-restricted-imports
+import { redirect } from 'next/navigation'
 
-export default async function Page() {
-  const data = await fetchHomeData()
-
-  return <Home data={data} />
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/en')
 }

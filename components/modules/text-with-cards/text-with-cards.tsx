@@ -1,28 +1,19 @@
 import Image from 'next/image'
 
-import InvestButton from '@/components/atoms/invest-button'
 import { Typography } from '@/components/atoms/typography'
 import Card from '@/components/molecules/card'
-import { WorkFlow } from '@/sanity/queries/components/workFlowCardProps'
-import { cn } from '@/utils/utils'
 
-type WorkflowProps = {
-  data: WorkFlow
-  className?: string
-}
+import Ctas from '../ctas'
 
-export default function Workflow({
-  data: { title, subtitle, workFlowCards },
-  className,
-}: WorkflowProps) {
+export default function TextWithCards({
+  title,
+  subtitle,
+  cards,
+  cta,
+}: Partial<Sanity.TextWithCards>) {
   return (
     <>
-      <div
-        className={cn(
-          'relative flex w-full flex-col items-center justify-center bg-primary px-4 py-12',
-          className,
-        )}
-      >
+      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-12">
         <Image
           src="/assets/img/upper-curve.svg"
           width={1920}
@@ -45,17 +36,16 @@ export default function Workflow({
           >
             {subtitle}
           </Typography>
-          <div className="flex flex-col justify-center gap-10 md:flex-row md:flex-wrap md:gap-0">
-            {workFlowCards.map((box, key) => (
-              <div className="md:w-1/2 md:p-3 lg:w-1/4 lg:flex-1" key={key}>
-                <Card data={box} />
-              </div>
-            ))}
-          </div>
-          <InvestButton
-            buttonColor="secondary"
-            className="mt-12 md:w-[200px]"
-          />
+          {cards?.length && (
+            <div className="flex flex-col justify-center gap-10 md:flex-row md:flex-wrap md:gap-0">
+              {cards.map((card, key) => (
+                <div className="md:w-1/2 md:p-3 lg:w-1/4 lg:flex-1" key={key}>
+                  <Card card={card} />
+                </div>
+              ))}
+            </div>
+          )}
+          {cta?.length && <Ctas cta={cta} />}
         </div>
       </div>
       <Image

@@ -32,6 +32,7 @@ export default function ScrollToTopButton() {
 
   return (
     <motion.button
+      // @ts-ignore
       className="fixed bottom-[3%] right-0 h-11 w-10 rounded-md bg-secondary lg:right-[2%]"
       variants={ScrollToTopContainerVariants}
       initial="hide"

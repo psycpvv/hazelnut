@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { cn } from '@/utils/utils'
 
-const buttonVariants = cva(
+const linkButtonVariants = cva(
   'flex justify-center items-center transition-colors duration-300 font-nunito',
   {
     variants: {
@@ -32,16 +32,16 @@ const buttonVariants = cva(
   },
 )
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+export interface LinkButtonProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof linkButtonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
   ({ className, variant, buttonColor, size, ...props }, ref) => {
     return (
-      <button
+      <a
         className={cn(
-          buttonVariants({ buttonColor, variant, size, className }),
+          linkButtonVariants({ buttonColor, variant, size, className }),
         )}
         ref={ref}
         {...props}
@@ -49,6 +49,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   },
 )
-Button.displayName = 'Button'
+LinkButton.displayName = 'Button'
 
-export { Button, buttonVariants }
+export { LinkButton, linkButtonVariants }

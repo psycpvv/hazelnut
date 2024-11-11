@@ -1,0 +1,54 @@
+'use client'
+import 'nouislider/dist/nouislider.css'
+import './nouislider.css'
+
+import Nouislider from 'nouislider-react'
+import { useEffect, useRef } from 'react'
+import { useDebouncedCallback } from 'use-debounce'
+
+import useMedia from '@/hooks/useMedia'
+import useCalculatorStore from '@/store/calculatorStore'
+
+export default function CalculatorSlider() {
+  const { tokens, setTokens } = useCalculatorStore(state => state)
+  const ref = useRef<any>(null)
+  const { isMd } = useMedia()
+  const setUiSlider = useDebouncedCallback(
+    _tokens => ref.current.noUiSlider.set(_tokens),
+    500,
+  )
+  useEffect(() => {
+    if (ref && ref.current) setUiSlider(tokens)
+  }, [setUiSlider, tokens])
+
+  return (
+    <Nouislider
+      instanceRef={instance => {
+        if (instance) {
+          ref.current = instance
+        }
+      }}
+      id="slider"
+      clickablePips
+      range={{
+        min: 1,
+        '15%': 10,
+        '40%': 100,
+        '70%': 1000,
+        '90%': 5000,
+        max: 6000,
+      }}
+      tooltips={isMd ? true : false}
+      pips={{
+        mode: 'values',
+        values: [1, 10, 100, 1000, 5000, 6000],
+        density: 2.5,
+      }}
+      start={0}
+      onSlide={(_render, _handle, value) => setTokens(Math.trunc(value[0]))}
+      onUpdate={(_render, _handle, value) => setTokens(Math.trunc(value[0]))}
+      connect
+      behaviour="tap"
+    />
+  )
+}

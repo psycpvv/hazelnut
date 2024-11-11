@@ -1,52 +1,5 @@
-import './globals.css'
+import { ChildrenProps } from '@/types'
 
-import type { Metadata } from 'next'
-import { Nunito_Sans, Roboto } from 'next/font/google'
-import { draftMode } from 'next/headers'
-import { VisualEditing } from 'next-sanity'
-
-import ScrollToTopButton from '@/components/molecules/scroll-to-top'
-import Footer from '@/components/organisms/footer'
-import Header from '@/components/organisms/header'
-import InvestModal from '@/components/organisms/invest-modal'
-import { cn } from '@/utils/utils'
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '900'],
-  variable: '--font-roboto',
-})
-
-const nunitoSans = Nunito_Sans({
-  subsets: ['latin'],
-  weight: ['900'],
-  variable: '--font-nunito',
-})
-
-export const metadata: Metadata = {
-  title: 'TREESURY',
-  description: 'TREESURY',
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={cn(roboto.className, roboto.variable, nunitoSans.variable)}
-      >
-        <Header />
-        <div className="pt-[73px]" suppressHydrationWarning={true}>
-          {children}
-          <InvestModal />
-        </div>
-        <Footer />
-        <ScrollToTopButton />
-        {draftMode().isEnabled && <VisualEditing />}
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: ChildrenProps) {
+  return children
 }
