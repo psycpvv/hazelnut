@@ -23,7 +23,8 @@ const iconLinkVariants = cva(
           'before:absolute before:content-empty before:left-0 before:top-0 before:h-full before:w-full before:-z-10 before:opacity-0 before:border-8 before:rounded-full before:border-solid before:border-white/20 before:animate-pulse-border-2 before:text-white before:box-border  after:absolute after:content-empty after:left-0 after:top-0 after:h-full after:w-full after:-z-10 after:opacity-0 after:border-8 after:rounded-full after:border-solid after:border-white/20 after:animate-pulse-border after:text-white after:box-border',
       },
       size: {
-        default: 'rounded-full w-[50px] h-[50px]',
+        default: 'rounded-full w-[50px] h-[50px] xl:w-[60px] xl:h-[60px]',
+        small: 'rounded-full w-[50px] h-[50px] xl:w-[60px] xl:h-[60px]',
       },
     },
     defaultVariants: {

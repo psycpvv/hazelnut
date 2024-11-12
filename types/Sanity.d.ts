@@ -21,11 +21,11 @@ declare global {
 
     // objects
 
-    type ImageProps = {
-      src: string
-      width: number
-      height: number
-    }
+    type Image = SanityImageObject &
+      Partial<{
+        alt: string
+        loading: 'lazy' | 'eager'
+      }>
 
     type Seo = {
       description: string
@@ -39,7 +39,7 @@ declare global {
     type Banner = {
       title: string
       subtitle: string
-      bgimage: ImageProps
+      bgimage: Image
       cta?: Button[]
     }
 
@@ -89,7 +89,7 @@ declare global {
       reservedTokens: number
       basePrice: number
       cta?: Button[]
-      description?: string
+      description?: any
     }
 
     type TextWithImage = {

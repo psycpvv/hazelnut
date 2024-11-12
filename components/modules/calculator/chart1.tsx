@@ -95,7 +95,8 @@ export default function Chart1() {
               },
             },
             legend: {
-              display: false,
+              // display: false,
+              position: 'bottom',
             },
           },
           maintainAspectRatio: true,

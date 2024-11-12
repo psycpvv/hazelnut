@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { stegaClean } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
 
@@ -12,7 +13,7 @@ const Player = dynamic(
 )
 export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
   return (
-    <div className="container relative flex flex-col items-center px-4 py-20">
+    <div className="container relative mx-auto flex flex-col items-center px-4 py-20">
       <div className="absolute -top-[73px] md:-top-[79px]" id="services"></div>
       <Typography variant="h2" textColor="primary" className="pb-4 text-center">
         {data.title}
@@ -28,7 +29,7 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
               key={key}
             >
               <div className="h-[240px] w-[200px]">
-                <Player autoplay loop src={step.lottieFile} />
+                <Player autoplay loop src={stegaClean(step.lottieFile)} />
               </div>
               <Typography
                 variant="h3"

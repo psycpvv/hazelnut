@@ -19,7 +19,18 @@ export default function Contact(data: Partial<Sanity.Contact>) {
       <div className="container grid md:grid-cols-2 md:gap-8">
         <div className="">
           <div className="flex flex-col gap-4 text-white md:gap-8">
-            <PortableText value={data.description} />
+            <PortableText
+              value={data.description}
+              components={{
+                block: {
+                  h2: ({ children }: any) => (
+                    <h2 className="font-nunito text-4xl font-bold leading-[3rem] [&>a]:text-secondary">
+                      {children}
+                    </h2>
+                  ),
+                },
+              }}
+            />
           </div>
           <div className="flex gap-5 py-5">
             {data.linkedin && (

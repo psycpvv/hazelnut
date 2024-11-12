@@ -19,7 +19,17 @@ export const seo = groq`seo ${withImageProps}`
 
 export const modulesQuery = groq`
 modules[]{ 
-  ...
+  ...,
+  _type == "contact" => @->,
+  _type == "contact" => @->,
+  _type == "how-it-works" => {
+    ...,
+    steps[] {
+      ...,
+      "lottieFile": lottieFile.asset->url
+    }
+  }
+  
 }
 `
 export const richTextQuery = (name: string = 'body') => groq`

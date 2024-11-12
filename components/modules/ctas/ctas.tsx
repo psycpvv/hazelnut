@@ -1,31 +1,39 @@
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { stegaClean } from 'next-sanity'
+import { Fragment } from 'react'
 
-import { IconButton } from '@/components/atoms/icon-button'
+import { IconLink } from '@/components/atoms/icon-link'
 import { LinkButton } from '@/components/atoms/link-button'
 
 export default function Ctas({ cta }: { cta: Sanity.Button[] }) {
   return (
-    <div>
+    <>
       {cta.map((cta, index) => (
-        <div key={index}>
+        <Fragment key={index}>
           {cta.icon ? (
-            <IconButton effect="pulse" buttonColor={cta.color}>
+            <IconLink
+              effect="pulse"
+              buttonColor={cta.color}
+              href={cta.link}
+              variant={stegaClean(cta.variant)}
+              target={stegaClean(cta.newTab) ? '_blank' : '_self'}
+            >
               <FontAwesomeIcon icon={faPlay} width={14} />
-            </IconButton>
+            </IconLink>
           ) : (
             <LinkButton
-              buttonColor={cta.color}
-              variant={cta.variant}
-              size={cta.size}
+              buttonColor={stegaClean(cta.color)}
+              variant={stegaClean(cta.variant)}
+              size={stegaClean(cta.size)}
               href={cta.link}
-              target={cta.newTab ? '_self' : '_blank'}
+              target={stegaClean(cta.newTab) ? '_blank' : '_self'}
             >
               {cta.text}
             </LinkButton>
           )}
-        </div>
+        </Fragment>
       ))}
-    </div>
+    </>
   )
 }

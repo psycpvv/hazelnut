@@ -159,7 +159,7 @@ export default function Chart2() {
         Tree lifetime
       </Typography>
       <Bar
-        className="w-full"
+        className="!w-full"
         height={200}
         options={{
           plugins: {

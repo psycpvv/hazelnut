@@ -1,4 +1,5 @@
 'use client'
+import { PortableText } from 'next-sanity'
 import { useEffect } from 'react'
 
 import { Typography } from '@/components/atoms/typography'
@@ -19,7 +20,7 @@ export default function Calculator(data: Partial<Sanity.Calculator>) {
   }, [data.basePrice, setTokenPrice])
 
   return (
-    <div className="container relative px-6">
+    <div className="container relative mx-auto px-6">
       <div
         className="absolute -top-[73px] md:-top-[79px]"
         id="calculator"
@@ -66,9 +67,11 @@ export default function Calculator(data: Partial<Sanity.Calculator>) {
           </div>
         )}
 
-        <Typography variant="text" className="pb-20">
-          {data.description}
-        </Typography>
+        {data.description && (
+          <Typography variant="text" className="pb-20">
+            <PortableText value={data.description} />
+          </Typography>
+        )}
       </div>
     </div>
   )
