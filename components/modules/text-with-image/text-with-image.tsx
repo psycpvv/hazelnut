@@ -22,6 +22,7 @@ export default function TextWithImage({
     <div className={cn('py-24', invertColor && 'bg-primary')}>
       <div className="container mx-auto grid items-center justify-center gap-8 md:grid-cols-2">
         {image && (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={urlFor(image).url()}
             alt="bush only new"

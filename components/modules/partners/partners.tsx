@@ -17,6 +17,7 @@ export default function Partners(data: Partial<Sanity.Partners>) {
               href={partner.url}
               className="transition-opacity duration-300 hover:opacity-60"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={urlFor(partner.image).height(200).url()}
                 alt="Companies"

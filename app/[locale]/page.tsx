@@ -1,9 +1,6 @@
-import { Metadata } from 'next'
-
 import Modules from '@/components/modules'
 import { fetchHomeData } from '@/sanity/services/pages/home.service'
 import { LocaleProps } from '@/types'
-import { mapSeo } from '@/utils/utils'
 
 // export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
 //   const params = await props.params

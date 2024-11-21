@@ -7,6 +7,7 @@ import { urlFor } from '@/sanity/utils/image-builder'
 export default function TeamItem({ data }: { data: Sanity.Team['team'][0] }) {
   return (
     <div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={urlFor(data.avatar).width(640).url()}
         alt="upper-curve"

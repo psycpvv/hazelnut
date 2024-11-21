@@ -1,15 +1,5 @@
 {
   "Footer": {
-    "nav": {
-      "quickLinks": "Quick links",
-      "home": "Home",
-      "howItWorks": "How it Works",
-      "calculator": "Calculator",
-      "about": "About",
-      "roadmap": "Roadmap",
-      "contact": "Contact Us",
-      "faq": "FAQ"
-    },
     "haveMoreQuestions": "Have more questions?",
     "emailUs": "Email Us",
     "subscribeToOurNewsletter": "Subscribe to our Newsletter",

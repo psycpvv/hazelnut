@@ -1,36 +1,14 @@
 {
-    "Header": {
-        "home": "POČETNA",
-        "howItWorks": "KAKO FUNKCIONIŠE",
-        "calculator": "KALKULATOR",
-        "about": "O NAMA",
-        "roadmap": "DINAMIKA PROJEKTA",
-        "contact": "KONTAKT",
-        "whitepaper": "BELI PAPIR",
-        "faq": "ČESTA PITANJA",
-        "invest": "LOŽITE ODMAH"
-    },
-    
-    "Footer": {
-        "nav": {
-            "quickLinks": "Brzi linkovi",
-            "home": "Početna",
-            "howItWorks": "Kako funkcioniše",
-            "calculator": "Kalkulator",
-            "about": "O nama",
-            "roadmap": "Mapa puta",
-            "contact": "Kontaktirajte nas",
-            "faq": "Česta pitanja"
-        },
-        "haveMoreQuestions": "Imate još pitanja?",
-        "emailUs": "Pošaljite nam email",
-        "subscribeToOurNewsletter": "Pretplatite se na naš bilten",
-        "subscribe": "Pretplatite se",
-        "noSpamWePromise": "Bez spama, obećavamo!",
-        "fundingInfo": "Projekat je finansiran od strane Fonda za inovacije iz sredstava Evropske unije za pretpristupnu pomoć i iz budžeta Republike Srbije, linija Ministarstva nauke, tehnološkog razvoja i inovacija.",
-        "privacyPolicy": "Politika privatnosti",
-        "termsOfUse": "Uslovi korišćenja",
-        "copyright": "Autorska prava © {year}. Sva prava zadržana",
-        "disclaimer": "Odricanje od odgovornosti"
-    }
+  "Footer": {
+    "haveMoreQuestions": "Imate još pitanja?",
+    "emailUs": "Pošaljite nam email",
+    "subscribeToOurNewsletter": "Pretplatite se na naš bilten",
+    "subscribe": "Pretplatite se",
+    "noSpamWePromise": "Bez spama, obećavamo!",
+    "fundingInfo": "Projekat je finansiran od strane Fonda za inovacije iz sredstava Evropske unije za pretpristupnu pomoć i iz budžeta Republike Srbije, linija Ministarstva nauke, tehnološkog razvoja i inovacija.",
+    "privacyPolicy": "Politika privatnosti",
+    "termsOfUse": "Uslovi korišćenja",
+    "copyright": "Autorska prava © {year}. Sva prava zadržana",
+    "disclaimer": "Odricanje od odgovornosti"
+  }
 }

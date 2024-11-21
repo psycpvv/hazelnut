@@ -29,6 +29,7 @@ export default function ItemsWithImage(data: Partial<Sanity.ItemsWithImage>) {
           </div>
         )}
       </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={urlFor(data.image?.asset!).width(752).url()}
         alt="bush only new"

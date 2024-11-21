@@ -24,27 +24,16 @@ export default function Footer(footer: Sanity.Layout['footer']) {
           <div className="text-primary">
             <h3 className="py-5 text-lg font-bold">{t('nav.quickLinks')}</h3>
             <ul className="flex flex-col gap-4">
-              <li>
-                <Link href="/">{t('nav.home')}</Link>
-              </li>
-              <li>
-                <Link href="#services">{t('nav.howItWorks')}</Link>
-              </li>
-              <li>
-                <Link href="/#calculator">{t('nav.calculator')}</Link>
-              </li>
-              <li>
-                <Link href="/#about">{t('nav.about')}</Link>
-              </li>
-              <li>
-                <Link href="/#roadmap">{t('nav.roadmap')}</Link>
-              </li>
-              <li>
-                <Link href="/faq">{t('nav.faq')}</Link>
-              </li>
-              <li>
-                <Link href="/#contact">{t('nav.contact')}</Link>
-              </li>
+              {footer.quickLinks.map(nav => (
+                <li key={nav._key}>
+                  <Link
+                    href={nav.link}
+                    target={nav.newTab ? '_blank' : '_self'}
+                  >
+                    {nav.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="text-primary">
