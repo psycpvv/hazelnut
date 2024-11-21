@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { PortableText, stegaClean } from 'next-sanity'
 
 import { PortableSmallListComponent } from '@/components/atoms/portable-component/portable-component'
