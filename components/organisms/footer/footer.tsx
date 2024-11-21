@@ -22,7 +22,7 @@ export default function Footer(footer: Sanity.Layout['footer']) {
             />
           </div>
           <div className="text-primary">
-            <h3 className="py-5 text-lg font-bold">{t('nav.quickLinks')}</h3>
+            <h3 className="py-5 text-lg font-bold">{t('quickLinks')}</h3>
             <ul className="flex flex-col gap-4">
               {footer.quickLinks.map(nav => (
                 <li key={nav._key}>
