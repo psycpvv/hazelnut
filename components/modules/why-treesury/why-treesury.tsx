@@ -19,7 +19,7 @@ import { cn } from '@/utils/utils'
 
 import { assets, mockData } from './constants'
 
-export default function WhyTreesupy(data: Partial<Sanity.WhyTreesury>) {
+export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
   const { isMd, isLg } = useMedia()
   const [row, setRow] = useState(0)
   const [col, setCol] = useState(0)
@@ -27,19 +27,15 @@ export default function WhyTreesupy(data: Partial<Sanity.WhyTreesury>) {
     setRow(_row)
     setCol(_col)
   }
-  function initCell() {
-    setRow(0)
-    setCol(0)
-  }
   return (
-    <div className="container py-14">
+    <div className="container mx-auto py-14">
       <div className="flex flex-col gap-4 px-4 pb-12 text-center">
         <Typography variant="h2" textColor="primary">
           {data.title}
         </Typography>
         <Typography variant="subtitle1">{data.subtitle} </Typography>
       </div>
-      <div className="flex" onMouseLeave={initCell}>
+      <div className="flex" onMouseLeave={() => updateCell(0, 0)}>
         <div className="w-1/3 pl-4 text-[11px] shadow-why-tree md:shadow-none lg:w-1/6">
           <div
             className="flex h-24 items-end font-nunito text-primary md:py-5"
@@ -61,7 +57,7 @@ export default function WhyTreesupy(data: Partial<Sanity.WhyTreesury>) {
           <Swiper
             pagination={{
               clickable: true,
-              el: '.swiper-why-treesupy-pagination',
+              el: '.swiper-why-treesury-pagination',
             }}
             slidesPerView={isLg ? 3 : 1}
             spaceBetween={0}
@@ -148,8 +144,8 @@ export default function WhyTreesupy(data: Partial<Sanity.WhyTreesury>) {
           </Swiper>
         </div>
       </div>
-      <div className="swiper-why-treesupy-pagination my-7 flex justify-center gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
-      <Typography variant="text" className="p-4">
+      <div className="swiper-why-treesury-pagination my-7 flex justify-center gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
+      <Typography variant="text" className="p-4 pt-12">
         <PortableText value={data.description} />
       </Typography>
     </div>

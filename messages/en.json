@@ -1,5 +1,24 @@
 {
-    "FaqPage": {
-        "title": "title"
-    }
+  "Footer": {
+    "nav": {
+      "quickLinks": "Quick links",
+      "home": "Home",
+      "howItWorks": "How it Works",
+      "calculator": "Calculator",
+      "about": "About",
+      "roadmap": "Roadmap",
+      "contact": "Contact Us",
+      "faq": "FAQ"
+    },
+    "haveMoreQuestions": "Have more questions?",
+    "emailUs": "Email Us",
+    "subscribeToOurNewsletter": "Subscribe to our Newsletter",
+    "subscribe": "Subscribe",
+    "noSpamWePromise": "No spam, we promise!",
+    "fundingInfo": "The project is financed by the Innovation Fund from the European Union Pre-Accession Assistance and from the budget of the Republic of Serbia, the line of the Ministry of Science, Technological Development and Innovation.",
+    "privacyPolicy": "Privacy policy",
+    "termsOfUse": "Terms of Use",
+    "copyright": "Copyright © {year}. All Rights Reserved",
+    "disclaimer": "Disclaimer"
+  }
 }

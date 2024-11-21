@@ -10,6 +10,7 @@ export default function TextWithCards({
   subtitle,
   cards,
   cta,
+  note,
 }: Partial<Sanity.TextWithCards>) {
   return (
     <>
@@ -21,7 +22,7 @@ export default function TextWithCards({
           alt="upper-curve"
           className="absolute left-0 top-0"
         />
-        <div className="container flex flex-col items-center">
+        <div className="container flex flex-col items-center lg:pt-6">
           <Typography
             variant="h2"
             textColor="white"
@@ -45,7 +46,20 @@ export default function TextWithCards({
               ))}
             </div>
           )}
-          {cta?.length && <Ctas cta={cta} />}
+          {cta?.length && (
+            <div className="pt-8">
+              <Ctas cta={cta} />
+            </div>
+          )}
+          {note && (
+            <Typography
+              variant="subtitle2"
+              className="pt-6 text-center"
+              textColor="white"
+            >
+              {note}
+            </Typography>
+          )}
         </div>
       </div>
       <Image

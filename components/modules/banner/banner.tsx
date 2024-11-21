@@ -1,3 +1,5 @@
+import { PortableText } from 'next-sanity'
+
 import { urlFor } from '@/sanity/utils/image-builder'
 
 import Ctas from '../ctas'
@@ -11,17 +13,30 @@ export default function Banner(data: Partial<Sanity.Banner>) {
       }}
     >
       <div className="container relative z-10 px-4 py-52 text-white md:px-12 xl:w-1/2">
-        {data.title && (
-          <div className="font-nunito text-[34px] uppercase leading-[42px]">
-            {data.title}
-          </div>
-        )}
-        {data.subtitle && <div className="pb-9 pt-5">{data.subtitle}</div>}
-        {data.cta?.length && (
-          <div className="flex gap-4">
-            <Ctas cta={data.cta} />
-          </div>
-        )}
+        <PortableText
+          value={data.content}
+          components={{
+            block: {
+              h1: ({ children }) => (
+                <div className="font-nunito text-[34px] uppercase leading-[42px]">
+                  {children}
+                </div>
+              ),
+              p: ({ children }) => (
+                <div className="font-nunito text-[34px] uppercase leading-[42px]">
+                  {children}
+                </div>
+              ),
+            },
+            types: {
+              cta: ({ value }) => (
+                <div className="flex gap-4">
+                  <Ctas cta={value.cta} />
+                </div>
+              ),
+            },
+          }}
+        />
       </div>
     </div>
   )

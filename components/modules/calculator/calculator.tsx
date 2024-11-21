@@ -25,7 +25,7 @@ export default function Calculator(data: Partial<Sanity.Calculator>) {
         className="absolute -top-[73px] md:-top-[79px]"
         id="calculator"
       ></div>
-      <div className="w-full py-12 md:pt-20">
+      {/* <div className="w-full py-12 md:pt-20">
         <div className="flex flex-col font-nunito text-xs text-white md:px-8 md:text-[15px]">
           <div className="relative flex h-[46px] w-full items-center justify-end rounded-full bg-secondary">
             <div className="px-4">{data.totalTokens}</div>
@@ -42,8 +42,8 @@ export default function Calculator(data: Partial<Sanity.Calculator>) {
         >
           AVAILABLE FOR RESERVATION: TBA
         </Typography>
-      </div>
-      <div className="flex flex-col md:flex-row md:gap-8">
+      </div> */}
+      <div className="flex flex-col pt-20 md:flex-row md:gap-8">
         <CalcInfo />
         <div className="flex flex-col items-center justify-center gap-4 md:w-2/3">
           <CalculatorInputs />
@@ -55,20 +55,25 @@ export default function Calculator(data: Partial<Sanity.Calculator>) {
           </div>
         </div>
       </div>
-      <div className="grid gap-8 pt-8 md:grid-cols-2">
+      <div className="grid gap-8 py-16 md:grid-cols-2">
         <Chart1 />
         <Chart2 />
       </div>
 
       <div className="flex flex-col">
         {data.cta?.length && (
-          <div className="mx-auto my-10">
+          <div className="mx-auto my-5">
             <Ctas cta={data.cta} />
           </div>
         )}
+        {data.note && (
+          <Typography variant="subtitle2" className="text-center">
+            {data.note}
+          </Typography>
+        )}
 
         {data.description && (
-          <Typography variant="text" className="pb-20">
+          <Typography variant="text" className="pb-20 pt-10">
             <PortableText value={data.description} />
           </Typography>
         )}

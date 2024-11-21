@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        unset: 'unset',
+      },
       transformOrigin: {
         'bottom-center': 'bottom center',
       },
@@ -70,6 +73,20 @@ const config: Config = {
             background: '#fff',
           },
         },
+        'blink-green': {
+          '0%': {
+            opacity: '1',
+            background: '#c7cb50',
+          },
+          '50%': {
+            opacity: '1',
+            background: '#79866f',
+          },
+          '100%': {
+            opacity: '1',
+            background: '#c7cb50',
+          },
+        },
         'hand-rotate': {
           '0%': {
             transform: 'rotate(-10deg)',
@@ -86,6 +103,7 @@ const config: Config = {
         'pulse-border-2': 'pulseBorder2 1.5s linear infinite',
         'pulse-border': 'pulseBorder 1s linear infinite',
         blink: 'blink 1.4s linear infinite',
+        'blink-green': 'blink-green 1.4s linear infinite',
         'hand-rotate': 'hand-rotate 1.6s linear infinite',
       },
     },

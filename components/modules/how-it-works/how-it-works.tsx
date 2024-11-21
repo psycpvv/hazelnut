@@ -37,7 +37,7 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
                 className="text-center"
               >
                 STEP {key + 1}
-                <div className="font-roboto text-xl">{step.title}</div>
+                <div className="text-2xl">{step.title}</div>
               </Typography>
               <Typography variant="subtitle1" className="px-6 text-center">
                 {step.subtitle}
@@ -46,10 +46,16 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
           ))}
         </div>
       )}
-
-      <div className="flex w-full justify-between gap-8 py-8 md:justify-center">
-        {data.cta?.length && <Ctas cta={data.cta} />}
-      </div>
+      {data.cta?.length && (
+        <div className="flex w-full justify-between gap-8 py-8 md:justify-center">
+          <Ctas cta={data.cta} />
+        </div>
+      )}
+      {data.note && (
+        <Typography variant="subtitle2" className="text-center">
+          {data.note}
+        </Typography>
+      )}
     </div>
   )
 }

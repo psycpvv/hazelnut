@@ -28,8 +28,11 @@ modules[]{
       ...,
       "lottieFile": lottieFile.asset->url
     }
-  }
-  
+  },
+  _type == "partners" => @->,
+  _type == "timeline" => @->,
+  _type == "team" => @->,
+  _type == "why-treesury" => @->,
 }
 `
 export const richTextQuery = (name: string = 'body') => groq`

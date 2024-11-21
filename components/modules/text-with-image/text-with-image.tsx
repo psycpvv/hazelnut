@@ -1,26 +1,55 @@
 import Image from 'next/image'
+import { PortableText, stegaClean } from 'next-sanity'
 
+import { PortableSmallListComponent } from '@/components/atoms/portable-component/portable-component'
 import { Typography } from '@/components/atoms/typography'
+import { urlFor } from '@/sanity/utils/image-builder'
+import { cn } from '@/utils/utils'
 
-export default function TextWithImage(data: Partial<Sanity.TextWithImage>) {
+import Ctas from '../ctas'
+
+export default function TextWithImage({
+  image,
+  description,
+  note,
+  invertColor,
+  title,
+  titleVariant,
+  cta,
+  imagePosition,
+}: Partial<Sanity.TextWithImage>) {
   return (
-    <div className="relative flex w-full flex-col gap-20 pb-8">
-      <div className="flex w-full flex-col items-center">
-        <div className="container grid md:grid-cols-2">
-          <div className="px-4">
-            {data.image && <Image {...data.image} alt="bush only new" />}
-          </div>
-          <div className="flex flex-col gap-4 px-4">
-            <Typography
-              variant="h3"
-              textColor="primary"
-              className="font-roboto"
-            >
-              {data.title}
-            </Typography>
-            <Typography variant="subtitle1">{data.title}</Typography>
-            {data.note && <Typography variant="text">{data.note}</Typography>}
-          </div>
+    <div className={cn('py-24', invertColor && 'bg-primary')}>
+      <div className="container mx-auto grid items-center justify-center gap-8 md:grid-cols-2">
+        {image && (
+          <img
+            src={urlFor(image).url()}
+            alt="bush only new"
+            className={cn(imagePosition && 'order-last')}
+          />
+        )}
+        <div className="flex flex-col gap-8 px-4">
+          <Typography
+            variant={stegaClean(titleVariant) ?? 'h2'}
+            textColor={invertColor ? 'white' : 'primary'}
+            className=""
+          >
+            {title}
+          </Typography>
+          {description && (
+            <div className={cn('text-xl', invertColor && 'text-white')}>
+              <PortableText
+                value={description}
+                components={PortableSmallListComponent}
+              />
+            </div>
+          )}
+          {cta?.length && <Ctas cta={cta} />}
+          {note && (
+            <div className={cn('pb-14', invertColor && 'text-white')}>
+              {note}
+            </div>
+          )}
         </div>
       </div>
     </div>

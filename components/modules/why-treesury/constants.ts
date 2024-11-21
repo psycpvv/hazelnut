@@ -4,7 +4,7 @@ export const mockData = [
       icon: '/assets/img/favicon.png',
       title: 'TREESURY',
       values: [1, 1, 1, 1, 1, 1, 1],
-      average: '12.3%+',
+      average: '12.0%+',
       averageStyle: 'secondary',
     },
     {

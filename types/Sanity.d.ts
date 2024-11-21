@@ -5,6 +5,19 @@ declare global {
   namespace Sanity {
     // documents
 
+    type LinkItem = {
+      _key: string
+      title: string
+      newTab: boolean
+      _type: 'item'
+      link: string
+    }
+
+    type Layout = {
+      header: { menu: LinkItem[]; cta?: Button[] }
+      footer: { quickLinks: LinkItem[] }
+    }
+
     // pages
 
     type PageBase = SanityDocument<{
@@ -17,6 +30,27 @@ declare global {
       modules?: Module[]
     }
 
+    type Page = PageBase & {
+      readonly _type: 'page'
+      modules?: Module[]
+    }
+
+    type FaqPage = {
+      _id: string
+      title: string
+      description: any
+      note: any
+      list: {
+        _key: string
+        title: string
+        item: {
+          title: string
+          slug: Slug
+          description: any
+        }[]
+      }[]
+    }
+
     // miscellaneous
 
     // objects
@@ -26,6 +60,11 @@ declare global {
         alt: string
         loading: 'lazy' | 'eager'
       }>
+
+    type Slug = {
+      current: string
+      _type: 'slug'
+    }
 
     type Seo = {
       description: string
@@ -37,10 +76,8 @@ declare global {
     }
 
     type Banner = {
-      title: string
-      subtitle: string
+      content: any
       bgimage: Image
-      cta?: Button[]
     }
 
     type HowItWorks = {
@@ -53,18 +90,20 @@ declare global {
         lottieFile: string
       }[]
       cta?: Button[]
+      note?: string
     }
 
     type TextWithCards = {
       title: string
       subtitle: string
       cards: {
-        logo: ImageProps
+        logo: Image
         title: string
-        description: string
+        description: any
         link: string
       }[]
       cta?: Button[]
+      note?: string
     }
 
     type Pricing = {
@@ -79,7 +118,7 @@ declare global {
     type RichText = {
       invertColor?: boolean
       title: string
-      subtitle: string
+      subtitle: any
       cta?: Button[]
       description: any
     }
@@ -89,15 +128,25 @@ declare global {
       reservedTokens: number
       basePrice: number
       cta?: Button[]
+      note?: string
       description?: any
     }
 
     type TextWithImage = {
       invertColor?: boolean
-      image: ImageProps
+      image: Image
       imagePosition?: boolean
       note?: string
       title: string
+      titleVariant:
+        | 'default'
+        | 'h1'
+        | 'h2'
+        | 'h3'
+        | 'h4'
+        | 'subtitle1'
+        | 'subtitle2'
+        | 'text'
       description: any
       cta?: Button[]
     }
@@ -112,6 +161,7 @@ declare global {
       title: string
       subtitle: string
       cta?: Button[]
+      note?: string
       plans: {
         quarter: 'Q1' | 'Q2' | 'Q3' | 'Q4'
         year:
@@ -142,14 +192,26 @@ declare global {
 
     type Partner = {
       url: string
-      image: ImageProps
+      image: Image
+    }
+
+    type NoteList = {
+      title: string
+      subtitle: string
+      item: {
+        _key: string
+        title: string
+        description: any
+      }[]
+      cta?: Button[]
+      note?: string
     }
 
     type Team = {
       title: string
       subtitle: string
       team: {
-        avatar: ImageProps
+        avatar: Image
         name: string
         role: string
         linkedin: string
@@ -164,7 +226,7 @@ declare global {
     }
 
     type ItemsWithImage = {
-      image: ImageProps
+      image: Image
       title: string
       items: string[]
     }

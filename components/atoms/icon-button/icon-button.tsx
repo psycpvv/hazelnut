@@ -24,6 +24,7 @@ const iconButtonVariants = cva(
       },
       size: {
         default: 'rounded-full w-[50px] h-[50px] xl:w-[60px] xl:h-[60px]',
+        small: 'rounded-full w-[50px] h-[50px]',
       },
     },
     defaultVariants: {

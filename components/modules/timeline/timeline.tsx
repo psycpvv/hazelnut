@@ -1,5 +1,7 @@
 'use client'
+import { format } from 'date-fns'
 import Image from 'next/image'
+import { stegaClean } from 'next-sanity'
 import { useState } from 'react'
 
 import { Typography } from '@/components/atoms/typography'
@@ -9,6 +11,7 @@ import Ctas from '../ctas'
 
 export default function Timeline(data: Partial<Sanity.Timeline>) {
   const [showHand, setShowHand] = useState(true)
+  const width = `${100 / (data.plans?.length ?? 1)}%`
   return (
     <>
       <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-20 text-white">
@@ -35,143 +38,66 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
             }}
           >
             <div className="flex w-full min-w-[1200px] py-10 pl-6">
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q1/23</div>
-                <div className="relative z-10 -ml-4 mb-6 mt-4 h-[3px] w-[100%+16px] bg-secondary">
-                  <div className="z-10 ml-4 h-5 w-5 -translate-y-[43%] rounded-full bg-secondary"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+23px)] border-l-2 border-dashed border-white/30"></div>
-                  </div>
-                  <div className="relative pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-secondary"></div>
-                    Closed Alpha Product Market Fit Testing
-                  </div>
-                </div>
-              </div>
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q2/23</div>
-                <div className="relative z-10 mb-6 mt-4 h-[3px] w-full bg-white">
-                  <div className="z-10 h-5 w-5 -translate-y-[43%] animate-blink rounded-full bg-white"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+23px)] border-l-2 border-dashed border-white/30"></div>
-                  </div>
-                  <div className="relative pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-white"></div>
-                    Public Alpha Product Market Fit Testing
-                  </div>
-                </div>
-              </div>
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q3/23</div>
-                <div className="relative z-10 mb-6 mt-4 h-[3px] w-full bg-white">
-                  <div className="z-10 h-5 w-5 -translate-y-[43%] rounded-full bg-white"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-white"></div>
-                      Public Alpha Product Market Fit Testing
+              {data.plans?.map((plan, i) => {
+                const quarter = stegaClean(plan.quarter)
+                const year = stegaClean(plan.year)
+                const currentQuarter = format(new Date(), 'Q')
+                const currentYear = format(new Date(), 'yy')
+                const later =
+                  Number(`${currentYear}${currentQuarter}`) <
+                  Number(`${year}${quarter}`)
+                const same =
+                  `${currentYear}${currentQuarter}` === `${year}${quarter}`
+                return (
+                  <div
+                    className="relative flex flex-col"
+                    key={i}
+                    style={{ width }}
+                  >
+                    <div className="-ml-3.5 font-bold">
+                      Q{quarter}/{year}
                     </div>
-
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+35px)] border-l-2 border-dashed border-white/30"></div>
-                  </div>
-                  <div className="relative mt-4 pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                    Crowdfunding Season 2023
-                  </div>
-                </div>
-              </div>
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q4/23</div>
-                <div className="relative z-10 mb-6 mt-4 h-[3px] w-full bg-white">
-                  <div className="z-10 h-5 w-5 -translate-y-[43%] rounded-full bg-white"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                      Crowdfunding Season 2023
+                    <div
+                      className={cn(
+                        'relative z-10 mb-6 mt-4 h-[3px]',
+                        later ? 'bg-white' : 'bg-secondary',
+                        i === 0 && '-ml-4',
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          'h-5 w-5 -translate-y-[43%] rounded-full',
+                          later ? 'bg-white' : 'bg-secondary',
+                          same && 'animate-blink-green',
+                          i === 0 && 'ml-4',
+                        )}
+                      ></div>
                     </div>
-
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+35px)] border-l-2 border-dashed border-white/30"></div>
-                  </div>
-                  <div className="relative mt-4 pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                    Planting Season 2023
-                  </div>
-                </div>
-              </div>
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q1/24</div>
-                <div className="relative z-10 mb-6 mt-4 h-[3px] w-full bg-white">
-                  <div className="z-10 h-5 w-5 -translate-y-[43%] rounded-full bg-white"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                      Planting Season 2023
+                    <div className="relative flex flex-col gap-6">
+                      <div className="absolute left-[10px] top-[-15px] h-[calc(100%-10px)] border-l-2 border-dashed border-white/30"></div>
+                      {plan.items.map((item, i) => (
+                        <div className="pr-3" key={i}>
+                          <div
+                            className="relative pl-7 text-sm"
+                            style={{
+                              height: i === plan.items.length - 1 ? 30 : 'auto',
+                            }}
+                          >
+                            <div
+                              className={cn(
+                                'absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full',
+                                later ? 'bg-[#8e9ac0]' : 'bg-secondary',
+                                same && 'animate-blink-green',
+                              )}
+                            ></div>
+                            {item}
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                      Tokenization of Crowdfunding Season 2023
-                    </div>
-
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+35px)] border-l-2 border-dashed border-white/30"></div>
                   </div>
-                  <div className="relative mt-4 pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                    STO Registration Season 2024
-                  </div>
-                </div>
-              </div>
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q2/24</div>
-                <div className="relative z-10 mb-6 mt-4 h-[3px] w-full bg-white">
-                  <div className="z-10 h-5 w-5 -translate-y-[43%] rounded-full bg-white"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                      STO Registration Season 2024
-                    </div>
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+35px)] border-l-2 border-dashed border-white/30"></div>
-                  </div>
-                  <div className="relative mt-4 pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                    Carbon Credit Certification
-                  </div>
-                </div>
-              </div>
-              <div className="relative flex w-[14.2857%] flex-col">
-                <div className="-ml-3.5 font-bold">Q3/24</div>
-                <div className="relative z-10 mb-6 mt-4 h-[3px] w-full bg-white">
-                  <div className="z-10 h-5 w-5 -translate-y-[43%] rounded-full bg-white"></div>
-                </div>
-                <div className="pr-3">
-                  <div className="relative flex flex-col gap-4">
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                      Secondary Market (ATS) Token Listing
-                    </div>
-                    <div className="relative pl-7 text-sm">
-                      <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                      Airdrop to Crowdfunding Investors for Season 2023
-                    </div>
-
-                    <div className="absolute left-[10px] top-[-15px] h-[calc(100%+35px)] border-l-2 border-dashed border-white/30"></div>
-                  </div>
-                  <div className="relative mt-4 pl-7 text-sm">
-                    <div className="absolute left-1 top-1 z-10 h-3.5 w-3.5 rounded-full bg-[#8e9ac0]"></div>
-                    Token Trading Enabled
-                  </div>
-                </div>
-              </div>
+                )
+              })}
             </div>
           </div>
           <Image
@@ -188,6 +114,11 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
             <div className="flex gap-1 md:gap-4">
               <Ctas cta={data.cta} />
             </div>
+          )}
+          {data.note && (
+            <Typography variant="subtitle2" className="pt-8 text-center">
+              {data.note}
+            </Typography>
           )}
         </div>
       </div>

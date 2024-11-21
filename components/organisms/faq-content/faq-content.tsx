@@ -4,45 +4,35 @@ import './style.scss'
 
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { stegaClean } from '@sanity/client/stega'
-import Link from 'next/link'
 import { PortableText } from 'next-sanity'
 import { useEffect, useRef, useState } from 'react'
 import Faq from 'react-faq-component'
 
-import { FaqList } from '@/sanity/queries/pages/faq.query'
+import { Link } from '@/i18n/routing'
 import { blocksToText } from '@/utils/utils'
 
-import specialFaqItem from './special-faq-item'
+import { faqComponent } from './faqComponent'
 
-type FaqContentProps = {
-  data: FaqList
-}
-
-export default function FaqContent({ data }: FaqContentProps) {
+export default function FaqContent({ list }: { list: Sanity.FaqPage['list'] }) {
   const [searchText, setSearchText] = useState('')
   const rowsObject = useRef<Record<string, any>>({})
   useEffect(() => {
     const slug = window.location.hash.substring(1)
-    console.log(slug)
-
     if (!slug) return
     setTimeout(() => {
-      for (const faqList of data) {
-        const faqItemIndex = faqList.faqItems.findIndex(
-          item => item.slug.current === slug,
+      for (const faqList of list) {
+        const faqItemIndex = faqList.item.findIndex(
+          item => item.slug?.current === slug,
         )
         if (faqItemIndex !== -1) {
-          const row = rowsObject.current[faqList._id][faqItemIndex]
+          const row = rowsObject.current[faqList._key][faqItemIndex]
           row.expand()
-          console.log(row)
-
           row.scrollIntoView()
           break
         }
       }
     }, 500)
-  }, [data])
+  }, [list])
 
   return (
     <>
@@ -56,13 +46,13 @@ export default function FaqContent({ data }: FaqContentProps) {
         />
         <div className="py-10 text-white">
           <div className="grid w-full grid-cols-2 gap-2 md:flex md:justify-center md:gap-4">
-            {data.map((faq, key) => (
+            {list.map((list, key) => (
               <Link
                 key={key}
-                href={`/faq#${faq._id}`}
+                href={`/faq#${list._key}`}
                 className="flex h-[50px] w-full items-center justify-center rounded-lg bg-primary px-4 text-center font-bold md:h-auto md:w-auto md:px-2.5 md:py-1"
               >
-                {faq.title}
+                {list.title}
               </Link>
             ))}
           </div>
@@ -70,16 +60,16 @@ export default function FaqContent({ data }: FaqContentProps) {
       </div>{' '}
       <div className="container px-3">
         <div className="faq-style-wrapper">
-          {data.map((faqItem, key) => (
+          {list.map((item, key) => (
             <Faq
               key={key}
               data={{
                 title: (
-                  <div id={faqItem._id} className="scroll-mt-28">
-                    {faqItem.title}
+                  <div id={item._key} className="scroll-mt-28">
+                    {item.title}
                   </div>
                 ),
-                rows: faqItem.faqItems
+                rows: item.item
                   .filter(
                     item =>
                       searchText === '' ||
@@ -92,10 +82,11 @@ export default function FaqContent({ data }: FaqContentProps) {
                   )
                   .map(item => ({
                     title: item.title,
-                    content: item.templatedDescription ? (
-                      specialFaqItem[stegaClean(item.templatedDescription)]
-                    ) : (
-                      <PortableText value={item.description} />
+                    content: (
+                      <PortableText
+                        value={item.description}
+                        components={faqComponent}
+                      />
                     ),
                   })),
               }}
@@ -104,7 +95,7 @@ export default function FaqContent({ data }: FaqContentProps) {
                 collapseIcon: <FontAwesomeIcon icon={faMinus} width={16} />,
               }}
               getRowOptions={(props: any) => {
-                rowsObject.current[faqItem._id] = props
+                rowsObject.current[item._key] = props
               }}
             />
           ))}

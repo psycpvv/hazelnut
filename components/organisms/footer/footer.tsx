@@ -1,11 +1,13 @@
 import { faFacebookF, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { IconButton } from '@/components/atoms/icon-button'
+import { Link } from '@/i18n/routing'
 
-export default function Footer() {
+export default function Footer(footer: Sanity.Layout['footer']) {
+  const t = useTranslations('Footer')
   return (
     <div className="flex w-full flex-col items-center py-8 lg:py-16">
       <div className="container flex flex-col items-center">
@@ -20,41 +22,41 @@ export default function Footer() {
             />
           </div>
           <div className="text-primary">
-            <h3 className="py-5 text-lg font-bold">Quick links</h3>
+            <h3 className="py-5 text-lg font-bold">{t('nav.quickLinks')}</h3>
             <ul className="flex flex-col gap-4">
               <li>
-                <Link href="/">Home</Link>
+                <Link href="/">{t('nav.home')}</Link>
               </li>
               <li>
-                <Link href="/#services">How it Works</Link>
+                <Link href="#services">{t('nav.howItWorks')}</Link>
               </li>
               <li>
-                <Link href="/#calculator">Calculator</Link>
+                <Link href="/#calculator">{t('nav.calculator')}</Link>
               </li>
               <li>
-                <Link href="/#about">About</Link>
+                <Link href="/#about">{t('nav.about')}</Link>
               </li>
               <li>
-                <Link href="/#roadmap">Roadmap</Link>
+                <Link href="/#roadmap">{t('nav.roadmap')}</Link>
               </li>
               <li>
-                <Link href="/faq">FAQ</Link>
+                <Link href="/faq">{t('nav.faq')}</Link>
               </li>
               <li>
-                <Link href="/#contact">Contact Us</Link>
+                <Link href="/#contact">{t('nav.contact')}</Link>
               </li>
             </ul>
           </div>
           <div className="text-primary">
-            <h3 className="py-5 text-lg font-bold">Have more questions?</h3>
-            <div className="text-lg font-light">Email Us</div>
+            <h3 className="py-5 text-lg font-bold">{t('haveMoreQuestions')}</h3>
+            <div className="text-lg font-light">{t('emailUs')}</div>
             <a href="mailto:info@treesury.com" className="font-bold">
               info@treesury.com
             </a>
           </div>
           <div className="">
             <h3 className="py-5 text-lg font-bold text-primary">
-              Subscribe to our Newsletter
+              {t('subscribeToOurNewsletter')}
             </h3>
             <div className="flex items-center justify-between gap-4 lg:flex-col xl:flex-row">
               <input
@@ -63,10 +65,10 @@ export default function Footer() {
                 placeholder="Enter Your Email"
               />
               <button className="w-full rounded-full bg-primary px-3 py-1 text-white">
-                Subscribe
+                {t('subscribe')}
               </button>
             </div>
-            <div className="text-sm font-light">No spam, we promise!</div>
+            <div className="text-sm font-light">{t('noSpamWePromise')}</div>
             <div className="flex gap-5 py-5">
               <Link href="https://www.facebook.com/treesuryinc" target="_blank">
                 <IconButton>
@@ -90,17 +92,14 @@ export default function Footer() {
           />
         </div>
         <div className="p-5 text-center text-sm/6 font-light text-primary md:w-2/3">
-          The project is financed by the Innovation Fund from the European Union
-          Pre-Accession Assistance and from the budget of the Republic of
-          Serbia, the line of the Ministry of Science, Technological Development
-          and Innovation.
+          {t('fundingInfo')}
         </div>
         <div className="mt-14 flex w-full flex-col justify-center gap-4 border-t px-8 py-5 text-primary lg:flex-row-reverse lg:justify-between">
           <div className="flex justify-center gap-8">
-            <Link href="#">Privacy policy</Link>
-            <Link href="#">Terms of Use</Link>
+            <Link href="/privacy-policy">{t('privacyPolicy')}</Link>
+            <Link href="/disclaimer">{t('disclaimer')}</Link>
           </div>
-          <div>Copyright © 2023. All Rights Reserved</div>
+          <div>{t('copyright', { year: new Date().getFullYear() })}</div>
         </div>
       </div>
     </div>

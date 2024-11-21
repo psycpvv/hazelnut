@@ -1,15 +1,12 @@
 'use client'
-import Link from 'next/link'
 import { useState } from 'react'
 
-import { Button } from '@/components/atoms/button'
 import { Logo, Menu } from '@/components/atoms/icons'
-import InvestButton from '@/components/atoms/invest-button'
+import Ctas from '@/components/modules/ctas'
+import { Link } from '@/i18n/routing'
 import { cn } from '@/utils/utils'
 
-import { navs } from './constants'
-
-export default function Header() {
+export default function Header(header: Sanity.Layout['header']) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div className="fixed z-50 flex w-full flex-col bg-white px-4 py-1.5 text-sm shadow-lg md:px-8">
@@ -19,21 +16,23 @@ export default function Header() {
         </Link>
 
         <ul className="hidden items-center gap-4 lg:flex xl:gap-8">
-          {navs.map((nav, key) => (
+          {header.menu.map(nav => (
             <li
-              key={key}
+              key={nav._key}
               className="font-nunito text-sm text-primary xl:text-base"
               onClick={() => setIsOpen(false)}
             >
-              <Link href={nav.href}>{nav.title}</Link>
+              <Link href={nav.link} target={nav.newTab ? '_blank' : '_self'}>
+                {nav.title}
+              </Link>
             </li>
           ))}
-          <div className="flex gap-3 xl:gap-6">
-            <Button variant="outlined" size="small">
-              <Link href="/faq">FAQ</Link>
-            </Button>
-            <InvestButton color="default" size="small" />
-          </div>
+
+          {header.cta?.length && (
+            <div className="flex gap-3 xl:gap-6">
+              <Ctas cta={header.cta} />
+            </div>
+          )}
         </ul>
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
           <Menu />
@@ -46,21 +45,25 @@ export default function Header() {
         )}
       >
         <ul className="flex flex-col py-4">
-          {navs.map((nav, key) => (
+          {header.menu.map(nav => (
             <li
-              key={key}
+              key={nav._key}
               className="py-4 font-nunito text-sm text-primary"
               onClick={() => setIsOpen(false)}
             >
-              <Link href={nav.href}>{nav.title}</Link>
+              <Link href={nav.link} target={nav.newTab ? '_blank' : '_self'}>
+                {nav.title}
+              </Link>
             </li>
           ))}
-          <li className="flex justify-between" onClick={() => setIsOpen(false)}>
-            <Button variant="outlined">
-              <Link href="/faq">FAQ</Link>
-            </Button>
-            <InvestButton buttonColor="default" />
-          </li>
+          {header.cta?.length && (
+            <li
+              className="flex justify-between"
+              onClick={() => setIsOpen(false)}
+            >
+              <Ctas cta={header.cta} />
+            </li>
+          )}
         </ul>
       </div>
     </div>

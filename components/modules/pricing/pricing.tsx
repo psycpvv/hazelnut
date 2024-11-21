@@ -5,46 +5,50 @@ import Ctas from '../ctas'
 
 export default function Pricing(data: Partial<Sanity.Pricing>) {
   return (
-    <div className="container flex flex-col items-center justify-center px-3 py-8">
+    <div className="container mx-auto flex flex-col items-center justify-center gap-8 px-3 py-8">
       <Typography
         variant="h2"
         textColor="primary"
-        className="px-3 pb-12 text-center"
+        className="px-3 pb-12 text-center uppercase"
       >
         {data.title}
       </Typography>
       <div className="flex w-full flex-col items-center gap-6">
         <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-24">
           <div>
-            <div className="relative flex h-[134px] items-center justify-center">
+            <div className="relative flex h-44 items-center justify-center">
               <div className="z-10 font-roboto text-3xl font-bold text-white">
-                {data.earlyPrice}
+                €{data.earlyPrice}
               </div>
-              <Hazelnut className="absolute left-[50%] top-0 w-[150px] -translate-x-1/2" />
+              <Hazelnut className="absolute left-[50%] top-0 w-48 -translate-x-1/2" />
             </div>
-            <Typography variant="h3" textColor="primary" className="pt-3">
+            <Typography variant="h4" textColor="primary" className="pt-3">
               EARLY BIRD PRICE *
             </Typography>
           </div>
           <div>
-            <div className="relative flex h-[134px] items-center justify-center">
+            <div className="relative flex h-44 items-center justify-center">
               <div className="z-10 font-roboto text-3xl font-bold text-white">
-                {data.regularPrice}
+                €{data.regularPrice}
               </div>
               <Hazelnut
-                className="absolute left-[50%] top-0 w-[150px] -translate-x-1/2"
+                className="absolute left-[50%] top-0 w-48 -translate-x-1/2"
                 fill="#7C7F33"
               />
             </div>
-            <Typography variant="h3" textColor="primary" className="pt-3">
+            <Typography variant="h4" textColor="primary" className="pt-3">
               REGULAR PRICE
             </Typography>
           </div>
         </div>
       </div>
-      {data.cta?.length && <Ctas cta={data.cta} />}
 
-      <Typography variant="text">{data.subtitle}</Typography>
+      <div className="flex flex-col gap-4 text-center">
+        {data.cta?.length && <Ctas cta={data.cta} />}
+        {data.subtitle && (
+          <Typography variant="subtitle2">{data.subtitle}</Typography>
+        )}
+      </div>
       <Typography variant="text">{data.note}</Typography>
     </div>
   )
