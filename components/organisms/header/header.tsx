@@ -2,6 +2,7 @@
 import { useState } from 'react'
 
 import { Logo, Menu } from '@/components/atoms/icons'
+import LanguageButton from '@/components/atoms/language-button'
 import Ctas from '@/components/modules/ctas'
 import { Link } from '@/i18n/routing'
 import { cn } from '@/utils/utils'
@@ -27,12 +28,10 @@ export default function Header(header: Sanity.Layout['header']) {
               </Link>
             </li>
           ))}
-
-          {header.cta?.length && (
-            <div className="flex gap-3 xl:gap-6">
-              <Ctas cta={header.cta} />
-            </div>
-          )}
+          <div className="flex gap-3 xl:gap-6">
+            <LanguageButton />
+            {header.cta?.length && <Ctas cta={header.cta} />}
+          </div>
         </ul>
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
           <Menu />

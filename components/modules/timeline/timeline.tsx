@@ -100,16 +100,6 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
               })}
             </div>
           </div>
-          <Image
-            src="/assets/img/hand.png"
-            width={40}
-            height={40}
-            alt="hand"
-            className={cn(
-              'origin-bottom-center animate-hand-rotate transition-all duration-300 lg:hidden',
-              showHand ? 'opacity-100' : 'opacity-0',
-            )}
-          />
           {data.cta?.length && (
             <div className="flex gap-1 md:gap-4">
               <Ctas cta={data.cta} />

@@ -29,9 +29,20 @@ modules[]{
       "lottieFile": lottieFile.asset->url
     }
   },
-  _type == "partners" => @->,
+  _type == "partners" => @->{
+    ...,
+    "title":  coalesce(title[_key == $locale][0].value, "Missing translation"),
+  },
   _type == "timeline" => @->,
-  _type == "team" => @->,
+  _type == "team" => @->{
+    ...,
+    "title":  coalesce(title[_key == $locale][0].value, "Missing translation"),
+    "subtitle":  coalesce(subtitle[_key == $locale][0].value, "Missing translation"),
+    "team": team[]{
+      ...,
+      "role":  coalesce(role[_key == $locale][0].value, "Missing translation"),
+    }
+  },
   _type == "why-treesury" => @->,
 }
 `
