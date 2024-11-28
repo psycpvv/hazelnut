@@ -1,4 +1,5 @@
 'use client'
+
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -8,6 +9,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { PortableText } from 'next-sanity'
 import { useState } from 'react'
 import { Pagination } from 'swiper/modules'
@@ -17,9 +19,8 @@ import { Typography } from '@/components/atoms/typography'
 import useMedia from '@/hooks/useMedia'
 import { cn } from '@/utils/utils'
 
-import { assets, mockData } from './constants'
-
 export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
+  const t = useTranslations('Modules.why-treesury')
   const { isMd, isLg } = useMedia()
   const [row, setRow] = useState(0)
   const [col, setCol] = useState(0)
@@ -27,6 +28,7 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
     setRow(_row)
     setCol(_col)
   }
+
   return (
     <div className="container mx-auto py-14">
       <div className="flex flex-col gap-4 px-4 pb-12 text-center">
@@ -41,9 +43,18 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
             className="flex h-24 items-end font-nunito text-primary md:py-5"
             onMouseEnter={() => updateCell(0, 0)}
           >
-            ASSET CLASS
+            {t('asset-class')}
           </div>
-          {assets.map((asset, key) => (
+          {[
+            t('green'),
+            t('inflation-hedge'),
+            t('equity-build-up'),
+            t('no-leverage'),
+            t('attractive-yield'),
+            t('hard-asset'),
+            t('low-volatility'),
+            t('average-annual-return'),
+          ].map((asset, key) => (
             <div
               key={key}
               className="flex h-16 items-center border-t font-nunito"
@@ -64,7 +75,51 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
             modules={[Pagination]}
             className="md:!pl-4"
           >
-            {mockData.map((_data, _key) => (
+            {[
+              [
+                {
+                  icon: '/assets/img/favicon.png',
+                  title: t('treesury'),
+                  values: [1, 1, 1, 1, 1, 1, 1],
+                  average: '12.0%+',
+                  averageStyle: 'secondary',
+                },
+                {
+                  icon: '/assets/img/table/bonds.svg',
+                  title: t('bonds'),
+                  values: [1, 0, 0, 1, 1, 0, 1],
+                  average: '6.4%',
+                },
+              ],
+              [
+                {
+                  icon: '/assets/img/table/stocks.svg',
+                  title: t('stocks'),
+                  values: [1, 0, 1, 0, -1, 0, 0],
+                  average: '12.0%',
+                },
+                {
+                  icon: '/assets/img/table/gold.svg',
+                  title: t('gold'),
+                  values: [0, 1, 0, 1, 0, 1, 0],
+                  average: '6.5%',
+                },
+              ],
+              [
+                {
+                  icon: '/assets/img/table/commercial.svg',
+                  title: t('commercial'),
+                  values: [0, 1, 1, 0, 1, 1, 0],
+                  average: '8.0%',
+                },
+                {
+                  icon: '/assets/img/table/cds.svg',
+                  title: t('cds'),
+                  values: [0, 0, 0, 1, 0, 0, 1],
+                  average: '2.6%',
+                },
+              ],
+            ].map((_data, _key) => (
               <SwiperSlide key={_key}>
                 <div className="flex w-full md:overflow-visible">
                   {_data.map((__data, __key) => (

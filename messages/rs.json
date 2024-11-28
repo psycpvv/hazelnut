@@ -11,5 +11,41 @@
     "termsOfUse": "Uslovi korišćenja",
     "copyright": "Autorska prava © {year}. Sva prava zadržana",
     "disclaimer": "Odricanje od odgovornosti"
+  },
+  "Modules": {
+    "pricing": {
+      "early-bird-price": "PROMOTIVNA CENA *",
+      "regular-price": "REDOVNA CENA"
+    },
+    "how-it-works": {
+      "step": "{step}. KORAK"
+    },
+    "why-treesury": {
+      "green": "ZELENA INVESTICIJA *",
+      "inflation-hedge": "ZAŠTITA OD INFLACIJE",
+      "equity-build-up": "RAST KAPITALA",
+      "no-leverage": "BEZ FINANSIJSKE POLUGE",
+      "attractive-yield": "ATRAKTIVNOST PRINOSA",
+      "hard-asset": "REALNA IMOVINA **",
+      "low-volatility": "MALA VOLATILNOST",
+      "average-annual-return": "PROSEČAN GODIŠNJI PRINOS ***",
+      "asset-class": "KLASA IMOVINE",
+      "treesury": "TREESURY",
+      "bonds": "OBVEZNICE",
+      "stocks": "AKCIJE",
+      "gold": "ZLATO",
+      "cds": "DEPOZITI KOD BANAKA",
+      "commercial": "KOMERCIJALNE NEKRETNINE"
+    },
+    "contact": {
+      "i-am": "Ja sam",
+      "enter-your-first-name": "Unesite vaše ime",
+      "enter-your-last-name": "Unesite vaše prezime",
+      "enter-your-email": "Unesite vašu email adresu",
+      "individual": "Fizičko lice",
+      "business": "Kompanija",
+      "send": "POŠALJI",
+      "enter-message": "Unesite vaše poruku"
+    }
   }
 }

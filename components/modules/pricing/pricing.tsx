@@ -1,9 +1,14 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+
 import { Hazelnut } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 
 import Ctas from '../ctas'
 
 export default function Pricing(data: Partial<Sanity.Pricing>) {
+  const t = useTranslations('Modules.pricing')
   return (
     <div className="container mx-auto flex flex-col items-center justify-center gap-8 px-3 py-8">
       <Typography
@@ -23,7 +28,7 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
               <Hazelnut className="absolute left-[50%] top-0 w-48 -translate-x-1/2" />
             </div>
             <Typography variant="h4" textColor="primary" className="pt-3">
-              EARLY BIRD PRICE *
+              {t('early-bird-price')}
             </Typography>
           </div>
           <div>
@@ -37,7 +42,7 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
               />
             </div>
             <Typography variant="h4" textColor="primary" className="pt-3">
-              REGULAR PRICE
+              {t('regular-price')}
             </Typography>
           </div>
         </div>

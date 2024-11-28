@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { useTranslations } from 'next-intl'
 import { stegaClean } from 'next-sanity'
 
 import { Typography } from '@/components/atoms/typography'
@@ -12,6 +13,7 @@ const Player = dynamic(
   { ssr: false },
 )
 export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
+  const t = useTranslations('Modules.how-it-works')
   return (
     <div className="container relative mx-auto flex flex-col items-center px-4 py-20">
       <div className="absolute -top-[73px] md:-top-[79px]" id="services"></div>
@@ -36,7 +38,7 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
                 textColor="primary"
                 className="text-center"
               >
-                STEP {key + 1}
+                {t('step', { step: key + 1 })}
                 <div className="text-2xl">{step.title}</div>
               </Typography>
               <Typography variant="subtitle1" className="px-6 text-center">

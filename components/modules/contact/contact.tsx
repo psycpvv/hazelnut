@@ -6,6 +6,7 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTranslations } from 'next-intl'
 import { PortableText } from 'next-sanity'
 
 import { Button } from '@/components/atoms/button'
@@ -15,6 +16,7 @@ import { Textarea } from '@/components/atoms/textarea'
 import { Link } from '@/i18n/routing'
 
 export default function Contact(data: Partial<Sanity.Contact>) {
+  const t = useTranslations('Modules.contact')
   return (
     <div className="relative flex w-full flex-col items-center bg-primary px-4 py-20">
       <div className="absolute -top-[73px] md:-top-[79px]" id="contact"></div>
@@ -60,11 +62,11 @@ export default function Contact(data: Partial<Sanity.Contact>) {
         </div>
         <div className="">
           <div className="grid gap-2 md:grid-cols-2 md:gap-6">
-            <Input placeholder="Enter Your First Name" />
-            <Input placeholder="Enter Your Last Name" />
-            <Input placeholder="Enter Your Email" type="email" />
+            <Input placeholder={t('enter-your-first-name')} />
+            <Input placeholder={t('enter-your-last-name')} />
+            <Input placeholder={t('enter-your-email')} type="email" />
             <div className="text-lg text-white">
-              <div className="">I am:</div>
+              <div className="">{t('i-am')}:</div>
               <div className="-ml-3 -mt-2 flex gap-10 text-white">
                 <div className="inline-flex items-center">
                   <label
@@ -99,7 +101,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
                     className="mt-px cursor-pointer select-none font-light"
                     htmlFor="html"
                   >
-                    Individual
+                    {t('individual')}
                   </label>
                 </div>
                 <div className="inline-flex items-center">
@@ -133,20 +135,24 @@ export default function Contact(data: Partial<Sanity.Contact>) {
                     className="mt-px cursor-pointer select-none font-light"
                     htmlFor="react"
                   >
-                    Business
+                    {t('business')}
                   </label>
                 </div>
               </div>
             </div>
           </div>
-          <Textarea placeholder="Enter message" rows={8} className="md:mt-4" />
+          <Textarea
+            placeholder={t('enter-message')}
+            rows={8}
+            className="md:mt-4"
+          />
           <div className="w-full">
             <Button
               buttonColor="secondary"
               size="small"
               className="mt-8 w-full md:w-[145px]"
             >
-              SEND
+              {t('send')}
             </Button>
           </div>
         </div>

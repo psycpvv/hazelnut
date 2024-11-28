@@ -11,5 +11,41 @@
     "termsOfUse": "Terms of Use",
     "copyright": "Copyright © {year}. All Rights Reserved",
     "disclaimer": "Disclaimer"
+  },
+  "Modules": {
+    "pricing": {
+      "early-bird-price": "EARLY BIRD PRICE *",
+      "regular-price": "REGULAR PRICE"
+    },
+    "how-it-works": {
+      "step": "STEP {step}"
+    },
+    "why-treesury": {
+      "green": "GREEN *",
+      "inflation-hedge": "INFLATION HEDGE",
+      "equity-build-up": "EQUITY BUILD UP",
+      "no-leverage": "NO LEVERAGE",
+      "attractive-yield": "ATTRACTIVE YIELD",
+      "hard-asset": "HARD ASSET **",
+      "low-volatility": "LOW VOLATILITY",
+      "average-annual-return": "AVERAGE ANNUAL RETURN ***",
+      "asset-class": "ASSET CLASS",
+      "treesury": "TREESURY",
+      "bonds": "BONDS",
+      "stocks": "STOCKS",
+      "gold": "GOLD",
+      "cds": "CDs",
+      "commercial": "COMMERCIAL"
+    },
+    "contact": {
+      "i-am": "I am",
+      "enter-your-first-name": "Enter Your First Name",
+      "enter-your-last-name": "Enter Your Last Name",
+      "enter-your-email": "Enter Your Email",
+      "individual": "Individual",
+      "business": "Business",
+      "send": "SEND",
+      "enter-message": "Enter message"
+    }
   }
 }
