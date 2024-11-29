@@ -46,6 +46,15 @@
       "business": "Business",
       "send": "SEND",
       "enter-message": "Enter message"
+    },
+    "calculator": {
+      "show-my-offsets": "Show my offsets",
+      "you-are-offsetting-carbon-emissions-equivalent-to": "You are offsetting carbon emissions equivalent to",
+      "driving-a-passenger-car-for-drivingmiles-miles": "Driving a passenger car for {drivingMiles} miles",
+      "taking-flights-round-trip-flight-from-new-york-to-los-angeles": "Taking {flights, plural, one {a round-trip flight} other {# round-trip flights}} from New York to Los Angeles",
+      "heating-a-typical-us-home-for-approximately-heatingtext-days": "Heating a typical US home for approximately {heating, plural, =0 {} other {# days}} {heatingYears, plural, =0 {} one {# year} other {# years}}",
+      "yearly-carbon-emissions-of-a-city-of-approximately-people-people": "Yearly carbon emissions of a city of approximately {people} people",
+      "cows-cows-per-year": "{cows} cows per year"
     }
   }
 }

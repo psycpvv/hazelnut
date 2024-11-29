@@ -46,6 +46,15 @@
       "business": "Kompanija",
       "send": "POŠALJI",
       "enter-message": "Unesite vaše poruku"
+    },
+    "calculator": {
+      "show-my-offsets": "Show my offsets",
+      "you-are-offsetting-carbon-emissions-equivalent-to": "Smanjujete emisiju ugljen-dioksida u količini koja je ekvivalentna",
+      "driving-a-passenger-car-for-drivingmiles-miles": "Vožnji automobila na {drivingMiles} kilometara",
+      "taking-flights-round-trip-flight-from-new-york-to-los-angeles": "{flights, plural,=1 {Povratnom} one {# povratni} few {# povratna} other {# povratnih}} let od Njujorka do Los Anđelesa",
+      "heating-a-typical-us-home-for-approximately-heatingtext-days": "Grejanju prosečnog doma u SAD-u tokom otprilike {heating, plural, =0 {} other {# dana}} {heatingYears, plural, =0 {} one {# godina} other {# godina}}",
+      "yearly-carbon-emissions-of-a-city-of-approximately-people-people": "Godišnja emisija ugljenika u gradu od približno {people} stanovnika",
+      "cows-cows-per-year": "{cows, plural, one {# kravi} few {# krave} other {# krava}} godišnje"
     }
   }
 }

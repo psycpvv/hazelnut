@@ -8,7 +8,7 @@ import { usePathname, useRouter } from '@/i18n/routing'
 export default function LanguageButton() {
   const router = useRouter()
   const locale = useLocale()
-  const revertedLocale = locale === 'en' ? 'rs' : 'en'
+  const revertedLocale = locale === 'en' ? 'sr' : 'en'
   const pathname = usePathname()
 
   function toggleLocale() {

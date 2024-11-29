@@ -7,5 +7,5 @@ export default createMiddleware(routing)
 export const config = {
   // Matcher entries are linked with a logical "or", therefore
   // if one of them matches, the middleware will be invoked.
-  matcher: ['/', '/(rs|en)/:path*'],
+  matcher: ['/', '/(sr|en)/:path*'],
 }

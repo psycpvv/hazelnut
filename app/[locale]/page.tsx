@@ -13,7 +13,6 @@ import { LocaleProps } from '@/types'
 
 export default async function Page(props: LocaleProps) {
   const params = await props.params
-
   const { locale } = params
 
   const page = await fetchHomeData(locale)

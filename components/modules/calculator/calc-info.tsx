@@ -6,6 +6,7 @@ import {
   TransitionChild,
 } from '@headlessui/react'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
 import useCalculatorStore from '@/store/calculatorStore'
@@ -21,6 +22,7 @@ export default function CalcInfo() {
     cows,
     tokens,
   } = useCalculatorStore(state => state)
+  const t = useTranslations('Modules.calculator')
   return (
     <div className="w-full md:w-1/3">
       <Image
@@ -35,30 +37,42 @@ export default function CalcInfo() {
           onClick={() => setOpen(true)}
           className="rounded-full bg-primary px-4 py-1.5 text-[11px] uppercase leading-3 text-white shadow-xl"
         >
-          Show my offsets
+          {t('show-my-offsets')}
         </button>
       </div>
       <div className="hidden md:block">
         <div className="mt-2">
           <p className="font-bold">
-            You are offsetting carbon emissions equivalent to:
+            {t('you-are-offsetting-carbon-emissions-equivalent-to')}:
           </p>
           <ul className="flex list-disc flex-col pl-7 pt-4 marker:text-2xl marker:text-secondary">
-            <li>Driving a passenger car for {drivingMiles()} miles</li>
             <li>
-              Taking {flights() === '1' ? 'a' : flights()} round-trip flight
-              from New York to Los Angeles
+              {t('driving-a-passenger-car-for-drivingmiles-miles', {
+                drivingMiles: drivingMiles(),
+              })}
             </li>
             <li>
-              Heating a typical US home for approximately {heatingText()} days
+              {t(
+                'taking-flights-round-trip-flight-from-new-york-to-los-angeles',
+                { flights: flights() },
+              )}
+            </li>
+            {/* Modules.calculator. */}
+            <li>
+              {t(
+                'heating-a-typical-us-home-for-approximately-heatingtext-days',
+                heatingText(),
+              )}
             </li>
             {tokens >= 10 && (
               <>
                 <li>
-                  Yearly carbon emissions of a city of approximately {people()}{' '}
-                  people
+                  {t(
+                    'yearly-carbon-emissions-of-a-city-of-approximately-people-people',
+                    { people: people() },
+                  )}
                 </li>
-                <li>{cows()} cows per year</li>
+                <li>{t('cows-cows-per-year', { cows: cows() })}</li>
               </>
             )}
           </ul>
@@ -157,27 +171,43 @@ export default function CalcInfo() {
                     <div className="md:flex md:items-start">
                       <div className="mt-2">
                         <p className="font-bold">
-                          You are offsetting carbon emissions equivalent to:
+                          {t(
+                            'you-are-offsetting-carbon-emissions-equivalent-to',
+                          )}
+                          :
                         </p>
                         <ul className="flex list-disc flex-col pl-7 pt-4 marker:text-2xl marker:text-secondary">
                           <li>
-                            Driving a passenger car for {drivingMiles()} miles
+                            {t(
+                              'driving-a-passenger-car-for-drivingmiles-miles',
+                              {
+                                drivingMiles: drivingMiles(),
+                              },
+                            )}
                           </li>
                           <li>
-                            Taking {flights() === '1' ? 'a' : flights()}{' '}
-                            round-trip flight from New York to Los Angeles
+                            {t(
+                              'taking-flights-round-trip-flight-from-new-york-to-los-angeles',
+                              { flights: flights() },
+                            )}
                           </li>
                           <li>
-                            Heating a typical US home for approximately{' '}
-                            {heatingText()} days
+                            {t(
+                              'heating-a-typical-us-home-for-approximately-heatingtext-days',
+                              heatingText(),
+                            )}
                           </li>
                           {tokens >= 10 && (
                             <>
                               <li>
-                                Yearly carbon emissions of a city of
-                                approximately {people()} people
+                                {t(
+                                  'yearly-carbon-emissions-of-a-city-of-approximately-people-people',
+                                  { people: people() },
+                                )}
                               </li>
-                              <li>{cows()} cows per year</li>
+                              <li>
+                                {t('cows-cows-per-year', { cows: cows() })}
+                              </li>
                             </>
                           )}
                         </ul>

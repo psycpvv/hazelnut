@@ -22,8 +22,8 @@ type CalculatorState = State & {
   paybackYears: () => number
   reachAmount: () => number
   drivingMiles: () => string
-  flights: () => string
-  heatingText: () => string
+  flights: () => number
+  heatingText: () => { heating: number; heatingYears: number }
   people: () => string
   cows: () => number
   totalInvestorsReturn40: () => number
@@ -94,12 +94,12 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
     String(871 * get().tokens)
       .replace(/\D/g, '')
       .replace(/\B(?=(\d{3})+(?!\d))/g, ','),
-  flights: () => (get().tokens / 1.57).toFixed(0),
+  flights: () => Math.ceil(get().tokens / 1.57),
   heatingText: () => {
     const tokens = get().tokens
     const heating = tokens * 17
-    const heating_years = Math.trunc(heating / 365)
-    return heating_years < 1 ? heating + ' days' : heating_years + ' years'
+    const heatingYears = Math.trunc(heating / 365)
+    return { heating: heatingYears > 0 ? 0 : heating, heatingYears }
   },
   people: () => formatNumber(Math.trunc(get().tokens * 818.18)),
   cows: () => Math.trunc(get().tokens * 0.72),
