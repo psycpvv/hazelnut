@@ -13,10 +13,10 @@ export default function Header(header: Sanity.Layout['header']) {
     <div className="fixed z-50 flex w-full flex-col bg-white px-4 py-1.5 text-sm shadow-lg md:px-8">
       <div className="flex justify-between">
         <Link href="/">
-          <Logo className="w-44 md:w-48" />
+          <Logo className="h-14 md:h-16" />
         </Link>
 
-        <ul className="hidden items-center gap-4 lg:flex xl:gap-8">
+        <ul className="hidden items-center gap-4 lg:flex xl:gap-6">
           {header.menu.map(nav => (
             <li
               key={nav._key}
@@ -28,7 +28,7 @@ export default function Header(header: Sanity.Layout['header']) {
               </Link>
             </li>
           ))}
-          <div className="flex gap-3 xl:gap-6">
+          <div className="flex gap-3 xl:gap-4">
             <LanguageButton />
             {header.cta?.length && <Ctas cta={header.cta} />}
           </div>

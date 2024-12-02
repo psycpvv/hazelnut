@@ -60,7 +60,7 @@ export default async function RootLayout(
       >
         <NextIntlClientProvider messages={messages}>
           <Header {...layout.header} />
-          <div className="pt-[73px]">{children}</div>
+          <div className="pt-[56px] md:pt-[76px]">{children}</div>
           <Footer {...layout.footer} />
           <ScrollToTopButton />
         </NextIntlClientProvider>
