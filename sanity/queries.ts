@@ -21,7 +21,7 @@ export const modulesQuery = groq`
 modules[]{ 
   ...,
   _type == "contact" => @->,
-  _type == "contact" => @->,
+  _type == "sto-status" => @->,
   _type == "how-it-works" => {
     ...,
     steps[] {

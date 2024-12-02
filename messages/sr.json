@@ -76,6 +76,10 @@
       "carbon-credits-co2": "Ugljenični krediti (CO2)",
       "total": "Ukupno",
       "year": "godina"
+    },
+    "sto-status": {
+      "reserved-tokens": "REZERVISANIH TOKENA",
+      "available-for-reservation": "RASPOLOŽIVO ZA REZERVACIJU"
     }
   }
 }

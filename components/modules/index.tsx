@@ -7,6 +7,7 @@ import NoteList from './note-list/note-list'
 import Partners from './partners'
 import Pricing from './pricing'
 import RichText from './rich-text'
+import StoStatus from './sto-status'
 import Team from './team'
 import TextWithCards from './text-with-cards'
 import TextWithImage from './text-with-image'
@@ -20,6 +21,8 @@ export default function Modules({ modules }: { modules?: Sanity.Module[] }) {
         switch (module._type) {
           case 'banner':
             return <Banner {...module} key={module._key} />
+          case 'sto-status':
+            return <StoStatus {...module} key={module._key} />
           case 'calculator':
             return <Calculator {...module} key={module._key} />
           case 'contact':

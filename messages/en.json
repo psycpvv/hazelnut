@@ -76,6 +76,10 @@
       "carbon-credits-co2": "Carbon Credits (CO2)",
       "total": "Total",
       "year": "Year"
+    },
+    "sto-status": {
+      "reserved-tokens": "RESERVED TOKENS",
+      "available-for-reservation": "AVAILABLE FOR RESERVATION"
     }
   }
 }

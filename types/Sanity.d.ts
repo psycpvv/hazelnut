@@ -93,6 +93,17 @@ declare global {
       note?: string
     }
 
+    type StoStatus = {
+      soldTokens: number
+      successThresholdOfSto: number
+      totalTokens: number
+      reservedTokens: number
+      availableTokens: number
+      description: any
+      cta?: Button[]
+      note?: string
+    }
+
     type TextWithCards = {
       title: string
       subtitle: string
