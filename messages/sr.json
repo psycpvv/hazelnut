@@ -54,7 +54,28 @@
       "taking-flights-round-trip-flight-from-new-york-to-los-angeles": "{flights, plural,=1 {Povratnom} one {# povratni} few {# povratna} other {# povratnih}} let od Njujorka do Los Anđelesa",
       "heating-a-typical-us-home-for-approximately-heatingtext-days": "Grejanju prosečnog doma u SAD-u tokom otprilike {heating, plural, =0 {} other {# dana}} {heatingYears, plural, =0 {} one {# godina} other {# godina}}",
       "yearly-carbon-emissions-of-a-city-of-approximately-people-people": "Godišnja emisija ugljenika u gradu od približno {people} stanovnika",
-      "cows-cows-per-year": "{cows, plural, one {# kravi} few {# krave} other {# krava}} godišnje"
+      "cows-cows-per-year": "{cows, plural, one {# kravi} few {# krave} other {# krava}} godišnje",
+      "enter-your-desired-number-of-treesury-trees": "Unesite željeni broj Treesury Tokena",
+      "or": "ILI",
+      "enter-your-desired-investment-amount": "Unesite željeni iznos ulaganja",
+      "bonus": "BONUS",
+      "total-acquired-trees": "Ukupan broj stečenih tokena",
+      "obtained-bonus-amount": "Ostvareni iznos bonusa",
+      "effective-price-per-tree": "Stvarna cena po tokenu",
+      "return": "PRINOS",
+      "average-annual-yield-40-years": "Prosečan godišnji prinos (40 godina)",
+      "total-investment-return-40-yrs": "Ukupan prinos od ulaganja (40 godina)",
+      "payback-period": "Period povrata",
+      "years": "godina",
+      "carbon-credits": "UTICAJ",
+      "total-co-less-than-sub-greater-than-2-less-than-sub-greater-than-captured-40-yrs": "Ukupna količina apsorbovanog CO2 (40 godina)",
+      "average-annual-co-less-than-sub-greater-than-2-less-than-sub-greater-than-captured": "Prosečna godišnja količina apsorbovanog CO2",
+      "cumulative-return-of-your-investment-over-the-treesury-tree-lifetime": "Kumulativni prinos od vašeg ulaganja tokom veka trajanja Treesury Tokena",
+      "return-structure-from-hazelnuts-and-carbon-credits-over-the-treesury-tree-lifetime": "Struktura prinosa od lešnika i ugljeničnih kredita tokom veka trajanja Treesury Tokena",
+      "hazelnuts": "Lešnici",
+      "carbon-credits-co2": "Ugljenični krediti (CO2)",
+      "total": "Ukupno",
+      "year": "godina"
     }
   }
 }

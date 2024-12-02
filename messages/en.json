@@ -50,11 +50,32 @@
     "calculator": {
       "show-my-offsets": "Show my offsets",
       "you-are-offsetting-carbon-emissions-equivalent-to": "You are offsetting carbon emissions equivalent to",
-      "driving-a-passenger-car-for-drivingmiles-miles": "Driving a passenger car for {drivingMiles} miles",
+      "driving-a-passenger-car-for-drivingmiles-miles": "Driving a passenger car for approximately {drivingMiles} miles",
       "taking-flights-round-trip-flight-from-new-york-to-los-angeles": "Taking {flights, plural, one {a round-trip flight} other {# round-trip flights}} from New York to Los Angeles",
       "heating-a-typical-us-home-for-approximately-heatingtext-days": "Heating a typical US home for approximately {heating, plural, =0 {} other {# days}} {heatingYears, plural, =0 {} one {# year} other {# years}}",
       "yearly-carbon-emissions-of-a-city-of-approximately-people-people": "Yearly carbon emissions of a city of approximately {people} people",
-      "cows-cows-per-year": "{cows} cows per year"
+      "cows-cows-per-year": "{cows} cows per year",
+      "enter-your-desired-number-of-treesury-trees": "Enter your desired number of Treesury Trees",
+      "or": "OR",
+      "enter-your-desired-investment-amount": "Enter your desired investment amount",
+      "bonus": "BONUS",
+      "total-acquired-trees": "Total Acquired Trees",
+      "obtained-bonus-amount": "Obtained Bonus Amount",
+      "effective-price-per-tree": "Effective Price per Tree",
+      "return": "RETURN",
+      "average-annual-yield-40-years": "Average Annual Yield (40 years)",
+      "total-investment-return-40-yrs": "Total Investment Return (40 yrs)",
+      "payback-period": "Payback Period",
+      "years": "years",
+      "carbon-credits": "CARBON CREDITS",
+      "total-co-less-than-sub-greater-than-2-less-than-sub-greater-than-captured-40-yrs": "Total CO<sub>2</sub> Captured (40 yrs)",
+      "average-annual-co-less-than-sub-greater-than-2-less-than-sub-greater-than-captured": "Average Annual CO<sub>2</sub> Captured",
+      "cumulative-return-of-your-investment-over-the-treesury-tree-lifetime": "Cumulative return of your investment over the Treesury Tree lifetime",
+      "return-structure-from-hazelnuts-and-carbon-credits-over-the-treesury-tree-lifetime": "Return structure from Hazelnuts and Carbon Credits over the Treesury Tree lifetime",
+      "hazelnuts": "Hazelnuts",
+      "carbon-credits-co2": "Carbon Credits (CO2)",
+      "total": "Total",
+      "year": "Year"
     }
   }
 }

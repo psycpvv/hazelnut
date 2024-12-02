@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js'
+import { useTranslations } from 'next-intl'
 import { Line } from 'react-chartjs-2'
 
 import { Typography } from '@/components/atoms/typography'
@@ -24,53 +25,58 @@ Chart.register(
   Legend,
 )
 export default function Chart1() {
+  const t = useTranslations('Modules.calculator')
+
   const { totalTokens, rate } = useCalculatorStore(state => state)
+  const tokens = totalTokens()
   const data = [
-    { year: 1, value: 0.0 * totalTokens() * rate },
-    { year: 2, value: 0.0 * totalTokens() * rate },
-    { year: 3, value: 0.0 * totalTokens() * rate },
-    { year: 4, value: 0.0 * totalTokens() * rate },
-    { year: 5, value: 0.0 * totalTokens() * rate },
-    { year: 6, value: 5.68 * totalTokens() * rate },
-    { year: 7, value: 21.41 * totalTokens() * rate },
-    { year: 8, value: 46.98 * totalTokens() * rate },
-    { year: 9, value: 75.87 * totalTokens() * rate },
-    { year: 10, value: 107.41 * totalTokens() * rate },
-    { year: 11, value: 123.23 * totalTokens() * rate },
-    { year: 12, value: 138.52 * totalTokens() * rate },
-    { year: 13, value: 153.89 * totalTokens() * rate },
-    { year: 14, value: 169.34 * totalTokens() * rate },
-    { year: 15, value: 184.87 * totalTokens() * rate },
-    { year: 16, value: 200.5 * totalTokens() * rate },
-    { year: 17, value: 216.24 * totalTokens() * rate },
-    { year: 18, value: 232.07 * totalTokens() * rate },
-    { year: 19, value: 248.01 * totalTokens() * rate },
-    { year: 20, value: 264.06 * totalTokens() * rate },
-    { year: 21, value: 281.26 * totalTokens() * rate },
-    { year: 22, value: 298.64 * totalTokens() * rate },
-    { year: 23, value: 316.2 * totalTokens() * rate },
-    { year: 24, value: 333.96 * totalTokens() * rate },
-    { year: 25, value: 351.91 * totalTokens() * rate },
-    { year: 26, value: 370.09 * totalTokens() * rate },
-    { year: 27, value: 388.48 * totalTokens() * rate },
-    { year: 28, value: 407.12 * totalTokens() * rate },
-    { year: 29, value: 426.0 * totalTokens() * rate },
-    { year: 30, value: 445.13 * totalTokens() * rate },
-    { year: 31, value: 464.54 * totalTokens() * rate },
-    { year: 32, value: 484.24 * totalTokens() * rate },
-    { year: 33, value: 504.24 * totalTokens() * rate },
-    { year: 34, value: 524.56 * totalTokens() * rate },
-    { year: 35, value: 545.19 * totalTokens() * rate },
-    { year: 36, value: 566.18 * totalTokens() * rate },
-    { year: 37, value: 587.54 * totalTokens() * rate },
-    { year: 38, value: 609.28 * totalTokens() * rate },
-    { year: 39, value: 631.42 * totalTokens() * rate },
-    { year: 40, value: 653.97 * totalTokens() * rate },
+    { year: 1, value: 0.0 * tokens * rate },
+    { year: 2, value: 0.0 * tokens * rate },
+    { year: 3, value: 0.0 * tokens * rate },
+    { year: 4, value: 0.0 * tokens * rate },
+    { year: 5, value: 0.0 * tokens * rate },
+    { year: 6, value: 5.63 * tokens * rate },
+    { year: 7, value: 21.29 * tokens * rate },
+    { year: 8, value: 46.82 * tokens * rate },
+    { year: 9, value: 75.66 * tokens * rate },
+    { year: 10, value: 104.56 * tokens * rate },
+    { year: 11, value: 121.78 * tokens * rate },
+    { year: 12, value: 136.95 * tokens * rate },
+    { year: 13, value: 152.2 * tokens * rate },
+    { year: 14, value: 167.53 * tokens * rate },
+    { year: 15, value: 182.93 * tokens * rate },
+    { year: 16, value: 198.42 * tokens * rate },
+    { year: 17, value: 214.0 * tokens * rate },
+    { year: 18, value: 229.67 * tokens * rate },
+    { year: 19, value: 245.44 * tokens * rate },
+    { year: 20, value: 261.3 * tokens * rate },
+    { year: 21, value: 278.2 * tokens * rate },
+    { year: 22, value: 295.26 * tokens * rate },
+    { year: 23, value: 312.49 * tokens * rate },
+    { year: 24, value: 329.89 * tokens * rate },
+    { year: 25, value: 347.47 * tokens * rate },
+    { year: 26, value: 365.24 * tokens * rate },
+    { year: 27, value: 383.22 * tokens * rate },
+    { year: 28, value: 401.41 * tokens * rate },
+    { year: 29, value: 419.82 * tokens * rate },
+    { year: 30, value: 438.46 * tokens * rate },
+    { year: 31, value: 457.35 * tokens * rate },
+    { year: 32, value: 476.5 * tokens * rate },
+    { year: 33, value: 495.92 * tokens * rate },
+    { year: 34, value: 515.63 * tokens * rate },
+    { year: 35, value: 535.62 * tokens * rate },
+    { year: 36, value: 555.93 * tokens * rate },
+    { year: 37, value: 576.57 * tokens * rate },
+    { year: 38, value: 597.56 * tokens * rate },
+    { year: 39, value: 618.9 * tokens * rate },
+    { year: 40, value: 640.62 * tokens * rate },
   ]
   return (
     <div>
       <Typography variant="subtitle2" className="text-center">
-        Cumulative return of your investment over the Treesury Tree lifetime
+        {t(
+          'cumulative-return-of-your-investment-over-the-treesury-tree-lifetime',
+        )}
       </Typography>
       <Line
         height={200}
@@ -124,8 +130,9 @@ export default function Chart1() {
           labels: data.map(item => item.year),
           datasets: [
             {
-              label:
-                'Cumulative return of your investment over the Treesury Tree lifetime',
+              label: t(
+                'cumulative-return-of-your-investment-over-the-treesury-tree-lifetime',
+              ),
               data: data.map(function (item) {
                 return item.value
               }),

@@ -5,12 +5,14 @@ import { formatNumber } from '@/utils/utils'
 type State = {
   rate: number
   tokens: number
+  investmentAmount: string
   tokenPrice: number
   co2PerToken: number
 }
 
 type CalculatorState = State & {
   setTokens: (val: number) => void
+  setInvestmentAmount: (val: string) => void
   setTokenPrice: (val: number) => void
   totalInvestment: () => number
   bonusTokens: () => number
@@ -34,6 +36,7 @@ type CalculatorState = State & {
 }
 
 const INITIAL_STATE: State = {
+  investmentAmount: '',
   rate: 0.925,
   tokens: 1,
   tokenPrice: 102,
@@ -42,7 +45,7 @@ const INITIAL_STATE: State = {
 
 const useCalculatorStore = create<CalculatorState>()((set, get) => ({
   ...INITIAL_STATE,
-  totalInvestorsReturn40: () => get().rate * 653.97,
+  totalInvestorsReturn40: () => get().rate * 640.62,
   totalReturn40: () => get().totalInvestorsReturn40() * get().totalTokens(),
   bonus: () => {
     const tokens = get().tokens
@@ -65,11 +68,11 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
     ).toFixed(2),
   paybackYears: () => {
     const tokens = get().tokens
-    if (tokens < 10) return 10.16
-    if (tokens < 100) return 9.76
-    if (tokens < 1000) return 9.71
-    if (tokens < 5000) return 9.63
-    return 9.5
+    if (tokens < 10) return 10.32
+    if (tokens < 100) return 9.84
+    if (tokens < 1000) return 9.78
+    if (tokens < 5000) return 9.69
+    return 9.55
   },
   reachAmount: () => {
     const tokens = get().tokens
@@ -108,6 +111,7 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
   totalCo2AveragePerYearMt: () =>
     ((get().totalTokens() * get().co2PerToken) / 40 / 1000).toFixed(2),
   setTokens: tokens => set({ tokens }),
+  setInvestmentAmount: investmentAmount => set({ investmentAmount }),
   setTokenPrice: tokenPrice => set({ tokenPrice }),
 }))
 

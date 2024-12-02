@@ -21,7 +21,7 @@ export function formatCurrency(n: number) {
 }
 
 export function convertNumber(v: string) {
-  return Number(v.slice(0, -3).replace(/,/g, ''))
+  return Number(v.replace('.00', '').replace(/,/g, ''))
 }
 export function formatDisplayNumber(inputVal: string | number) {
   if (typeof inputVal === 'number') inputVal = inputVal.toString()

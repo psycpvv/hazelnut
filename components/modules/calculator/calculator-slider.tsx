@@ -10,7 +10,8 @@ import useMedia from '@/hooks/useMedia'
 import useCalculatorStore from '@/store/calculatorStore'
 
 export default function CalculatorSlider() {
-  const { tokens, setTokens } = useCalculatorStore(state => state)
+  const { tokens, setTokens, tokenPrice, setInvestmentAmount } =
+    useCalculatorStore(state => state)
   const ref = useRef<any>(null)
   const { isMd } = useMedia()
   const setUiSlider = useDebouncedCallback(
@@ -20,6 +21,11 @@ export default function CalculatorSlider() {
   useEffect(() => {
     if (ref && ref.current) setUiSlider(tokens)
   }, [setUiSlider, tokens])
+
+  function updateHandler(value: number) {
+    setTokens(value)
+    setInvestmentAmount((value * tokenPrice).toFixed(2))
+  }
 
   return (
     <Nouislider
@@ -45,8 +51,8 @@ export default function CalculatorSlider() {
         density: 2.5,
       }}
       start={0}
-      onSlide={(_render, _handle, value) => setTokens(Math.trunc(value[0]))}
-      onUpdate={(_render, _handle, value) => setTokens(Math.trunc(value[0]))}
+      onSlide={(_render, _handle) => updateHandler(Number(_render[0]))}
+      onUpdate={(_render, _handle) => updateHandler(Number(_render[0]))}
       connect
       behaviour="tap"
     />

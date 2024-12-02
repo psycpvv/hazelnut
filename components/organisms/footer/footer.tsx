@@ -9,7 +9,7 @@ import { Link } from '@/i18n/routing'
 export default function Footer(footer: Sanity.Layout['footer']) {
   const t = useTranslations('Footer')
   return (
-    <div className="flex w-full flex-col items-center pt-8 lg:py-16">
+    <div className="flex w-full flex-col items-center pt-8 lg:pt-16">
       <div className="container flex flex-col items-center">
         <div className="grid px-6 md:grid-cols-4 md:gap-4">
           <div className="flex items-center justify-center md:items-start">
@@ -43,7 +43,7 @@ export default function Footer(footer: Sanity.Layout['footer']) {
               info@treesury.com
             </a>
           </div>
-          <div className="">
+          <div>
             <h3 className="py-5 text-lg font-bold text-primary">
               {t('subscribeToOurNewsletter')}
             </h3>
