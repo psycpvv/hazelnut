@@ -37,7 +37,12 @@ export default function TextWithImage({
             {title}
           </Typography>
           {description && (
-            <div className={cn('md:text-xl', invertColor && 'text-white')}>
+            <div
+              className={cn(
+                'font-light md:text-xl',
+                invertColor && 'text-white',
+              )}
+            >
               <PortableText
                 value={description}
                 components={PortableSmallListComponent}

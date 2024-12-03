@@ -45,7 +45,7 @@ export default function CalcInfo() {
           <p className="font-bold">
             {t('you-are-offsetting-carbon-emissions-equivalent-to')}:
           </p>
-          <ul className="flex list-disc flex-col pl-7 pt-4 marker:text-2xl marker:text-secondary">
+          <ul className="flex list-disc flex-col pl-7 pt-4 font-light marker:text-2xl marker:text-secondary">
             <li>
               {t('driving-a-passenger-car-for-drivingmiles-miles', {
                 drivingMiles: drivingMiles(),

@@ -22,7 +22,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
       <div className="absolute -top-[73px] md:-top-[79px]" id="contact"></div>
       <div className="container grid md:grid-cols-2 md:gap-8">
         <div>
-          <div className="flex flex-col gap-4 text-white">
+          <div className="flex flex-col gap-4 text-lg font-light text-white">
             <PortableText
               value={data.description}
               components={{

@@ -50,7 +50,7 @@ export default function NoteList(data: Partial<Sanity.NoteList>) {
                     components={{
                       block: {
                         normal: ({ children }) => (
-                          <p className="md:text-lg">{children}</p>
+                          <p className="font-light md:text-lg">{children}</p>
                         ),
                       },
                     }}

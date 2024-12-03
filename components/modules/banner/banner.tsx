@@ -22,10 +22,8 @@ export default function Banner(data: Partial<Sanity.Banner>) {
                   {children}
                 </div>
               ),
-              p: ({ children }) => (
-                <div className="font-nunito text-[34px] uppercase leading-[42px]">
-                  {children}
-                </div>
+              normal: ({ children }) => (
+                <p className="text-lg font-light">{children}</p>
               ),
             },
             types: {

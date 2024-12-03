@@ -22,7 +22,7 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
         <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-24">
           <div>
             <div className="relative flex h-32 items-center justify-center md:h-44">
-              <div className="z-10 font-roboto text-3xl font-bold text-white">
+              <div className="z-10 text-3xl font-bold text-white">
                 €{data.earlyPrice}
               </div>
               <Hazelnut className="absolute left-[50%] top-0 w-36 -translate-x-1/2 md:w-48" />
@@ -33,7 +33,7 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
           </div>
           <div>
             <div className="relative flex h-32 items-center justify-center md:h-44">
-              <div className="z-10 font-roboto text-3xl font-bold text-white">
+              <div className="z-10 text-3xl font-bold text-white">
                 €{data.regularPrice}
               </div>
               <Hazelnut

@@ -63,7 +63,7 @@ export default function StoStatus({
       {description && (
         <div
           className={cn(
-            'text-center [&_a]:text-primary [&_a]:underline [&_p]:text-base [&_p]:md:text-lg',
+            'text-center font-light [&_a]:text-primary [&_a]:underline [&_p]:text-base [&_p]:md:text-lg',
           )}
         >
           {description && <PortableText value={description} />}
@@ -87,7 +87,7 @@ export default function StoStatus({
           </div>
         </div>
       </div>
-      <div className="text-center md:text-lg">{note}</div>
+      <div className="text-center font-light md:text-lg">{note}</div>
 
       {!!cta?.length && (
         <div className="flex w-full justify-center gap-8">

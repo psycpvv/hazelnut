@@ -36,7 +36,7 @@ export default function RichText({
         {subtitle && (
           <div
             className={cn(
-              'text-center [&_a]:text-primary [&_a]:underline',
+              'text-center font-light [&_a]:text-primary [&_a]:underline',
               invertColor && 'text-white',
             )}
           >
@@ -60,7 +60,7 @@ export default function RichText({
         {description && (
           <div
             className={cn(
-              'text-center [&_a]:text-primary [&_a]:underline [&_p]:text-lg',
+              'text-center font-light [&_a]:text-primary [&_a]:underline [&_p]:text-lg',
               invertColor && 'text-white',
             )}
           >
