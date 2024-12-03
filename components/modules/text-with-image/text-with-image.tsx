@@ -1,6 +1,9 @@
 import { PortableText, stegaClean } from 'next-sanity'
 
-import { PortableSmallListComponent } from '@/components/atoms/portable-component/portable-component'
+import {
+  PortableSmallListComponent,
+  PortableTitleWithBoldComponent,
+} from '@/components/atoms/portable-component/portable-component'
 import { Typography } from '@/components/atoms/typography'
 import { urlFor } from '@/sanity/utils/image-builder'
 import { cn } from '@/utils/utils'
@@ -34,7 +37,10 @@ export default function TextWithImage({
             textColor={invertColor ? 'white' : 'primary'}
             className=""
           >
-            {title}
+            <PortableText
+              value={title}
+              components={PortableTitleWithBoldComponent}
+            />
           </Typography>
           {description && (
             <div

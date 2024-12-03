@@ -79,7 +79,10 @@
     },
     "sto-status": {
       "reserved-tokens": "RESERVED TOKENS",
-      "available-for-reservation": "AVAILABLE FOR RESERVATION"
+      "available-for-reservation": "AVAILABLE FOR RESERVATION",
+      "treesury-tokens-sold": "TREESURY TOKENS SOLD",
+      "total-issuance": "TOTAL ISSUANCE",
+      "the-success-threshold-of-the-sto": "THE SUCCESS THRESHOLD OF THE (STO)"
     }
   }
 }

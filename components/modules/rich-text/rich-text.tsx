@@ -1,5 +1,6 @@
 import { PortableText } from 'next-sanity'
 
+import { PortableTitleWithBoldComponent } from '@/components/atoms/portable-component/portable-component'
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/utils'
 
@@ -29,7 +30,10 @@ export default function RichText({
             textColor={invertColor ? 'white' : 'primary'}
             className="text-center"
           >
-            {title}
+            <PortableText
+              value={title}
+              components={PortableTitleWithBoldComponent}
+            />
           </Typography>
         )}
 

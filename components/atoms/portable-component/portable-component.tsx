@@ -19,3 +19,12 @@ export const PortableSmallListComponent: Partial<PortableTextReactComponents> =
       ),
     },
   }
+
+export const PortableTitleWithBoldComponent: Partial<PortableTextReactComponents> =
+  {
+    marks: {
+      strong: ({ children }) => (
+        <strong className="font-normal text-secondary">{children}</strong>
+      ),
+    },
+  }

@@ -128,7 +128,7 @@ declare global {
 
     type RichText = {
       invertColor?: boolean
-      title: string
+      title: any
       subtitle: any
       cta?: Button[]
       description: any
@@ -148,7 +148,7 @@ declare global {
       image: Image
       imagePosition?: boolean
       note?: string
-      title: string
+      title: any
       titleVariant:
         | 'default'
         | 'h1'

@@ -16,11 +16,11 @@ export default function Header(header: Sanity.Layout['header']) {
           <Logo className="h-14 md:h-16" />
         </Link>
 
-        <ul className="hidden items-center gap-4 lg:flex xl:gap-6">
+        <ul className="hidden items-center gap-3 lg:flex 2xl:gap-6">
           {header.menu.map(nav => (
             <li
               key={nav._key}
-              className="font-nunito text-sm text-primary xl:text-base"
+              className="font-nunito text-sm text-primary 2xl:text-base"
               onClick={() => setIsOpen(false)}
             >
               <Link href={nav.link} target={nav.newTab ? '_blank' : '_self'}>

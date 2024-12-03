@@ -79,7 +79,10 @@
     },
     "sto-status": {
       "reserved-tokens": "REZERVISANIH TOKENA",
-      "available-for-reservation": "RASPOLOŽIVO ZA REZERVACIJU"
+      "available-for-reservation": "RASPOLOŽIVO ZA REZERVACIJU",
+      "treesury-tokens-sold": "PRODATIH TREESURY TOKENA",
+      "total-issuance": "UKUPNA EMISIJA",
+      "the-success-threshold-of-the-sto": "PRAG USPEŠNOSTI PONUDE (IJP)"
     }
   }
 }

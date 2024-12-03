@@ -23,24 +23,31 @@ export default function StoStatus({
       <div className="w-full md:pb-12">
         <div className="flex justify-between font-nunito text-xs text-white md:px-12">
           <div className="relative mb-3 rounded-full bg-primary px-3.5 py-2">
-            TREESURY TOKENS SOLD
+            {t('treesury-tokens-sold')}
             <div className="absolute -bottom-4 left-4 border-8 border-solid border-white border-t-primary md:left-6"></div>
           </div>
           <div className="relative mb-3 rounded-full bg-primary px-3.5 py-2">
-            TOTAL ISSUANCE
+            {t('total-issuance')}
             <div className="absolute -bottom-4 right-6 border-8 border-solid border-white border-t-primary"></div>
           </div>
         </div>
         <div className="flex flex-col font-nunito text-xs text-white md:px-8 md:text-[15px]">
           <div className="relative flex h-[46px] w-full items-center justify-end rounded-full bg-secondary">
-            <div className="px-4">{totalTokens}</div>
+            <div className="px-4">
+              {Intl.NumberFormat('sr', {
+                style: 'decimal',
+              }).format(totalTokens!)}
+            </div>
             <div
               className="absolute left-0 top-0 flex h-[46px] items-center justify-center rounded-full bg-primary md:pl-4"
               style={{
                 width: (soldTokens! * 100) / totalTokens! + '%',
               }}
             >
-              {soldTokens} <br className="" /> (
+              {Intl.NumberFormat('sr', {
+                style: 'decimal',
+              }).format(soldTokens!)}
+              <br className="" /> (
               {Math.round((soldTokens! * 100) / totalTokens!)}%)
             </div>
             <div
@@ -51,12 +58,18 @@ export default function StoStatus({
             >
               <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 border-[10px] border-solid border-white/0 border-b-primary"></div>
               <div className="absolute left-0.5 top-[56px] mb-3 hidden -translate-x-1/2 text-nowrap rounded-full bg-primary px-3.5 py-2 font-nunito text-xs text-white md:block">
-                THE SUCCESS THRESHOLD OF THE (STO) - 10.000
+                {t('the-success-threshold-of-the-sto')} -{' '}
+                {Intl.NumberFormat('sr', {
+                  style: 'decimal',
+                }).format(successThresholdOfSto!)}
               </div>
             </div>
           </div>
           <div className="mb-3 mt-2.5 text-nowrap rounded-full bg-primary px-3.5 py-2 text-center font-nunito text-xs text-white md:hidden">
-            THE SUCCESS THRESHOLD OF THE (STO) - 10.000
+            {t('the-success-threshold-of-the-sto')} -{' '}
+            {Intl.NumberFormat('sr', {
+              style: 'decimal',
+            }).format(successThresholdOfSto!)}
           </div>
         </div>
       </div>
