@@ -18,7 +18,7 @@ export default function TextWithImage({
   imagePosition,
 }: Partial<Sanity.TextWithImage>) {
   return (
-    <div className={cn('py-24', invertColor && 'bg-primary')}>
+    <div className={cn('py-14 md:py-24', invertColor && 'bg-primary')}>
       <div className="container mx-auto grid items-center justify-center gap-8 md:grid-cols-2">
         {image && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -37,7 +37,7 @@ export default function TextWithImage({
             {title}
           </Typography>
           {description && (
-            <div className={cn('text-xl', invertColor && 'text-white')}>
+            <div className={cn('md:text-xl', invertColor && 'text-white')}>
               <PortableText
                 value={description}
                 components={PortableSmallListComponent}
@@ -46,7 +46,7 @@ export default function TextWithImage({
           )}
           {cta?.length && <Ctas cta={cta} />}
           {note && (
-            <div className={cn('pb-14', invertColor && 'text-white')}>
+            <div className={cn('md:pb-14', invertColor && 'text-white')}>
               {note}
             </div>
           )}

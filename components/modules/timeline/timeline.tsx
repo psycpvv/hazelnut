@@ -1,8 +1,6 @@
-'use client'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import { stegaClean } from 'next-sanity'
-import { useState } from 'react'
 
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/utils'
@@ -10,11 +8,10 @@ import { cn } from '@/utils/utils'
 import Ctas from '../ctas'
 
 export default function Timeline(data: Partial<Sanity.Timeline>) {
-  const [showHand, setShowHand] = useState(true)
   const width = `${100 / (data.plans?.length ?? 1)}%`
   return (
     <>
-      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-20 text-white">
+      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-8 text-white md:py-20">
         <div id="roadmap" className="absolute -top-[73px] md:-top-[79px]"></div>
         <Image
           src="/assets/img/upper-curve.svg"
@@ -28,15 +25,50 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
             <Typography variant="h2">{data.title}</Typography>
             <Typography variant="subtitle1">{data.subtitle}</Typography>
           </div>
-          <div
-            className="w-full overflow-x-auto"
-            onScroll={e => {
-              if (e.currentTarget.scrollLeft > 730 && showHand)
-                setShowHand(false)
-              if (e.currentTarget.scrollLeft < 730 && !showHand)
-                setShowHand(true)
-            }}
-          >
+          <div className="flex flex-col gap-12 px-4 py-16 md:hidden">
+            {data.plans?.map((plan, i) => {
+              const quarter = stegaClean(plan.quarter)
+              const year = stegaClean(plan.year)
+              const currentQuarter = format(new Date(), 'Q')
+              const currentYear = format(new Date(), 'yy')
+              const later =
+                Number(`${currentYear}${currentQuarter}`) <
+                Number(`${year}${quarter}`)
+              const same =
+                `${currentYear}${currentQuarter}` === `${year}${quarter}`
+              return (
+                <div className="" key={i}>
+                  <div className="flex items-center gap-3 text-xl">
+                    <div
+                      className={cn(
+                        'h-5 w-5 rounded-full',
+                        later ? 'bg-white' : 'bg-secondary',
+                        same && 'animate-blink-green',
+                      )}
+                    ></div>
+                    <div className="font-bold">
+                      Q{quarter}/{year}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3 pt-3 text-sm">
+                    {plan.items.map((item, i) => (
+                      <div key={i} className="ml-1 flex items-center gap-3">
+                        <div
+                          className={cn(
+                            'h-2.5 w-2.5 rounded-full',
+                            later ? 'bg-[#8e9ac0]' : 'bg-secondary',
+                            same && 'animate-blink-green',
+                          )}
+                        ></div>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <div className="hidden w-full overflow-x-auto md:block">
             <div className="flex w-full min-w-[1200px] py-10 pl-6">
               {data.plans?.map((plan, i) => {
                 const quarter = stegaClean(plan.quarter)

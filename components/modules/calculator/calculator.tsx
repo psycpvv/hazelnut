@@ -37,7 +37,7 @@ export default function Calculator(data: Partial<Sanity.Calculator>) {
           </div>
         </div>
       </div>
-      <div className="grid gap-8 py-16 md:grid-cols-2">
+      <div className="grid gap-8 py-8 md:grid-cols-2 md:py-16">
         <Chart1 />
         <Chart2 />
       </div>

@@ -16,7 +16,7 @@ export default function RichText({
     <div className={cn(invertColor && 'bg-primary')}>
       <div
         className={cn(
-          'container relative mx-auto flex w-full flex-col gap-6 px-4 py-14',
+          'container relative mx-auto flex w-full flex-col gap-4 px-4 py-14 md:gap-6',
         )}
       >
         <div
@@ -45,7 +45,7 @@ export default function RichText({
               components={{
                 block: {
                   normal: ({ children }) => (
-                    <p className="text-2xl">{children}</p>
+                    <p className="md:text-2xl">{children}</p>
                   ),
                 },
               }}
@@ -53,7 +53,7 @@ export default function RichText({
           </div>
         )}
         {!!cta?.length && (
-          <div className="flex w-full justify-between gap-8 py-8 md:justify-center">
+          <div className="flex w-full justify-center gap-8 py-8">
             <Ctas cta={cta} />
           </div>
         )}

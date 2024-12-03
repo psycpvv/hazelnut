@@ -30,7 +30,7 @@ export default function NoteList(data: Partial<Sanity.NoteList>) {
                 clickable: true,
                 el: '.swiper-note-list-pagination',
               }}
-              navigation
+              navigation={isMd}
               slidesPerView={isMd ? (isLg ? 3 : 2) : 1}
               spaceBetween={28}
               modules={[Pagination, Navigation]}
@@ -39,10 +39,10 @@ export default function NoteList(data: Partial<Sanity.NoteList>) {
               {data.item.map(item => (
                 <SwiperSlide
                   key={item._key}
-                  className="relative !h-unset rounded-md bg-white p-10 pl-12"
+                  className="relative !h-unset rounded-md bg-white p-7 pb-5 pl-12 md:p-10"
                 >
                   <div className="absolute bottom-0 left-0 top-0 w-2 rounded-bl-md rounded-tl-md bg-secondary"></div>
-                  <h4 className="pb-6 font-nunito text-3xl text-primary">
+                  <h4 className="pb-6 font-nunito text-2xl text-primary md:text-3xl">
                     {item.title}
                   </h4>
                   <PortableText
@@ -50,7 +50,7 @@ export default function NoteList(data: Partial<Sanity.NoteList>) {
                     components={{
                       block: {
                         normal: ({ children }) => (
-                          <p className="text-lg">{children}</p>
+                          <p className="md:text-lg">{children}</p>
                         ),
                       },
                     }}
