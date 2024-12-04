@@ -18,7 +18,7 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
       >
         {data.title}
       </Typography>
-      <div className="flex w-full flex-col items-center gap-6">
+      <div className="flex w-full flex-col items-center gap-6 md:pb-8">
         <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-24">
           <div>
             <div className="relative flex h-32 items-center justify-center md:h-44">
@@ -27,9 +27,9 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
               </div>
               <Hazelnut className="absolute left-[50%] top-0 w-36 -translate-x-1/2 md:w-48" />
             </div>
-            <Typography variant="h4" textColor="primary" className="pt-3">
+            <div className="pt-3 font-nunito text-2xl text-primary">
               {t('early-bird-price')}
-            </Typography>
+            </div>
           </div>
           <div>
             <div className="relative flex h-32 items-center justify-center md:h-44">
@@ -41,21 +41,22 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
                 fill="#7C7F33"
               />
             </div>
-            <Typography variant="h4" textColor="primary" className="pt-3">
+            <div className="pt-3 font-nunito text-2xl text-primary">
               {t('regular-price')}
-            </Typography>
+            </div>
           </div>
         </div>
       </div>
-
+      {data.cta?.length && (
+        <div className="w-auto text-center">
+          <Ctas cta={data.cta} />
+        </div>
+      )}
       <div className="flex flex-col gap-4 text-center">
-        {data.cta?.length && <Ctas cta={data.cta} />}
         {data.subtitle && (
           <Typography variant="subtitle2">{data.subtitle}</Typography>
         )}
-        <Typography variant="text" className="md:pt-4">
-          {data.note}
-        </Typography>
+        <Typography variant="text">{data.note}</Typography>
       </div>
     </div>
   )

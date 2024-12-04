@@ -12,7 +12,9 @@ import ScrollToTopButton from '@/components/molecules/scroll-to-top'
 import Footer from '@/components/organisms/footer'
 import Header from '@/components/organisms/header'
 import { routing } from '@/i18n/routing'
+import ToastProvider from '@/providers/toast-provider'
 import { fetchLayoutData } from '@/sanity/services/layout/layout.service'
+import { TRPCReactProvider } from '@/trpc/react'
 import { cn } from '@/utils/utils'
 
 const roboto = Roboto({
@@ -58,13 +60,16 @@ export default async function RootLayout(
       <body
         className={cn(roboto.className, roboto.variable, nunitoSans.variable)}
       >
-        <NextIntlClientProvider messages={messages}>
-          <Header {...layout.header} />
-          <div className="pt-[56px] md:pt-[76px]">{children}</div>
-          <Footer {...layout.footer} />
-          <ScrollToTopButton />
-        </NextIntlClientProvider>
-        {(await draftMode()).isEnabled && <VisualEditing />}
+        <TRPCReactProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Header {...layout.header} />
+            <div className="pt-[56px] md:pt-[76px]">{children}</div>
+            <Footer {...layout.footer} />
+            <ToastProvider />
+            <ScrollToTopButton />
+          </NextIntlClientProvider>
+          {(await draftMode()).isEnabled && <VisualEditing />}
+        </TRPCReactProvider>
       </body>
     </html>
   )

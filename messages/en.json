@@ -1,4 +1,10 @@
 {
+  "Common": {
+    "form": {
+      "required": "You must enter this field.",
+      "email": "You must enter a valid email."
+    }
+  },
   "Footer": {
     "quickLinks": "Quick links",
     "haveMoreQuestions": "Have more questions?",
@@ -40,12 +46,18 @@
     },
     "contact": {
       "i-am": "I am",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "E-mail",
+      "message": "Message",
       "enter-your-first-name": "Enter Your First Name",
       "enter-your-last-name": "Enter Your Last Name",
       "enter-your-email": "Enter Your Email",
       "individual": "Individual",
       "business": "Business",
       "send": "SEND",
+      "sending": "SENDING...",
+      "success": "Message successfully sent",
       "enter-message": "Enter message"
     },
     "calculator": {

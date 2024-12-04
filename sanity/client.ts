@@ -1,16 +1,14 @@
 import { createClient } from 'next-sanity'
 
-import { dataset, dev } from '@/env'
+import { env } from '@/env'
 
 export default createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset,
-  apiVersion: '2024-05-01',
-  useCdn: !dev,
+  projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: env.NEXT_PUBLIC_SANITY_API_VERSION,
+  useCdn: process.env.NODE_ENV !== 'development',
   stega: {
     enabled: false,
-    studioUrl: dev
-      ? 'http://localhost:3335'
-      : process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
+    studioUrl: env.NEXT_PUBLIC_SANITY_STUDIO_URL,
   },
 })

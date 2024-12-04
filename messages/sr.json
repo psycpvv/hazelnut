@@ -1,4 +1,10 @@
 {
+  "Common": {
+    "form": {
+      "email": "Morate uneti validnu email adresu.",
+      "required": "Morate uneti ovo polje."
+    }
+  },
   "Footer": {
     "quickLinks": "Brzi linkovi",
     "haveMoreQuestions": "Imate još pitanja?",
@@ -43,9 +49,15 @@
       "enter-your-first-name": "Unesite vaše ime",
       "enter-your-last-name": "Unesite vaše prezime",
       "enter-your-email": "Unesite vašu email adresu",
+      "firstName": "Ime",
+      "lastName": "Prezime",
+      "email": "Email",
+      "message": "Poruku",
       "individual": "Fizičko lice",
       "business": "Kompanija",
       "send": "POŠALJI",
+      "sending": "SENDING...",
+      "success": "Message successfully sent",
       "enter-message": "Unesite vaše poruku"
     },
     "calculator": {
