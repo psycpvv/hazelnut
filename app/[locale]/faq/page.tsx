@@ -17,13 +17,16 @@ export default async function Page() {
         </div>
       </div>
       <FaqContent list={data.list} />
-      <div className="container px-3 pt-20">
+      <div className="container flex flex-col gap-4 px-3 pt-20">
         <PortableText
           value={data.note}
           components={{
             block: {
               h4: ({ children }) => (
-                <div className="pb-8 text-lg">{children}</div>
+                <div className="text-lg md:pb-8">{children}</div>
+              ),
+              normal: ({ children }) => (
+                <p className="text-sm font-light">{children}</p>
               ),
             },
           }}

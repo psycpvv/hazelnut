@@ -15,7 +15,7 @@ export default function Footer(footer: Sanity.Layout['footer']) {
   return (
     <div className="flex w-full flex-col items-center pt-8 lg:pt-16">
       <div className="container flex flex-col items-center">
-        <div className="grid w-full gap-4 px-6 md:grid-cols-4">
+        <div className="grid w-full gap-4 md:grid-cols-4 md:px-6">
           <div className="flex items-center justify-center md:items-start">
             <Image
               src="/assets/img/treesury-logo.svg"
@@ -97,10 +97,10 @@ export default function Footer(footer: Sanity.Layout['footer']) {
             alt="fondbigbanner"
           />
         </div>
-        <div className="p-5 text-center text-sm/6 font-light text-primary md:w-2/3">
+        <div className="py-5 text-center text-sm/6 font-light text-primary md:w-2/3 md:px-5">
           {t('fundingInfo')}
         </div>
-        <div className="mt-14 flex w-full flex-col justify-center gap-4 border-t px-8 py-5 text-primary lg:flex-row-reverse lg:justify-between">
+        <div className="flex w-full flex-col justify-center gap-4 border-t px-8 py-5 text-primary md:mt-14 lg:flex-row-reverse lg:justify-between">
           <div className="flex justify-center gap-8">
             <Link href="/privacy-policy">{t('privacyPolicy')}</Link>
             <Link href="/disclaimer">{t('disclaimer')}</Link>
