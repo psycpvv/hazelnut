@@ -12,7 +12,7 @@ export default function Banner(data: Partial<Sanity.Banner>) {
         backgroundImage: `url(${urlFor(data.bgimage?.asset!).width(1920).url()})`,
       }}
     >
-      <div className="container relative z-10 px-4 text-white md:px-12 md:py-52 xl:w-1/2">
+      <div className="container relative z-10 flex flex-col gap-4 px-4 text-white md:px-12 md:py-52 xl:w-1/2">
         <PortableText
           value={data.content}
           components={{
