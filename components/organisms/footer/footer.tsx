@@ -1,4 +1,8 @@
-import { faFacebookF, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -11,7 +15,7 @@ export default function Footer(footer: Sanity.Layout['footer']) {
   return (
     <div className="flex w-full flex-col items-center pt-8 lg:pt-16">
       <div className="container flex flex-col items-center">
-        <div className="grid px-6 md:grid-cols-4 md:gap-4">
+        <div className="grid w-full gap-4 px-6 md:grid-cols-4">
           <div className="flex items-center justify-center md:items-start">
             <Image
               src="/assets/img/treesury-logo.svg"
@@ -47,36 +51,49 @@ export default function Footer(footer: Sanity.Layout['footer']) {
             <h3 className="py-5 text-lg font-bold text-primary">
               {t('subscribeToOurNewsletter')}
             </h3>
-            <div className="flex items-center justify-between gap-4 lg:flex-col xl:flex-row">
+            <div className="relative flex items-center justify-between gap-4 lg:flex-col xl:flex-row">
               <input
                 type="text"
-                className="w-full border-b-2 border-primary outline-none"
-                placeholder="Enter Your Email"
+                className="w-full border-b-2 border-primary py-1 outline-none"
+                placeholder={t('enter-your-email')}
               />
-              <button className="w-full rounded-full bg-primary px-3 py-1 text-white">
+              <button className="absolute right-0 top-0 rounded-full bg-primary px-3 py-0.5 text-white">
                 {t('subscribe')}
               </button>
             </div>
-            <div className="text-sm font-light">{t('noSpamWePromise')}</div>
+            <div className="py-2 text-sm font-light">
+              {t('noSpamWePromise')}
+            </div>
             <div className="flex gap-5 py-5">
-              <Link href="https://www.facebook.com/treesuryinc" target="_blank">
-                <IconButton>
-                  <FontAwesomeIcon icon={faFacebookF} size="lg" />
-                </IconButton>
-              </Link>
-              <Link href="https://www.facebook.com/treesuryinc" target="_blank">
+              <a
+                href="https://www.linkedin.com/company/treesury/"
+                target="_blank"
+              >
                 <IconButton>
                   <FontAwesomeIcon icon={faLinkedin} size="lg" />
                 </IconButton>
-              </Link>
+              </a>
+              <a href="https://www.instagram.com/treesury/" target="_blank">
+                <IconButton>
+                  <FontAwesomeIcon icon={faInstagram} size="lg" />
+                </IconButton>
+              </a>
+              <a
+                href="https://www.facebook.com/TreesuryOfficial"
+                target="_blank"
+              >
+                <IconButton>
+                  <FontAwesomeIcon icon={faFacebookF} size="lg" />
+                </IconButton>
+              </a>
             </div>
           </div>
         </div>
-        <div className="px-5">
+        <div className="px-5 md:pt-16">
           <Image
             src="/assets/img/fondbigbanner.png"
-            width={1615}
-            height={197}
+            width={1080}
+            height={132}
             alt="fondbigbanner"
           />
         </div>
@@ -88,7 +105,9 @@ export default function Footer(footer: Sanity.Layout['footer']) {
             <Link href="/privacy-policy">{t('privacyPolicy')}</Link>
             <Link href="/disclaimer">{t('disclaimer')}</Link>
           </div>
-          <div>{t('copyright', { year: new Date().getFullYear() })}</div>
+          <div className="text-center">
+            {t('copyright', { year: new Date().getFullYear() })}
+          </div>
         </div>
       </div>
     </div>

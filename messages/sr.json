@@ -10,7 +10,8 @@
     "privacyPolicy": "Politika privatnosti",
     "termsOfUse": "Uslovi korišćenja",
     "copyright": "Autorska prava © {year}. Sva prava zadržana",
-    "disclaimer": "Odricanje od odgovornosti"
+    "disclaimer": "Odricanje od odgovornosti",
+    "enter-your-email": "Unesite vašu email adresu"
   },
   "Modules": {
     "pricing": {

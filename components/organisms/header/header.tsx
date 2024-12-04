@@ -33,15 +33,18 @@ export default function Header(header: Sanity.Layout['header']) {
             {header.cta?.length && <Ctas cta={header.cta} />}
           </div>
         </ul>
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
-          <Menu />
-        </button>
+        <div className="flex items-center gap-6 lg:hidden">
+          <LanguageButton />
+          <button onClick={() => setIsOpen(!isOpen)}>
+            <Menu />
+          </button>
+        </div>
       </div>
       <div
-        className={cn(
-          'overflow-hidden transition-all duration-500',
-          isOpen ? 'h-[440px]' : 'h-0',
-        )}
+        className={cn('overflow-hidden transition-all duration-500')}
+        style={{
+          height: isOpen ? 78 + 52 * header.menu.length : 0,
+        }}
       >
         <ul className="flex flex-col py-4">
           {header.menu.map(nav => (

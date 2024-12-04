@@ -10,7 +10,8 @@
     "privacyPolicy": "Privacy policy",
     "termsOfUse": "Terms of Use",
     "copyright": "Copyright © {year}. All Rights Reserved",
-    "disclaimer": "Disclaimer"
+    "disclaimer": "Disclaimer",
+    "enter-your-email": "Enter Your Email"
   },
   "Modules": {
     "pricing": {
