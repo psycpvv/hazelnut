@@ -8,6 +8,7 @@ import { useDebouncedCallback } from 'use-debounce'
 
 import useMedia from '@/hooks/useMedia'
 import useCalculatorStore from '@/store/calculatorStore'
+import { formatCurrency } from '@/utils/utils'
 
 export default function CalculatorSlider() {
   const { tokens, setTokens, tokenPrice, setInvestmentAmount } =
@@ -24,7 +25,7 @@ export default function CalculatorSlider() {
 
   function updateHandler(value: number) {
     setTokens(value)
-    setInvestmentAmount((value * tokenPrice).toFixed(2))
+    setInvestmentAmount(formatCurrency(value * tokenPrice))
   }
 
   return (
@@ -51,8 +52,12 @@ export default function CalculatorSlider() {
         density: 2.5,
       }}
       start={0}
-      onSlide={(_render, _handle) => updateHandler(Number(_render[0]))}
-      onUpdate={(_render, _handle) => updateHandler(Number(_render[0]))}
+      onSlide={(_render, _handle) =>
+        updateHandler(Math.ceil(Number(_render[0])))
+      }
+      onUpdate={(_render, _handle) =>
+        updateHandler(Math.ceil(Number(_render[0])))
+      }
       connect
       behaviour="tap"
     />

@@ -101,7 +101,7 @@ const useCalculatorStore = create<CalculatorState>()((set, get) => ({
   heatingText: () => {
     const tokens = get().tokens
     const heating = tokens * 17
-    const heatingYears = Math.trunc(heating / 365)
+    const heatingYears = Math.round(heating / 365)
     return { heating: heatingYears > 0 ? 0 : heating, heatingYears }
   },
   people: () => formatNumber(Math.trunc(get().tokens * 818.18)),
