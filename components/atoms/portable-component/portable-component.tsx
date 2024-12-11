@@ -4,13 +4,16 @@ import { PortableTextReactComponents } from 'next-sanity'
 
 export const PortableSmallListComponent: Partial<PortableTextReactComponents> =
   {
+    block: {
+      normal: ({ children }) => <p className="py-2">{children}</p>,
+    },
     listItem: {
       bullet: ({ children }) => (
-        <div className="flex gap-2.5 items-first-baseline">
+        <div className="flex gap-2.5 py-2 items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
-              width={16}
+              width={24}
               className="text-secondary"
             />
           </div>

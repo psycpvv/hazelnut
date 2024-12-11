@@ -50,7 +50,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
   }
 
   return (
-    <div className="relative flex w-full flex-col items-center bg-primary px-4 py-20">
+    <div className="relative flex w-full flex-col items-center bg-primary py-16 md:pb-[100px] md:pt-[120px]">
       <div className="absolute -top-[73px] md:-top-[79px]" id="contact"></div>
       <div className="container grid md:grid-cols-2 md:gap-8">
         <div>
@@ -60,7 +60,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
               components={{
                 block: {
                   h2: ({ children }) => (
-                    <h2 className="font-nunito text-4xl font-bold leading-[3rem] [&>a]:text-secondary">
+                    <h2 className="font-nunito text-[28px] font-bold leading-[3rem] md:text-4xl [&>a]:text-secondary">
                       {children}
                     </h2>
                   ),
@@ -215,7 +215,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
             <Button
               buttonColor="secondary"
               size="small"
-              className="mt-8 w-full md:w-[145px]"
+              className="mt-12 w-full md:w-[145px]"
               disabled={sendContact.isPending}
             >
               {sendContact.isPending ? t('sending') : t('send')}

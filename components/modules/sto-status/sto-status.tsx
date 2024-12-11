@@ -19,16 +19,16 @@ export default function StoStatus({
 }: Partial<Sanity.StoStatus>) {
   const t = useTranslations('Modules.sto-status')
   return (
-    <div className="container relative mx-auto flex flex-col gap-10 px-4 py-12">
+    <div className="container relative mx-auto flex flex-col gap-10 px-4 py-16">
       <div className="w-full md:pb-12">
         <div className="flex justify-between font-nunito text-xs text-white md:px-12">
-          <div className="relative mb-3 rounded-full bg-primary px-3.5 py-2">
+          <div className="relative mb-2.5 h-[30px] rounded-full bg-primary px-3.5 py-2 text-[10px]">
             {t('treesury-tokens-sold')}
-            <div className="absolute -bottom-4 left-4 border-8 border-solid border-white border-t-primary md:left-6"></div>
+            <div className="absolute -bottom-3.5 left-4 border-8 border-solid border-transparent border-t-primary"></div>
           </div>
-          <div className="relative mb-3 rounded-full bg-primary px-3.5 py-2">
+          <div className="relative mb-2.5 h-[30px] rounded-full bg-primary px-3.5 py-2 text-[10px]">
             {t('total-issuance')}
-            <div className="absolute -bottom-4 right-6 border-8 border-solid border-white border-t-primary"></div>
+            <div className="absolute -bottom-3.5 right-4 border-8 border-solid border-transparent border-t-primary"></div>
           </div>
         </div>
         <div className="flex flex-col font-nunito text-xs text-white md:px-8 md:text-[15px]">
@@ -39,16 +39,15 @@ export default function StoStatus({
               }).format(totalTokens!)}
             </div>
             <div
-              className="absolute left-0 top-0 flex h-[46px] items-center justify-center rounded-full bg-primary md:pl-4"
+              className="absolute left-0 top-0 flex h-[46px] items-center rounded-full bg-primary pl-3 max-md:!min-w-[18%] md:pl-4"
               style={{
                 width: (soldTokens! * 100) / totalTokens! + '%',
               }}
             >
               {Intl.NumberFormat('sr', {
                 style: 'decimal',
-              }).format(soldTokens!)}
-              <br className="" /> (
-              {Math.round((soldTokens! * 100) / totalTokens!)}%)
+              }).format(soldTokens!)}{' '}
+              ({Math.round((soldTokens! * 100) / totalTokens!)}%)
             </div>
             <div
               className="absolute top-0 h-full w-1 -translate-x-1/2 bg-primary"
@@ -56,8 +55,8 @@ export default function StoStatus({
                 left: (successThresholdOfSto! * 100) / totalTokens! + '%',
               }}
             >
-              <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 border-[10px] border-solid border-white/0 border-b-primary"></div>
-              <div className="absolute left-0.5 top-[56px] mb-3 hidden -translate-x-1/2 text-nowrap rounded-full bg-primary px-3.5 py-2 font-nunito text-xs text-white md:block">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 border-8 border-solid border-transparent/0 border-b-primary"></div>
+              <div className="absolute left-0.5 top-[56px] mb-3 hidden h-[30px] -translate-x-1/2 text-nowrap rounded-full bg-primary px-3.5 py-2 font-nunito text-[10px] text-xs text-white md:block">
                 {t('the-success-threshold-of-the-sto')} -{' '}
                 {Intl.NumberFormat('sr', {
                   style: 'decimal',
@@ -85,7 +84,7 @@ export default function StoStatus({
       <div className="mx-auto grid w-2/3 grid-cols-1 justify-center gap-8 font-nunito text-primary md:grid-cols-2">
         <div className="text-center">
           <div className="text-nowrap text-2xl">{t('reserved-tokens')}:</div>
-          <div className="pt-4 text-4xl">
+          <div className="pt-4 text-[40px]">
             {Intl.NumberFormat('sr', {
               style: 'decimal',
             }).format(reservedTokens!)}
@@ -93,7 +92,7 @@ export default function StoStatus({
         </div>
         <div className="text-center">
           <div className="text-2xl">{t('available-for-reservation')}:</div>
-          <div className="pt-4 text-4xl">
+          <div className="pt-4 text-[40px]">
             {Intl.NumberFormat('sr', {
               style: 'decimal',
             }).format(availableTokens!)}

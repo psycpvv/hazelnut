@@ -24,7 +24,9 @@ export default function TeamItem({ data }: { data: Sanity.Team['team'][0] }) {
           </Link>
         </div>
         <div className="text-lg">{data.name}</div>
-        <div className="mt-2.5 text-[#777]">{data.role}</div>
+        <div className="mx-auto mt-2.5 max-w-[150px] text-[#777]">
+          {data.role}
+        </div>
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import { format } from 'date-fns'
 import Image from 'next/image'
 import { stegaClean } from 'next-sanity'
 
+import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/utils'
 
@@ -11,7 +12,7 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
   const width = `${100 / (data.plans?.length ?? 1)}%`
   return (
     <>
-      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-8 text-white md:py-20">
+      <div className="relative flex w-full flex-col items-center justify-center bg-primary py-12 text-white md:pb-16 md:pt-24">
         <div id="roadmap" className="absolute -top-[73px] md:-top-[79px]"></div>
         <Image
           src="/assets/img/upper-curve.svg"
@@ -69,7 +70,7 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
             })}
           </div>
           <div className="hidden w-full overflow-x-auto md:block">
-            <div className="flex w-full min-w-[1200px] py-10 pl-6">
+            <div className="flex w-full min-w-[1200px] py-16 pl-6">
               {data.plans?.map((plan, i) => {
                 const quarter = stegaClean(plan.quarter)
                 const year = stegaClean(plan.year)
@@ -137,11 +138,7 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
               <Ctas cta={data.cta} />
             </div>
           )}
-          {data.note && (
-            <Typography variant="subtitle2" className="pt-8 text-center">
-              {data.note}
-            </Typography>
-          )}
+          {data.note && <CtaNote note={data.note} className="text-white" />}
         </div>
       </div>
       <Image

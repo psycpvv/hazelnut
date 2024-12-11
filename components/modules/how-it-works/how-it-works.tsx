@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { useTranslations } from 'next-intl'
 import { stegaClean } from 'next-sanity'
 
+import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 
 import Ctas from '../ctas'
@@ -33,14 +34,10 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
               <div className="h-[240px] w-[200px]">
                 <Player autoplay loop src={stegaClean(step.lottieFile)} />
               </div>
-              <Typography
-                variant="h3"
-                textColor="primary"
-                className="text-center"
-              >
+              <h3 className="text-center font-nunito text-xl text-primary md:text-2xl">
                 {t('step', { step: key + 1 })}
-                <div className="text-xl md:text-2xl">{step.title}</div>
-              </Typography>
+                <div className="">{step.title}</div>
+              </h3>
               <Typography variant="subtitle1" className="px-6 text-center">
                 {step.subtitle}
               </Typography>
@@ -53,11 +50,7 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
           <Ctas cta={data.cta} />
         </div>
       )}
-      {data.note && (
-        <Typography variant="subtitle2" className="text-center">
-          {data.note}
-        </Typography>
-      )}
+      {data.note && <CtaNote note={data.note} />}
     </div>
   )
 }

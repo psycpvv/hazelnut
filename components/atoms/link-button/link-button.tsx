@@ -19,9 +19,9 @@ const linkButtonVariants = cva(
       },
       size: {
         default:
-          'px-5 xl:px-6 rounded-full text-sm/5 xl:text-base min-w-24 sm:min-w-40 h-[50px] xl:h-[60px]',
+          'px-5 xl:px-6 rounded-full text-sm/5 xl:text-base min-w-32 sm:min-w-40 h-[50px] xl:h-[60px]',
         small:
-          'px-5 xl:px-6 rounded-full text-sm/5 xl:text-base min-w-24 h-[50px]',
+          'px-5 xl:px-6 rounded-full text-sm/5 xl:text-base min-w-32 sm:min-w-[120px] h-[50px]',
       },
     },
     defaultVariants: {

@@ -24,13 +24,13 @@ export default function CalcInfo() {
   } = useCalculatorStore(state => state)
   const t = useTranslations('Modules.calculator')
   return (
-    <div className="w-full md:w-1/3">
+    <>
       <Image
         src={`/assets/img/calculator/${calcImageSrc()}`}
         width={1156}
         height={68}
         alt="Calculater Image"
-        className="w-full"
+        className="-mt-[50px] w-full"
       />
       <div className="flex items-center justify-center py-6 md:hidden">
         <button
@@ -41,11 +41,11 @@ export default function CalcInfo() {
         </button>
       </div>
       <div className="hidden md:block">
-        <div className="mt-2">
+        <div className="mt-8">
           <p className="font-bold">
             {t('you-are-offsetting-carbon-emissions-equivalent-to')}:
           </p>
-          <ul className="flex list-disc flex-col pl-7 pt-4 font-light marker:text-2xl marker:text-secondary">
+          <ul className="flex list-disc flex-col pl-7 pt-2 font-light marker:text-2xl marker:text-secondary">
             <li>
               {t('driving-a-passenger-car-for-drivingmiles-miles', {
                 drivingMiles: drivingMiles(),
@@ -220,6 +220,6 @@ export default function CalcInfo() {
           </div>
         </Dialog>
       </Transition>
-    </div>
+    </>
   )
 }

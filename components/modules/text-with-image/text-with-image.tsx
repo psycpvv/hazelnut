@@ -1,5 +1,6 @@
 import { PortableText, stegaClean } from 'next-sanity'
 
+import CtaNote from '@/components/atoms/cta-note'
 import {
   PortableSmallListComponent,
   PortableTitleWithBoldComponent,
@@ -31,7 +32,7 @@ export default function TextWithImage({
             className={cn(imagePosition && 'order-last')}
           />
         )}
-        <div className="flex flex-col gap-8 px-4">
+        <div className="flex flex-col items-center gap-2 md:items-start md:gap-8 md:px-4">
           <Typography
             variant={stegaClean(titleVariant) ?? 'h2'}
             textColor={invertColor ? 'white' : 'primary'}
@@ -45,7 +46,7 @@ export default function TextWithImage({
           {description && (
             <div
               className={cn(
-                'font-light md:text-xl',
+                'font-light md:text-xl 2xl:text-2xl',
                 invertColor && 'text-white',
               )}
             >
@@ -55,11 +56,19 @@ export default function TextWithImage({
               />
             </div>
           )}
-          {cta?.length && <Ctas cta={cta} />}
-          {note && (
-            <div className={cn('md:pb-14', invertColor && 'text-white')}>
-              {note}
+          {cta?.length && (
+            <div className="py-8 md:py-0">
+              <Ctas cta={cta} />
             </div>
+          )}
+          {note && (
+            <CtaNote
+              note={note}
+              className={cn(
+                'pt-0 text-left md:pb-14',
+                invertColor && 'text-white',
+              )}
+            />
           )}
         </div>
       </div>

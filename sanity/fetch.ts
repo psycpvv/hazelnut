@@ -22,7 +22,7 @@ export async function fetchSanity<T = any>(
     params,
     preview
       ? {
-          stega: true,
+          // stega: true,
           perspective: 'previewDrafts',
           useCdn: false,
           token: process.env.NEXT_PUBLIC_SANITY_TOKEN,

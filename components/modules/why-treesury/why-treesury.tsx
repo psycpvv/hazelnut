@@ -31,11 +31,13 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
 
   return (
     <div className="container mx-auto py-14">
-      <div className="flex flex-col gap-4 px-4 pb-12 text-center">
+      <div className="flex flex-col items-center justify-center gap-4 pb-20 text-center md:px-4">
         <Typography variant="h2" textColor="primary">
           {data.title}
         </Typography>
-        <Typography variant="subtitle1">{data.subtitle} </Typography>
+        <Typography variant="subtitle1" className="md:max-w-[70%]">
+          {data.subtitle}
+        </Typography>
       </div>
       <div className="flex" onMouseLeave={() => updateCell(0, 0)}>
         <div className="w-1/3 pl-4 text-[11px] shadow-why-tree md:shadow-none lg:w-1/6">
@@ -57,7 +59,7 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
           ].map((asset, key) => (
             <div
               key={key}
-              className="flex h-16 items-center border-t font-nunito"
+              className="flex h-[60px] items-center border-t font-nunito"
               onMouseEnter={() => updateCell(0, key + 1)}
             >
               {asset}
@@ -151,7 +153,7 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
                         <div
                           key={k}
                           className={cn(
-                            'flex h-16 flex-col items-center justify-center border-b',
+                            'flex h-[60px] flex-col items-center justify-center border-b',
                             col === k + 1 && 'bg-[#f3f3f3]',
                           )}
                           onMouseEnter={() =>
@@ -178,7 +180,7 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
                       ))}
                       <div
                         onMouseEnter={() => updateCell(_key * 2 + __key, 8)}
-                        className="flex h-16 flex-col items-center justify-center"
+                        className="flex h-[60px] flex-col items-center justify-center"
                       >
                         <div
                           className={cn(
@@ -199,8 +201,8 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
           </Swiper>
         </div>
       </div>
-      <div className="swiper-why-treesury-pagination my-7 flex justify-center gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
-      <Typography variant="text" className="p-4 pt-12">
+      <div className="swiper-why-treesury-pagination my-7 flex justify-center md:gap-2 [&>.swiper-pagination-bullet-active]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
+      <Typography variant="text" className="p-4 px-0 md:pt-12">
         <PortableText value={data.description} />
       </Typography>
     </div>

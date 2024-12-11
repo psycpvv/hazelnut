@@ -1,4 +1,5 @@
 'use client'
+import useMedia from '@/hooks/useMedia'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -15,6 +16,7 @@ const ScrollToTopContainerVariants: Variants = {
 
 export default function ScrollToTopButton() {
   const { scrollYProgress } = useScroll()
+  const { isLg } = useMedia()
   const controls = useAnimationControls()
   function scrollToTop() {
     if (typeof window === 'undefined') return
@@ -22,7 +24,7 @@ export default function ScrollToTopButton() {
   }
   useEffect(() => {
     return scrollYProgress.on('change', latestValue => {
-      if (latestValue > 0.1) {
+      if (latestValue > 0.1 && isLg) {
         controls.start('show')
       } else {
         controls.start('hide')

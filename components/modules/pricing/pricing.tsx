@@ -10,7 +10,7 @@ import Ctas from '../ctas'
 export default function Pricing(data: Partial<Sanity.Pricing>) {
   const t = useTranslations('Modules.pricing')
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center gap-8 px-3 py-8">
+    <div className="container mx-auto flex flex-col items-center justify-center gap-8 px-3 py-12">
       <Typography
         variant="h2"
         textColor="primary"
@@ -18,11 +18,11 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
       >
         {data.title}
       </Typography>
-      <div className="flex w-full flex-col items-center gap-6 md:pb-8">
+      <div className="flex w-full flex-col items-center gap-6 pb-8">
         <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-24">
           <div>
             <div className="relative flex h-32 items-center justify-center md:h-44">
-              <div className="z-10 text-3xl font-bold text-white">
+              <div className="z-10 text-[40px] font-bold text-white">
                 €{data.earlyPrice}
               </div>
               <Hazelnut className="absolute left-[50%] top-0 w-36 -translate-x-1/2 md:w-48" />
@@ -33,7 +33,7 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
           </div>
           <div>
             <div className="relative flex h-32 items-center justify-center md:h-44">
-              <div className="z-10 text-3xl font-bold text-white">
+              <div className="z-10 text-[40px] font-bold text-white">
                 €{data.regularPrice}
               </div>
               <Hazelnut
@@ -52,11 +52,13 @@ export default function Pricing(data: Partial<Sanity.Pricing>) {
           <Ctas cta={data.cta} />
         </div>
       )}
-      <div className="flex flex-col gap-4 text-center">
+      <div className="flex flex-col gap-4 text-center md:w-3/4">
         {data.subtitle && (
           <Typography variant="subtitle2">{data.subtitle}</Typography>
         )}
-        <Typography variant="text">{data.note}</Typography>
+        <Typography variant="text" className="text-left">
+          {data.note}
+        </Typography>
       </div>
     </div>
   )

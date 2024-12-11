@@ -12,14 +12,16 @@ import useMedia from '@/hooks/useMedia'
 export default function Team(data: Partial<Sanity.Team>) {
   const { isMd, isLg, isXl } = useMedia()
   return (
-    <div className="flex w-full flex-col items-center bg-primary px-4 py-20">
+    <div className="flex w-full flex-col items-center bg-primary py-20">
       <div className="container">
-        <div className="flex flex-col gap-4 text-center text-white">
+        <div className="flex flex-col items-center gap-4 text-center text-white">
           <Typography variant="h2">{data.title}</Typography>
-          <Typography variant="subtitle1">{data.subtitle}</Typography>
+          <Typography variant="subtitle1" className="max-w-[800px]">
+            {data.subtitle}
+          </Typography>
         </div>
         {data.team?.length && (
-          <div className="py-12">
+          <div className="pb-8 pt-12 md:pb-3">
             <Swiper
               pagination={{
                 clickable: true,
@@ -37,7 +39,7 @@ export default function Team(data: Partial<Sanity.Team>) {
             </Swiper>
           </div>
         )}
-        <div className="swiper-teams-pagination flex justify-center gap-2 [&>.swiper-pagination-bullet]:!bg-white [&>span]:!h-3 [&>span]:!w-3"></div>
+        <div className="swiper-teams-pagination flex justify-center md:gap-2 [&>.swiper-pagination-bullet]:!bg-white [&>span]:!h-3 [&>span]:!w-3"></div>
       </div>
     </div>
   )

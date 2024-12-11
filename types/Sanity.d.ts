@@ -127,6 +127,8 @@ declare global {
     }
 
     type RichText = {
+      titleWidth?: number
+      titleSize?: number
       invertColor?: boolean
       title: any
       subtitle: any

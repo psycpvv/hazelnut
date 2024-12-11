@@ -10,7 +10,7 @@ import { urlFor } from '@/sanity/utils/image-builder'
 
 export default function Partners(data: Partial<Sanity.Partners>) {
   return (
-    <div className="mx-auto px-4 py-14">
+    <div className="mx-auto px-4 py-16 md:py-24">
       <div className="flex flex-col gap-4 px-4 pb-12">
         <Typography variant="h2" textColor="primary" className="text-center">
           {data.title}
@@ -69,7 +69,7 @@ export default function Partners(data: Partial<Sanity.Partners>) {
           </Swiper>
         </div>
       )}
-      <div className="swiper-partners-pagination mt-6 flex justify-center gap-2 md:hidden [&>.swiper-pagination-bullet]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
+      <div className="swiper-partners-pagination mt-6 flex justify-center md:gap-2 md:hidden [&>.swiper-pagination-bullet]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 import Card from '@/components/molecules/card'
 
@@ -14,7 +15,7 @@ export default function TextWithCards({
 }: Partial<Sanity.TextWithCards>) {
   return (
     <>
-      <div className="relative flex w-full flex-col items-center justify-center bg-primary px-4 py-12">
+      <div className="relative flex w-full flex-col items-center justify-center bg-primary py-12">
         <Image
           src="/assets/img/upper-curve.svg"
           width={1920}
@@ -22,7 +23,7 @@ export default function TextWithCards({
           alt="upper-curve"
           className="absolute left-0 top-0"
         />
-        <div className="container flex flex-col items-center lg:pt-6">
+        <div className="container flex flex-col items-center lg:py-6">
           <Typography
             variant="h2"
             textColor="white"
@@ -32,7 +33,7 @@ export default function TextWithCards({
           </Typography>
           <Typography
             variant="subtitle1"
-            className="pb-14 text-center"
+            className="pb-[54px] text-center"
             textColor="white"
           >
             {subtitle}
@@ -51,15 +52,7 @@ export default function TextWithCards({
               <Ctas cta={cta} />
             </div>
           )}
-          {note && (
-            <Typography
-              variant="subtitle2"
-              className="pt-6 text-center"
-              textColor="white"
-            >
-              {note}
-            </Typography>
-          )}
+          {note && <CtaNote note={note} className="text-white" />}
         </div>
       </div>
       <Image
