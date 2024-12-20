@@ -11,7 +11,7 @@ export default function TeamItem({ data }: { data: Sanity.Team['team'][0] }) {
       <img
         src={urlFor(data.avatar).width(640).url()}
         alt="upper-curve"
-        className="h-[450px] w-full rounded-2xl object-cover"
+        className="h-[450px] w-full rounded-2xl object-cover sm:h-[300px]"
       />
       <div className="relative z-10 mx-auto -mt-16 w-[90%] rounded-2xl bg-white p-5 pt-10 text-center">
         <div className="absolute -top-6 left-1/2 flex h-[50px] w-[50px] -translate-x-1/2 items-center justify-center rounded-full bg-white">

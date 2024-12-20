@@ -10,9 +10,9 @@ import { Typography } from '@/components/atoms/typography'
 import useMedia from '@/hooks/useMedia'
 
 export default function Team(data: Partial<Sanity.Team>) {
-  const { isMd, isLg, isXl } = useMedia()
+  const { isMd, isLg, isXl, isSm } = useMedia()
   return (
-    <div className="flex w-full flex-col items-center bg-primary py-20">
+    <div className="flex w-full flex-col items-center bg-primary px-4 py-20">
       <div className="container">
         <div className="flex flex-col items-center gap-4 text-center text-white">
           <Typography variant="h2">{data.title}</Typography>
@@ -27,7 +27,9 @@ export default function Team(data: Partial<Sanity.Team>) {
                 clickable: true,
                 el: '.swiper-teams-pagination',
               }}
-              slidesPerView={isMd ? (isLg ? (isXl ? 5 : 3) : 2) : 1}
+              slidesPerView={
+                isSm ? (isMd ? (isLg ? (isXl ? 5 : 4) : 3) : 2) : 1
+              }
               spaceBetween={20}
               modules={[Pagination]}
             >
