@@ -30,11 +30,6 @@ declare global {
       modules?: Module[]
     }
 
-    type Page = PageBase & {
-      readonly _type: 'page'
-      modules?: Module[]
-    }
-
     type FaqPage = {
       _id: string
       title: string
