@@ -57,7 +57,7 @@ export default function FaqContent({ list }: { list: Sanity.FaqPage['list'] }) {
             ))}
           </div>
         </div>
-      </div>{' '}
+      </div>
       <div className="container px-3">
         <div className="faq-style-wrapper">
           {list.map((item, key) => (

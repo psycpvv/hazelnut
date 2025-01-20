@@ -69,7 +69,7 @@ export default function Partners(data: Partial<Sanity.Partners>) {
           </Swiper>
         </div>
       )}
-      <div className="swiper-partners-pagination mt-6 flex justify-center md:gap-2 md:hidden [&>.swiper-pagination-bullet]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
+      <div className="swiper-partners-pagination mt-6 flex justify-center md:hidden md:gap-2 [&>.swiper-pagination-bullet]:!bg-primary [&>span]:!h-3 [&>span]:!w-3"></div>
     </div>
   )
 }
