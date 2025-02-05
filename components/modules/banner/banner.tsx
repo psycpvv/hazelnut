@@ -9,7 +9,7 @@ export default function Banner(data: Partial<Sanity.Banner>) {
     <div
       className="flex h-[calc(100vh-56px)] flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[80vh]"
       style={{
-        backgroundImage: `url(${urlFor(data.bgimage?.asset!).width(1920).url()})`,
+        backgroundImage: `url(${urlFor(data.bgimage?.asset!).width(1366).url()})`,
       }}
     >
       <div className="container max-w-[1620px]">

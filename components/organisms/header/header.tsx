@@ -12,7 +12,7 @@ export default function Header(header: Sanity.Layout['header']) {
   return (
     <div className="fixed z-50 flex w-full flex-col bg-white px-4 py-1.5 text-sm shadow-lg md:px-8">
       <div className="flex justify-between">
-        <Link href="/">
+        <Link href="/" aria-label="Home">
           <Logo className="h-14 md:h-16" />
         </Link>
 
@@ -35,7 +35,7 @@ export default function Header(header: Sanity.Layout['header']) {
         </ul>
         <div className="flex items-center gap-6 lg:hidden">
           <LanguageButton />
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu">
             <Menu />
           </button>
         </div>

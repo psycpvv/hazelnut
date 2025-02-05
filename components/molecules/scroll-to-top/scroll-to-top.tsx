@@ -1,5 +1,4 @@
 'use client'
-import useMedia from '@/hooks/useMedia'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -9,6 +8,8 @@ import {
   Variants,
 } from 'framer-motion'
 import { useEffect } from 'react'
+
+import useMedia from '@/hooks/useMedia'
 const ScrollToTopContainerVariants: Variants = {
   hide: { opacity: 0, y: 100 },
   show: { opacity: 1, y: 0 },
@@ -34,12 +35,12 @@ export default function ScrollToTopButton() {
 
   return (
     <motion.button
-      // @ts-ignore
       className="fixed bottom-[3%] right-0 h-11 w-10 rounded-md bg-secondary lg:right-[2%]"
       variants={ScrollToTopContainerVariants}
       initial="hide"
       animate={controls}
       onClick={scrollToTop}
+      aria-label="Scroll to top"
     >
       <FontAwesomeIcon icon={faArrowUp} width={25} className="text-white" />
     </motion.button>

@@ -1,5 +1,7 @@
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { getImageDimensions } from '@sanity/asset-utils'
+import { Image } from 'next-sanity/image'
 
 import { Typography } from '@/components/atoms/typography'
 import { urlFor } from '@/sanity/utils/image-builder'
@@ -29,12 +31,15 @@ export default function ItemsWithImage(data: Partial<Sanity.ItemsWithImage>) {
           </div>
         )}
       </div>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={urlFor(data.image?.asset!).width(752).url()}
-        alt="bush only new"
-        className="order-first pb-10 md:order-none"
-      />
+      {data.image && (
+        <Image
+          src={urlFor(data.image).url()}
+          width={644}
+          height={644 / getImageDimensions(data.image).aspectRatio}
+          alt="bush only new"
+          className="order-first pb-10 md:order-none"
+        />
+      )}
     </div>
   )
 }

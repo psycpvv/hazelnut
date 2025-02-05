@@ -36,6 +36,7 @@ export default function CalculatorInputs() {
           }}
           type="text"
           className="w-full rounded-lg border border-solid border-primary px-4 py-1 text-center font-nunito text-2xl/9 md:py-1.5"
+          aria-labelledby="Tokens"
         />
         <p className="text-sm font-light">
           {t('enter-your-desired-number-of-treesury-trees')}
@@ -53,6 +54,7 @@ export default function CalculatorInputs() {
             }}
             type="text"
             className="w-full rounded-lg border border-solid border-primary px-4 py-1 text-center font-nunito md:py-1.5"
+            aria-labelledby="Investment Amount"
           />
           {investmentAmountOnChangeHandler.isPending() && (
             <div className="absolute right-3.5 top-2 flex justify-center">

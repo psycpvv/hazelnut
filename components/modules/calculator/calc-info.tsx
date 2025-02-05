@@ -27,8 +27,8 @@ export default function CalcInfo() {
     <>
       <Image
         src={`/assets/img/calculator/${calcImageSrc()}`}
-        width={1156}
-        height={68}
+        width={578}
+        height={34}
         alt="Calculater Image"
         className="-mt-[50px] w-full"
       />

@@ -10,6 +10,8 @@ import { useTranslations } from 'next-intl'
 import { IconButton } from '@/components/atoms/icon-button'
 import { Link } from '@/i18n/routing'
 
+import fondbigbanner from './fondbigbanner.png'
+
 export default function Footer(footer: Sanity.Layout['footer']) {
   const t = useTranslations('Footer')
   return (
@@ -69,12 +71,12 @@ export default function Footer(footer: Sanity.Layout['footer']) {
                 href="https://www.linkedin.com/company/treesury/"
                 target="_blank"
               >
-                <IconButton size="small">
+                <IconButton size="small" aria-label="LinkedIn">
                   <FontAwesomeIcon icon={faLinkedin} size="lg" />
                 </IconButton>
               </a>
               <a href="https://www.instagram.com/treesury/" target="_blank">
-                <IconButton size="small">
+                <IconButton size="small" aria-label="Instagram">
                   <FontAwesomeIcon icon={faInstagram} size="lg" />
                 </IconButton>
               </a>
@@ -82,7 +84,7 @@ export default function Footer(footer: Sanity.Layout['footer']) {
                 href="https://www.facebook.com/TreesuryOfficial"
                 target="_blank"
               >
-                <IconButton size="small">
+                <IconButton size="small" aria-label="Facebook">
                   <FontAwesomeIcon icon={faFacebookF} size="lg" />
                 </IconButton>
               </a>
@@ -90,14 +92,9 @@ export default function Footer(footer: Sanity.Layout['footer']) {
           </div>
         </div>
         <div className="px-5 md:pt-16">
-          <Image
-            src="/assets/img/fondbigbanner.png"
-            width={1080}
-            height={132}
-            alt="fondbigbanner"
-          />
+          <Image src={fondbigbanner} width={1080} alt="fondbigbanner" />
         </div>
-        <div className="py-5 md:text-center text-sm/6 font-light text-primary md:w-2/3 md:px-5">
+        <div className="py-5 text-sm/6 font-light text-primary md:w-2/3 md:px-5 md:text-center">
           {t('fundingInfo')}
         </div>
         <div className="flex w-full flex-col justify-center gap-6 border-t px-8 py-5 text-sm text-primary md:mt-14 lg:flex-row-reverse lg:justify-between">

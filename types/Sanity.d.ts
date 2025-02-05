@@ -142,7 +142,7 @@ declare global {
 
     type TextWithImage = {
       invertColor?: boolean
-      image: Image
+      image: SanityImageSource
       imagePosition?: boolean
       note?: string
       title: any
@@ -200,7 +200,7 @@ declare global {
 
     type Partner = {
       url: string
-      image: Image
+      image: SanityImageSource
     }
 
     type NoteList = {
@@ -219,7 +219,7 @@ declare global {
       title: string
       subtitle: string
       team: {
-        avatar: Image
+        avatar: SanityImageSource
         name: string
         role: string
         linkedin: string
@@ -234,7 +234,7 @@ declare global {
     }
 
     type ItemsWithImage = {
-      image: Image
+      image: SanityImageSource
       title: string
       items: string[]
     }

@@ -2,6 +2,8 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import { getImageDimensions } from '@sanity/asset-utils'
+import { Image } from 'next-sanity/image'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -24,9 +26,10 @@ export default function Partners(data: Partial<Sanity.Partners>) {
               href={partner.url}
               className="transition-opacity duration-300 hover:opacity-60"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={urlFor(partner.image).height(200).url()}
+              <Image
+                src={urlFor(partner.image).url()}
+                height={200}
+                width={200 * getImageDimensions(partner.image).aspectRatio}
                 alt="Companies"
                 className="h-20 max-h-20 w-auto max-w-52 object-contain"
               />

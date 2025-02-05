@@ -18,7 +18,11 @@ export default function LanguageButton() {
     })
   }
   return (
-    <button className="current_lang-btn horizontalAnim" onClick={toggleLocale}>
+    <button
+      className="current_lang-btn horizontalAnim"
+      onClick={toggleLocale}
+      aria-label="Change language"
+    >
       <span className="current_lang">
         <Image
           src={`/assets/img/${revertedLocale}.svg`}

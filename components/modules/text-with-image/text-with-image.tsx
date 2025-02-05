@@ -1,4 +1,6 @@
+import { getImageDimensions } from '@sanity/asset-utils'
 import { PortableText, stegaClean } from 'next-sanity'
+import { Image } from 'next-sanity/image'
 
 import CtaNote from '@/components/atoms/cta-note'
 import {
@@ -25,10 +27,11 @@ export default function TextWithImage({
     <div className={cn('py-14 md:py-24', invertColor && 'bg-primary')}>
       <div className="container mx-auto grid items-center justify-center gap-8 md:grid-cols-2">
         {image && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={urlFor(image).url()}
             alt="bush only new"
+            width={644}
+            height={644 / getImageDimensions(image).aspectRatio}
             className={cn(imagePosition && 'order-last')}
           />
         )}

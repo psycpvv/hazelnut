@@ -71,21 +71,33 @@ export default function Contact(data: Partial<Sanity.Contact>) {
           <div className="flex gap-5 py-5">
             {data.linkedin && (
               <Link href={data.linkedin} target="_blank">
-                <IconButton buttonColor="secondary" size="small">
+                <IconButton
+                  buttonColor="secondary"
+                  size="small"
+                  aria-label="LinkedIn"
+                >
                   <FontAwesomeIcon icon={faLinkedin} size="lg" />
                 </IconButton>
               </Link>
             )}
             {data.instagram && (
               <Link href={data.instagram} target="_blank">
-                <IconButton buttonColor="secondary" size="small">
+                <IconButton
+                  buttonColor="secondary"
+                  size="small"
+                  aria-label="Instagram"
+                >
                   <FontAwesomeIcon icon={faInstagram} size="lg" />
                 </IconButton>
               </Link>
             )}
             {data.facebook && (
               <Link href={data.facebook} target="_blank">
-                <IconButton buttonColor="secondary" size="small">
+                <IconButton
+                  buttonColor="secondary"
+                  size="small"
+                  aria-label="Facebook"
+                >
                   <FontAwesomeIcon icon={faFacebookF} size="lg" />
                 </IconButton>
               </Link>
@@ -135,6 +147,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
                         type="radio"
                         value={t('individual')}
                         className="border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity before:content-empty checked:border-white checked:before:bg-white hover:before:opacity-10"
+                        aria-labelledby="Individual"
                         {...register('type')}
                       />
                       <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 opacity-0 transition-opacity peer-checked:opacity-100">
@@ -170,6 +183,7 @@ export default function Contact(data: Partial<Sanity.Contact>) {
                         className="border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity before:content-empty checked:border-white checked:before:bg-white hover:before:opacity-10"
                         id="contact-form-business"
                         value={t('business')}
+                        aria-labelledby="Business"
                         {...register('type')}
                       />
                       <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 opacity-0 transition-opacity peer-checked:opacity-100">
