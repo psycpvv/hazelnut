@@ -104,7 +104,7 @@ declare global {
       title: string
       subtitle: string
       cards: {
-        logo: Image
+        logo: SanityImageSource
         title: string
         description: any
         link: string
