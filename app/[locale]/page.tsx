@@ -12,9 +12,7 @@ import { LocaleProps } from '@/types'
 // }
 
 export default async function Page(props: LocaleProps) {
-  const params = await props.params
-  const { locale } = params
-
+  const { locale } = await props.params
   const page = await fetchHomeData(locale)
   return <Modules modules={page?.modules} />
 }
