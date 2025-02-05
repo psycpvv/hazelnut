@@ -5,7 +5,7 @@ import { PortableText } from 'next-sanity'
 
 import { cn } from '@/utils/utils'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function StoStatus({
   totalTokens,

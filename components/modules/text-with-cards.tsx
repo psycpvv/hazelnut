@@ -4,7 +4,7 @@ import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 import Card from '@/components/molecules/card'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function TextWithCards({
   title,
@@ -20,6 +20,7 @@ export default function TextWithCards({
           src="/assets/img/upper-curve.svg"
           width={1920}
           height={64}
+          loading="lazy"
           alt="upper-curve"
           className="absolute left-0 top-0"
         />
@@ -57,6 +58,7 @@ export default function TextWithCards({
       </div>
       <Image
         src="/assets/img/bottom-curve.png"
+        loading="lazy"
         width={1920}
         height={64}
         alt="upper-curve"

@@ -2,12 +2,12 @@
 
 import { PortableText } from 'next-sanity'
 
-import { PortableTitleWithBoldComponent } from '@/components/atoms/portable-component/portable-component'
+import { PortableTitleWithBoldComponent } from '@/components/atoms/portable-component'
 import { Typography } from '@/components/atoms/typography'
 import useMedia from '@/hooks/useMedia'
 import { cn } from '@/utils/utils'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function RichText({
   invertColor,

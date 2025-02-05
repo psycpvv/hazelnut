@@ -6,12 +6,12 @@ import CtaNote from '@/components/atoms/cta-note'
 import {
   PortableSmallListComponent,
   PortableTitleWithBoldComponent,
-} from '@/components/atoms/portable-component/portable-component'
+} from '@/components/atoms/portable-component'
 import { Typography } from '@/components/atoms/typography'
 import { urlFor } from '@/sanity/utils/image-builder'
 import { cn } from '@/utils/utils'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function TextWithImage({
   image,
@@ -30,6 +30,7 @@ export default function TextWithImage({
           <Image
             src={urlFor(image).url()}
             alt="bush only new"
+            loading="lazy"
             width={644}
             height={644 / getImageDimensions(image).aspectRatio}
             className={cn(imagePosition && 'order-last')}

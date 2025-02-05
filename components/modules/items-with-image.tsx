@@ -38,6 +38,7 @@ export default function ItemsWithImage(data: Partial<Sanity.ItemsWithImage>) {
           height={644 / getImageDimensions(data.image).aspectRatio}
           alt="bush only new"
           className="order-first pb-10 md:order-none"
+          loading="lazy"
         />
       )}
     </div>

@@ -32,6 +32,7 @@ export default function Partners(data: Partial<Sanity.Partners>) {
                 width={200 * getImageDimensions(partner.image).aspectRatio}
                 alt="Companies"
                 className="h-20 max-h-20 w-auto max-w-52 object-contain"
+                loading="lazy"
               />
             </a>
           ))}

@@ -7,7 +7,7 @@ import { stegaClean } from 'next-sanity'
 import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 const Player = dynamic(
   async () => (await import('@lottiefiles/react-lottie-player')).Player,

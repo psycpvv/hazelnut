@@ -2,7 +2,7 @@ import { PortableText } from 'next-sanity'
 
 import { urlFor } from '@/sanity/utils/image-builder'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function Banner(data: Partial<Sanity.Banner>) {
   return (

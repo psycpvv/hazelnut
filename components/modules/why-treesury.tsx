@@ -139,6 +139,7 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
                         <Image
                           src={__data.icon}
                           width={40}
+                          loading="lazy"
                           height={40}
                           alt="favicon"
                           className={cn(
@@ -164,6 +165,7 @@ export default function WhyTreesury(data: Partial<Sanity.WhyTreesury>) {
                             <Image
                               src="/assets/img/table/disabled.svg"
                               width={16}
+                              loading="lazy"
                               height={16}
                               alt="avatar"
                             />

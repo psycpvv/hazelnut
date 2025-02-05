@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Hazelnut } from '@/components/atoms/icons'
 import { Typography } from '@/components/atoms/typography'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function Pricing(data: Partial<Sanity.Pricing>) {
   const t = useTranslations('Modules.pricing')

@@ -9,7 +9,7 @@ export const PortableSmallListComponent: Partial<PortableTextReactComponents> =
     },
     listItem: {
       bullet: ({ children }) => (
-        <div className="flex gap-2.5 py-2 items-first-baseline">
+        <li className="flex gap-2.5 py-2 items-first-baseline">
           <div>
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -18,7 +18,7 @@ export const PortableSmallListComponent: Partial<PortableTextReactComponents> =
             />
           </div>
           <div>{children}</div>
-        </div>
+        </li>
       ),
     },
   }

@@ -6,7 +6,7 @@ import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 import { cn } from '@/utils/utils'
 
-import Ctas from '../ctas'
+import Ctas from './ctas'
 
 export default function Timeline(data: Partial<Sanity.Timeline>) {
   const width = `${100 / (data.plans?.length ?? 1)}%`
@@ -17,6 +17,7 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
         <Image
           src="/assets/img/upper-curve.svg"
           width={1920}
+          loading="lazy"
           height={64}
           alt="upper-curve"
           className="absolute left-0 top-0"
@@ -144,6 +145,7 @@ export default function Timeline(data: Partial<Sanity.Timeline>) {
       <Image
         src="/assets/img/bottom-curve.png"
         width={1920}
+        loading="lazy"
         height={64}
         alt="upper-curve"
       />
