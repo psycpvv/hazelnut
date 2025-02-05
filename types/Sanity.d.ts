@@ -1,3 +1,4 @@
+import { SanityImageSource } from '@sanity/asset-utils'
 import type { SanityImageObject } from '@sanity/image-url/lib/types/types'
 import type { SanityDocument } from 'next-sanity'
 
@@ -72,7 +73,7 @@ declare global {
 
     type Banner = {
       content: any
-      bgimage: Image
+      bgimage: SanityImageSource
     }
 
     type HowItWorks = {
