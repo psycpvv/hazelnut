@@ -87,7 +87,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -96,7 +95,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -105,7 +103,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -114,7 +111,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -123,7 +119,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -132,7 +127,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -141,7 +135,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Image
         loading="lazy"
@@ -150,7 +143,6 @@ export default function CalcInfo() {
         height={68}
         alt="Calculater Image"
         className="h-0 w-full opacity-0"
-        priority
       />
       <Transition show={open}>
         <Dialog className="relative z-10" onClose={setOpen}>
