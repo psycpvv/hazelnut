@@ -26,6 +26,7 @@ export default function CalcInfo() {
   return (
     <>
       <Image
+        loading="lazy"
         src={`/assets/img/calculator/${calcImageSrc()}`}
         width={578}
         height={34}
@@ -80,6 +81,7 @@ export default function CalcInfo() {
       </div>
 
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-1.png"
         width={1156}
         height={68}
@@ -88,6 +90,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-2.png"
         width={1156}
         height={68}
@@ -96,6 +99,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-3.png"
         width={1156}
         height={68}
@@ -104,6 +108,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-4.png"
         width={1156}
         height={68}
@@ -112,6 +117,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-5.png"
         width={1156}
         height={68}
@@ -120,6 +126,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-6.png"
         width={1156}
         height={68}
@@ -128,6 +135,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-7.png"
         width={1156}
         height={68}
@@ -136,6 +144,7 @@ export default function CalcInfo() {
         priority
       />
       <Image
+        loading="lazy"
         src="/assets/img/calculator/calc-8.png"
         width={1156}
         height={68}
