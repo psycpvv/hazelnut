@@ -5,7 +5,7 @@ import { Nunito_Sans, Roboto } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
 
 import ScrollToTopButton from '@/components/molecules/scroll-to-top'
@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   description: 'TREESURY',
 }
 
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }))
+}
+
 export default async function RootLayout(
   props: Readonly<{
     children: React.ReactNode
@@ -50,6 +54,9 @@ export default async function RootLayout(
   if (!routing.locales.includes(locale as any)) {
     notFound()
   }
+
+  // Enable static rendering
+  setRequestLocale(locale)
 
   // Providing all messages to the client
   // side is the easiest way to get started
