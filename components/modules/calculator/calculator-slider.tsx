@@ -3,7 +3,7 @@ import 'nouislider/dist/nouislider.css'
 import './nouislider.css'
 
 import Nouislider from 'nouislider-react'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 
 import useMedia from '@/hooks/useMedia'
@@ -22,12 +22,6 @@ export default function CalculatorSlider() {
   useEffect(() => {
     if (ref && ref.current) setUiSlider(tokens)
   }, [setUiSlider, tokens])
-
-  useLayoutEffect(() => {
-    window.document
-      .querySelector('#slider .noUi-handle')
-      ?.setAttribute('aria-label', 'Calculator slider')
-  }, [])
 
   function updateHandler(value: number) {
     setTokens(value)
