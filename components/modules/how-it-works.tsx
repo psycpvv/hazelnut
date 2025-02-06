@@ -1,6 +1,4 @@
-'use client'
-
-import dynamic from 'next/dynamic'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { useTranslations } from 'next-intl'
 import { stegaClean } from 'next-sanity'
 
@@ -8,11 +6,6 @@ import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 
 import Ctas from './ctas'
-
-const Player = dynamic(
-  async () => (await import('@lottiefiles/react-lottie-player')).Player,
-  { ssr: false },
-)
 
 export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
   const t = useTranslations('Modules.how-it-works')
@@ -33,7 +26,11 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
               key={key}
             >
               <div className="h-[240px] w-[200px]">
-                <Player autoplay loop src={stegaClean(step.lottieFile)} />
+                <DotLottieReact
+                  autoplay
+                  loop
+                  src={stegaClean(step.lottieFile)}
+                />
               </div>
               <h3 className="text-center font-nunito text-xl text-primary md:text-2xl">
                 {t('step', { step: key + 1 })}
