@@ -33,12 +33,7 @@ export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
               key={key}
             >
               <div className="h-[240px] w-[200px]">
-                <Player
-                  autoplay
-                  loop
-                  src={stegaClean(step.lottieFile)}
-                  renderer="canvas"
-                />
+                <Player autoplay loop src={stegaClean(step.lottieFile)} />
               </div>
               <h3 className="text-center font-nunito text-xl text-primary md:text-2xl">
                 {t('step', { step: key + 1 })}
