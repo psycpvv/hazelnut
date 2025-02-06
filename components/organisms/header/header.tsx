@@ -28,10 +28,10 @@ export default function Header(header: Sanity.Layout['header']) {
               </Link>
             </li>
           ))}
-          <div className="flex gap-3 xl:gap-4">
+          <li className="flex gap-3 xl:gap-4">
             <LanguageButton />
             {header.cta?.length && <Ctas cta={header.cta} />}
-          </div>
+          </li>
         </ul>
         <div className="flex items-center gap-6 lg:hidden">
           <LanguageButton />
