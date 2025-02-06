@@ -1,4 +1,4 @@
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import dynamic from 'next/dynamic'
 import { useTranslations } from 'next-intl'
 import { stegaClean } from 'next-sanity'
 
@@ -6,6 +6,11 @@ import CtaNote from '@/components/atoms/cta-note'
 import { Typography } from '@/components/atoms/typography'
 
 import Ctas from './ctas'
+
+const DotLottieReact = dynamic(
+  async () => (await import('@lottiefiles/dotlottie-react')).DotLottieReact,
+  { ssr: false },
+)
 
 export default function HowItWorks(data: Partial<Sanity.HowItWorks>) {
   const t = useTranslations('Modules.how-it-works')
